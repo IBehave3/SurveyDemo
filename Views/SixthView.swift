@@ -198,7 +198,6 @@ struct SixthView: View {
 
         
 
-
 struct SixthView_Previews: PreviewProvider {
     static var previews: some View {
         SixthView()
