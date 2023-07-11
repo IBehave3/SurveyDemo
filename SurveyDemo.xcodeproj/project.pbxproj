@@ -22,6 +22,7 @@
 		BAB9429E2A0D63F300C837D4 /* SurveyDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB9429D2A0D63F300C837D4 /* SurveyDemoTests.swift */; };
 		BAB942A82A0D63F300C837D4 /* SurveyDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB942A72A0D63F300C837D4 /* SurveyDemoUITests.swift */; };
 		BAB942AA2A0D63F300C837D4 /* SurveyDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB942A92A0D63F300C837D4 /* SurveyDemoUITestsLaunchTests.swift */; };
+		BAD25C5E2A5DCD0000A9E84E /* postRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD25C5D2A5DCD0000A9E84E /* postRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		BAB942A32A0D63F300C837D4 /* SurveyDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurveyDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB942A72A0D63F300C837D4 /* SurveyDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDemoUITests.swift; sourceTree = "<group>"; };
 		BAB942A92A0D63F300C837D4 /* SurveyDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BAD25C5D2A5DCD0000A9E84E /* postRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				BA66EE442A4CC9150040326C /* DemoRequest.swift */,
+				BAD25C5D2A5DCD0000A9E84E /* postRequest.swift */,
 			);
 			path = "HTTP Requests";
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				BA38899D2A462218000870E8 /* FifthView.swift in Sources */,
 				BA0123452A5382880029215C /* customEnvProperties.swift in Sources */,
 				BA38899B2A4621BD000870E8 /* FourthView.swift in Sources */,
+				BAD25C5E2A5DCD0000A9E84E /* postRequest.swift in Sources */,
 				BA0123482A53A2C40029215C /* selectButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

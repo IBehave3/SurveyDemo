@@ -24,8 +24,17 @@ struct ContentView: View {
                 .font(.system(size: 25))
                 
                 Button("Generate Unique ID" ){
-                    postContainer()
+                    getData()
                     print("pressed")
+                }
+                .buttonStyle(.borderedProminent)
+                .bold()
+                .font(.system(size: 20))
+                .padding()
+                
+                Button("Test POST data" ){
+                    postData()
+                    print("pressed POST request")
                 }
                 .buttonStyle(.borderedProminent)
                 .bold()

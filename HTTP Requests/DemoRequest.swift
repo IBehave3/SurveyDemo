@@ -3,15 +3,16 @@
 //  SurveyDemo
 //
 //  Created by Jonathan Ruiz on 6/28/23.
-//
+
+// This is a Demo for Get Data API call. Prints Json data to terminal when called.
 
 import Foundation
 import Combine
 
 
-func postContainer (){
+func getData (){
     
-    let url = "https://www.acp-research.com:443/api/manage/container?dbId=exampleDatabase&containerId=id_map"
+    let url = "https://www.acp-research.com:443/api/push-data?dataStructureId=testDevice&userId=noah-lewis"
             
     getData(from: url)
 }
@@ -26,9 +27,12 @@ func getData (from url:String){
             return
         }
        
-        var results: serverMessage?
+        var results: [serverMessage]?
         do{
-            results = try JSONDecoder().decode(serverMessage.self, from: data )
+            results = try JSONDecoder().decode([serverMessage].self, from: data )
+            //below implementation also prints response but in different(prettier) format and codable structs arent needed
+            //let results = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+            //print(results)
         }
         catch{
             print(String(describing: error))
@@ -38,9 +42,7 @@ func getData (from url:String){
             return
         }
         
-        print(json.id)
-        print(json.userID)
-        print(json.sessionID)
+        print(json)
         
     }.resume()
      
@@ -49,7 +51,19 @@ func getData (from url:String){
 
 
 struct serverMessage: Codable{
+    let sessionId : String
+    let dataStructureId : String
+    let data : data
     let id : String
-    let userID : String
-    let sessionID : String
 }
+
+
+struct data : Codable{
+    let timestamp : Int?
+    let message : String?
+    let surveyResponse : String?
+}
+
+
+
+
