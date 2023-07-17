@@ -1,35 +1,31 @@
 //
-//  File.swift
+//  createUserRequest.swift
 //  SurveyDemo
 //
-//  Created by Jonathan Ruiz on 7/11/23.
+//  Created by Jonathan Ruiz on 7/12/23.
 //
 
 import Foundation
-import SwiftUI
 import Combine
 
 
-func postData(username:String, body:[String:Any]){
-    
-    @EnvironmentObject var globalVariable : globalVariables
+func createUser(username: String){
     // make dataStructureId and userId variables that can be changed
     // appTest userId amde july 12 2023 to test some different users/ dummy user examples
-    
-    guard let url = URL(string: "https://www.acp-research.com:443/api/push-data?dataStructureId=testDevice&userId=\(username)" ) else{
+    guard let url = URL(string: "https://www.acp-research.com:443/api/auth/create-user?userId=\(username)" ) else{
         return
     }
     
     var request = URLRequest(url: url)
     request.httpMethod = "POST"
     //request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-    //var body2 = globalVariable.dataCollected
-    //let body: [String: Any] = [
-      //  "timestamp" : 103,
-        //"message" : "appTest username from app",
-        //"surveyResponse" : "yes to answer: test4 7/12/23",
-        //"surveyResponse2" : "no to answer: test5 7/12/23"
-    //]
+    let body: [String: Any] = [
+        "dataStructureDeviceMapping": [
+            [
+                "dataStructureId": "appTest"
+            ]
+        ]
+    ]
     request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
     
     let task = URLSession.shared.dataTask(with: request) { data, response , error in
@@ -38,33 +34,28 @@ func postData(username:String, body:[String:Any]){
                     print("Invalid response")
                     return
                 }
+                
+        let  code = response.statusCode
         
-        print("Status Code: \(response.statusCode)")
-        // no response from api when making post request
+        if( code == 201){
+            print("Created : \(code)")
+        }else{
+            print("Conflict : \(code)")
+        }
         /*
         guard let data = data, error == nil else{
              print("something went wrong")
             return
         }
-        //no response from api
         do {
-            let response = try JSONDecoder().decode(Response.self, from: data)
+            let response = try JSONSerialization.jsonObject(with: data,options: .allowFragments)
             print("Success   \(response)")
         }
         catch{
             print(String(describing: error))
         }
-         */
-
+         
+        */
     }
     task.resume()
 }
-// no response from api
-/*
- struct Response: Codable{
-    let timestamp : Int
-    let message : String
-    let surveyResponse : String
-    let surveyResonse2 : String
- }
- */

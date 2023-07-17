@@ -7,9 +7,15 @@
 
 import SwiftUI
 
+
+
 struct ContentView: View {
     
     @State private var isActive: Bool = false
+    
+    @EnvironmentObject var globalVariable : globalVariables
+    
+    @AppStorage("userName") var username : String = ""
     
     var body: some View {
         NavigationView(){ 
@@ -24,7 +30,7 @@ struct ContentView: View {
                 .font(.system(size: 25))
                 
                 Button("Generate Unique ID" ){
-                    getData()
+                    getData(username: username)
                     print("pressed")
                 }
                 .buttonStyle(.borderedProminent)
@@ -33,13 +39,32 @@ struct ContentView: View {
                 .padding()
                 
                 Button("Test POST data" ){
-                    postData()
+                    //postData(username: username)
                     print("pressed POST request")
                 }
                 .buttonStyle(.borderedProminent)
                 .bold()
                 .font(.system(size: 20))
-                .padding()
+                .padding(.leading,-40)
+                .padding(.bottom,15)
+                
+                TextField("Username", text: $username , prompt: Text("Username")  )
+                    .padding(.horizontal,110)
+                    .textFieldStyle(.roundedBorder)
+                    .font(.title2)
+                    .textInputAutocapitalization(.never)
+                    .disableAutocorrection(true)
+                    .textContentType(.username)
+                    
+                Button("Submit"){
+                    globalVariable.userNameId = username
+                    createUser(username: username)
+                    getLogin(username: username)
+                    print(username)
+                    print("Global Variable: \(globalVariable.userNameId)")
+                }.disabled(username.isEmpty)
+                
+                
                       
                 NavigationLink(destination: SecondView(), isActive: $isActive){
                     Text("Start Surevy")
@@ -82,10 +107,12 @@ struct fifthView: View {
     }
 }
 
-    
+
     struct ContentView_Previews: PreviewProvider {
+        
         static var previews: some View {
             ContentView()
+                .environmentObject(globalVariables())
         }
     }
 

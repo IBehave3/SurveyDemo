@@ -1,23 +1,22 @@
 //
-//  DemoRequest.swift
+//  getLoginUserRequest.swift
 //  SurveyDemo
 //
-//  Created by Jonathan Ruiz on 6/28/23.
-
-// This is a Demo for Get Data API call. Prints Json data to terminal when called.
+//  Created by Jonathan Ruiz on 7/12/23.
+//
 
 import Foundation
 import Combine
 
 
-func getData (username: String){
+func getLogin (username: String){
     // appTest userId used as dummy user
-    let url = "https://www.acp-research.com:443/api/push-data?dataStructureId=testDevice&userId=\(username)"
+    let url = "https://www.acp-research.com:443/api/auth/login-user?userId=\(username)"
             
     getData(from: url)
 }
 
-func getData (from url: String){
+func getLogin (from url: String){
     
     
     URLSession.shared.dataTask(with: URL(string: url)! ) { (data, response, error) in
@@ -27,44 +26,24 @@ func getData (from url: String){
             return
         }
        
-        var results: [serverMessage]?
+        //var results: [serverMessage]?
         do{
             //results = try JSONDecoder().decode([serverMessage].self, from: data )
             //below implementation also prints response but in different(prettier) format and codable structs arent needed
             let results = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-            print(results)
+            print("Success \(results)")
         }
         catch{
             print(String(describing: error))
         }
         
-        guard let json = results else{
-            return
-        }
+        //guard let json = results else{
+          //  return
+        //}
         
-        print(json)
+        //print(json)
         
     }.resume()
      
      
 }
-
-
-struct serverMessage: Codable{
-    let sessionId : String
-    let dataStructureId : String
-    let data : data
-    let id : String
-}
-
-
-struct data : Codable{
-    let timestamp : Int?
-    let message : String?
-    let surveyResponse : String?
-    let surveyResponse2 : String?
-}
-
-
-
-

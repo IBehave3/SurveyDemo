@@ -9,6 +9,8 @@ import SwiftUI
 
 struct secondView: View {
     
+    @EnvironmentObject var globalVariable : globalVariables
+    
     @Environment(\.rootPresentation) var isActive: Binding<Bool>
     
     @State private var buttonPushed1 = false
@@ -50,7 +52,9 @@ struct secondView: View {
                                 buttonPushed3 = false
                                 buttonPushed4 = false
                                 answer1 = "1"
+                                globalVariable.dataCollected["Page 1 answer1"] = answer1
                             }
+                            
                         }
                     Text("No")
                 }
@@ -63,6 +67,7 @@ struct secondView: View {
                                 buttonPushed3 = false
                                 buttonPushed4 = false
                                 answer1 = "2"
+                                globalVariable.dataCollected["Page 1 answer1"] = answer1
                             }
                         }
                     Text("Kinda")
@@ -76,6 +81,7 @@ struct secondView: View {
                                 buttonPushed2 = false
                                 buttonPushed4 = false
                                 answer1 = "3"
+                                globalVariable.dataCollected["Page 1 answer1"] = answer1
                             }
                         }
                     Text("Eh")
@@ -89,6 +95,7 @@ struct secondView: View {
                                 buttonPushed2 = false
                                 buttonPushed3 = false
                                 answer1 = "4"
+                                globalVariable.dataCollected["Page 1 answer1"] = answer1
                             }
                         }
                     Text("Sure")
@@ -111,6 +118,7 @@ struct secondView: View {
                                 buttonPushedB3 = false
                                 buttonPushedB4 = false
                                 answer2 = "1"
+                                globalVariable.dataCollected["Page 1 answer2"] = answer2
                             }
                         }
                     Text("No")
@@ -124,6 +132,7 @@ struct secondView: View {
                                 buttonPushedB3 = false
                                 buttonPushedB4 = false
                                 answer2 = "2"
+                                globalVariable.dataCollected["Page 1 answer2"] = answer2
                             }
                         }
                     Text("Kinda")
@@ -137,6 +146,7 @@ struct secondView: View {
                                 buttonPushedB2 = false
                                 buttonPushedB4 = false
                                 answer2 = "3"
+                                globalVariable.dataCollected["Page 1 answer2"] = answer2
                             }
                         }
                     Text("Eh")
@@ -150,6 +160,7 @@ struct secondView: View {
                                 buttonPushedB2 = false
                                 buttonPushedB3 = false
                                 answer2 = "4"
+                                globalVariable.dataCollected["Page 1 answer2"] = answer2
                             }
                         }
                     Text("Sure")
@@ -172,6 +183,7 @@ struct secondView: View {
                                 buttonPushedC3 = false
                                 buttonPushedC4 = false
                                 answer3 = "1"
+                                globalVariable.dataCollected["Page 1 answer3"] = answer3
                             }
                         }
                     Text("No")
@@ -185,6 +197,7 @@ struct secondView: View {
                                 buttonPushedC3 = false
                                 buttonPushedC4 = false
                                 answer3 = "2"
+                                globalVariable.dataCollected["Page 1 answer3"] = answer3
                             }
                         }
                     Text("Kinda")
@@ -198,6 +211,7 @@ struct secondView: View {
                                 buttonPushedC2 = false
                                 buttonPushedC4 = false
                                 answer3 = "3"
+                                globalVariable.dataCollected["Page 1 answer3"] = answer3
                             }
                         }
                     Text("Eh")
@@ -211,6 +225,7 @@ struct secondView: View {
                                 buttonPushedC2 = false
                                 buttonPushedC3 = false
                                 answer3 = "4"
+                                globalVariable.dataCollected["Page 1 answer3"] = answer3
                             }
                         }
                     Text("Sure")
@@ -233,6 +248,7 @@ struct secondView: View {
                                 buttonPushedD3 = false
                                 buttonPushedD4 = false
                                 answer4 = "1"
+                                globalVariable.dataCollected["Page 1 answer4"] = answer4
                             }
                         }
                     Text("No")
@@ -246,6 +262,7 @@ struct secondView: View {
                                 buttonPushedD3 = false
                                 buttonPushedD4 = false
                                 answer4 = "2"
+                                globalVariable.dataCollected["Page 1 answer4"] = answer4
                             }
                         }
                     Text("Kinda")
@@ -259,6 +276,7 @@ struct secondView: View {
                                 buttonPushedD2 = false
                                 buttonPushedD4 = false
                                 answer4 = "3"
+                                globalVariable.dataCollected["Page 1 answer4"] = answer4
                             }
                         }
                     Text("Eh")
@@ -272,6 +290,7 @@ struct secondView: View {
                                 buttonPushedD2 = false
                                 buttonPushedD3 = false
                                 answer4 = "4"
+                                globalVariable.dataCollected["Page 1 answer4"] = answer4
                             }
                         }
                     Text("Sure")
@@ -290,25 +309,27 @@ struct secondView: View {
             let _ = print("answer 2: \(answer2)")
             let _ = print("answer 3: \(answer3)")
             let _ = print("answer 4: \(answer4)")
+            let _ = print("Global Variable: \(globalVariable.userNameId)")
+            let _ = print(globalVariable.dataCollected)
             NavigationLink(destination: ThirdView()){
                 Text("Next Question")
             }
             Image(systemName:"arrow.right.circle.fill")
             
         }
-        .onTapGesture {
-            
-        }
         .disabled(answer1.isEmpty || answer2.isEmpty || answer3.isEmpty || answer4.isEmpty)
         .padding(.top,20)
         .padding(.bottom, 20.0)
     }
+        
    
 }
+    
 
 struct secondView_Previews: PreviewProvider {
     @Binding var isActive: Bool
     static var previews: some View {
         secondView()
+            .environmentObject(globalVariables())
     }
 }

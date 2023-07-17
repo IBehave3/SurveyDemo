@@ -9,12 +9,16 @@ import SwiftUI
 
 struct ThirdView: View {
     
+    @EnvironmentObject var globalVariable : globalVariables
+    
     @Environment(\.rootPresentation) var isActive: Binding<Bool>
     
     @State var scale1: Double = 0
     @State var scale2: Double = 0
     @State var scale3: Double = 0
     @State var scale4: Double = 0
+    @State var clicked : Bool = true
+    
     var body: some View{
         VStack{
             VStack{
@@ -76,11 +80,22 @@ struct ThirdView: View {
             }
             
             HStack{
+                Button("Submit"){
+                    globalVariable.dataCollected["Page 2 answer1"] = scale1
+                    globalVariable.dataCollected["Page 2 answer2"] = scale2
+                    globalVariable.dataCollected["Page 2 answer3"] = scale3
+                    globalVariable.dataCollected["Page 2 answer4"] = scale4
+                    clicked.toggle()
+                }
+                .buttonStyle(.borderedProminent)
+                .padding(.trailing,50)
                 NavigationLink(destination: FourthView()){
                     Text("Next question")
                 }
+                .disabled(clicked)
                 Image(systemName:"arrow.right.circle.fill")
             }
+            .padding(.top,20)
             
         }
         .navigationBarBackButtonHidden(false)
@@ -90,5 +105,6 @@ struct ThirdView: View {
 struct ThirdView_Previews: PreviewProvider {
     static var previews: some View {
         ThirdView()
+            .environmentObject(globalVariables())
     }
 }

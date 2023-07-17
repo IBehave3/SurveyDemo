@@ -9,6 +9,8 @@ import SwiftUI
 
 struct FifthView: View {
     
+    @EnvironmentObject var globalVariable : globalVariables
+    
     @Environment(\.rootPresentation) var isActive: Binding<Bool>
     
     @State var choice1 = ""
@@ -29,26 +31,31 @@ struct FifthView: View {
                     Menu{
                         Button(action:{
                             choice1 = "1"
+                            globalVariable.dataCollected["Page 4 answer1"] = choice1
                         }, label: {
                             Text("1: Strongly Agree")
                         })
                         Button(action:{
                             choice1 = "2"
+                            globalVariable.dataCollected["Page 4 answer1"] = choice1
                         }, label: {
                             Text("2: Agree")
                         })
                         Button(action:{
                             choice1 = "3"
+                            globalVariable.dataCollected["Page 4 answer1"] = choice1
                         }, label: {
                             Text("3: Neutral")
                         })
                         Button(action:{
                             choice1 = "4"
+                            globalVariable.dataCollected["Page 4 answer1"] = choice1
                         }, label: {
                             Text("4: Disagree")
                         })
                         Button(action:{
                             choice1 = "5"
+                            globalVariable.dataCollected["Page 4 answer1"] = choice1
                         }, label: {
                             Text("5: Strongly Disagree")
                         })
@@ -61,7 +68,6 @@ struct FifthView: View {
                     }
                     
                 }
-                //.offset(x:10,y:10)
                 .padding(.leading,5.0)
                 
                 HStack{
@@ -70,26 +76,31 @@ struct FifthView: View {
                     Menu{
                         Button(action:{
                             choice2 = "1"
+                            globalVariable.dataCollected["Page 4 answer2"] = choice2
                         }, label: {
                             Text("1: Strongly Agree")
                         })
                         Button(action:{
                             choice2 = "2"
+                            globalVariable.dataCollected["Page 4 answer2"] = choice2
                         }, label: {
                             Text("2: Agree")
                         })
                         Button(action:{
                             choice2 = "3"
+                            globalVariable.dataCollected["Page 4 answer2"] = choice2
                         }, label: {
                             Text("3: Neutral")
                         })
                         Button(action:{
                             choice2 = "4"
+                            globalVariable.dataCollected["Page 4 answer2"] = choice2
                         }, label: {
                             Text("4: Disagree")
                         })
                         Button(action:{
                             choice2 = "5"
+                            globalVariable.dataCollected["Page 4 answer2"] = choice2
                         }, label: {
                             Text("5: Strongly Disagree")
                         })
@@ -111,26 +122,31 @@ struct FifthView: View {
                     Menu{
                         Button(action:{
                             choice3 = "1"
+                            globalVariable.dataCollected["Page 4 answer3"] = choice3
                         }, label: {
                             Text("1: Strongly Agree")
                         })
                         Button(action:{
                             choice3 = "2"
+                            globalVariable.dataCollected["Page 4 answer3"] = choice3
                         }, label: {
                             Text("2: Agree")
                         })
                         Button(action:{
                             choice3 = "3"
+                            globalVariable.dataCollected["Page 4 answer3"] = choice3
                         }, label: {
                             Text("3: Neutral")
                         })
                         Button(action:{
                             choice3 = "4"
+                            globalVariable.dataCollected["Page 4 answer3"] = choice3
                         }, label: {
                             Text("4: Disagree")
                         })
                         Button(action:{
                             choice3 = "5"
+                            globalVariable.dataCollected["Page 4 answer3"] = choice3
                         }, label: {
                             Text("5: Strongly Disagree")
                         })
@@ -153,26 +169,31 @@ struct FifthView: View {
                     Menu{
                         Button(action:{
                             choice4 = "1"
+                            globalVariable.dataCollected["Page 4 answer4"] = choice4
                         }, label: {
                             Text("1: Strongly Agree")
                         })
                         Button(action:{
                             choice4 = "2"
+                            globalVariable.dataCollected["Page 4 answer4"] = choice4
                         }, label: {
                             Text("2: Agree")
                         })
                         Button(action:{
                             choice4 = "3"
+                            globalVariable.dataCollected["Page 4 answer4"] = choice4
                         }, label: {
                             Text("3: Neutral")
                         })
                         Button(action:{
                             choice4 = "4"
+                            globalVariable.dataCollected["Page 4 answer4"] = choice4
                         }, label: {
                             Text("4: Disagree")
                         })
                         Button(action:{
                             choice4 = "5"
+                            globalVariable.dataCollected["Page 4 answer4"] = choice4
                         }, label: {
                             Text("5: Strongly Disagree")
                         })
@@ -192,26 +213,31 @@ struct FifthView: View {
                     Menu{
                         Button(action:{
                             choice5 = "1"
+                            globalVariable.dataCollected["Page 4 answer5"] = choice5
                         }, label: {
                             Text("1: Strongly Agree")
                         })
                         Button(action:{
                             choice5 = "2"
+                            globalVariable.dataCollected["Page 4 answer5"] = choice5
                         }, label: {
                             Text("2: Agree")
                         })
                         Button(action:{
                             choice5 = "3"
+                            globalVariable.dataCollected["Page 4 answer5"] = choice5
                         }, label: {
                             Text("3: Neutral")
                         })
                         Button(action:{
                             choice5 = "4"
+                            globalVariable.dataCollected["Page 4 answer5"] = choice5
                         }, label: {
                             Text("4: Disagree")
                         })
                         Button(action:{
                             choice5 = "5"
+                            globalVariable.dataCollected["Page 4 answer5"] = choice5
                         }, label: {
                             Text("5: Strongly Disagree")
                         })
@@ -231,26 +257,31 @@ struct FifthView: View {
                     Menu{
                         Button(action:{
                             choice6 = "1"
+                            globalVariable.dataCollected["Page 4 answer6"] = choice6
                         }, label: {
                             Text("1: Strongly Agree")
                         })
                         Button(action:{
                             choice6 = "2"
+                            globalVariable.dataCollected["Page 4 answer6"] = choice6
                         }, label: {
                             Text("2: Agree")
                         })
                         Button(action:{
                             choice6 = "3"
+                            globalVariable.dataCollected["Page 4 answer6"] = choice6
                         }, label: {
                             Text("3: Neutral")
                         })
                         Button(action:{
                             choice6 = "4"
+                            globalVariable.dataCollected["Page 4 answer6"] = choice6
                         }, label: {
                             Text("4: Disagree")
                         })
                         Button(action:{
                             choice6 = "5"
+                            globalVariable.dataCollected["Page 4 answer6"] = choice6
                         }, label: {
                             Text("5: Strongly Disagree")
                         })
@@ -270,26 +301,31 @@ struct FifthView: View {
                     Menu{
                         Button(action:{
                             choice7 = "1"
+                            globalVariable.dataCollected["Page 4 answer7"] = choice7
                         }, label: {
                             Text("1: Strongly Agree")
                         })
                         Button(action:{
                             choice7 = "2"
+                            globalVariable.dataCollected["Page 4 answer7"] = choice7
                         }, label: {
                             Text("2: Agree")
                         })
                         Button(action:{
                             choice7 = "3"
+                            globalVariable.dataCollected["Page 4 answer7"] = choice7
                         }, label: {
                             Text("3: Neutral")
                         })
                         Button(action:{
                             choice7 = "4"
+                            globalVariable.dataCollected["Page 4 answer7"] = choice7
                         }, label: {
                             Text("4: Disagree")
                         })
                         Button(action:{
                             choice7 = "5"
+                            globalVariable.dataCollected["Page 4 answer7"] = choice7
                         }, label: {
                             Text("5: Strongly Disagree")
                         })
@@ -309,26 +345,31 @@ struct FifthView: View {
                     Menu{
                         Button(action:{
                             choice8 = "1"
+                            globalVariable.dataCollected["Page 4 answer8"] = choice8
                         }, label: {
                             Text("1: Strongly Agree")
                         })
                         Button(action:{
                             choice8 = "2"
+                            globalVariable.dataCollected["Page 4 answer8"] = choice8
                         }, label: {
                             Text("2: Agree")
                         })
                         Button(action:{
                             choice8 = "3"
+                            globalVariable.dataCollected["Page 4 answer8"] = choice8
                         }, label: {
                             Text("3: Neutral")
                         })
                         Button(action:{
                             choice8 = "4"
+                            globalVariable.dataCollected["Page 4 answer8"] = choice8
                         }, label: {
                             Text("4: Disagree")
                         })
                         Button(action:{
                             choice8 = "5"
+                            globalVariable.dataCollected["Page 4 answer8"] = choice8
                         }, label: {
                             Text("5: Strongly Disagree")
                         })
@@ -348,26 +389,31 @@ struct FifthView: View {
                     Menu{
                         Button(action:{
                             choice9 = "1"
+                            globalVariable.dataCollected["Page 4 answer9"] = choice9
                         }, label: {
                             Text("1: Strongly Agree")
                         })
                         Button(action:{
                             choice9 = "2"
+                            globalVariable.dataCollected["Page 4 answer9"] = choice9
                         }, label: {
                             Text("2: Agree")
                         })
                         Button(action:{
                             choice9 = "3"
+                            globalVariable.dataCollected["Page 4 answer9"] = choice9
                         }, label: {
                             Text("3: Neutral")
                         })
                         Button(action:{
                             choice9 = "4"
+                            globalVariable.dataCollected["Page 4 answer9"] = choice9
                         }, label: {
                             Text("4: Disagree")
                         })
                         Button(action:{
                             choice9 = "5"
+                            globalVariable.dataCollected["Page 4 answer9"] = choice9
                         }, label: {
                             Text("5: Strongly Disagree")
                         })
@@ -411,5 +457,6 @@ struct FifthView: View {
 struct FifthView_Previews: PreviewProvider {
     static var previews: some View {
         FifthView()
+            .environmentObject(globalVariables())
     }
 }

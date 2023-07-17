@@ -9,6 +9,8 @@ import SwiftUI
 
 struct FourthView: View {
     
+    @EnvironmentObject var globalVariable : globalVariables
+    
     @Environment(\.rootPresentation) var isActive: Binding<Bool>
     @State private var button0Pushed = false
     @State private var button1Pushed = false
@@ -34,6 +36,7 @@ struct FourthView: View {
                                 button3Pushed = false
                                 button4Pushed = false
                                 answer = "0"
+                                globalVariable.dataCollected["Page 3 answer"] = answer
                             }
                         }
                     Text("Not at All")
@@ -51,6 +54,7 @@ struct FourthView: View {
                                 button3Pushed = false
                                 button4Pushed = false
                                 answer = "1"
+                                globalVariable.dataCollected["Page 3 answer"] = answer
                             }
                         }
                     Text("A Little")
@@ -68,6 +72,7 @@ struct FourthView: View {
                                 button3Pushed = false
                                 button4Pushed = false
                                 answer = "2"
+                                globalVariable.dataCollected["Page 3 answer"] = answer
                             }
                         }
                     Text("Moderately")
@@ -85,6 +90,7 @@ struct FourthView: View {
                                 button0Pushed = false
                                 button4Pushed = false
                                 answer = "3"
+                                globalVariable.dataCollected["Page 3 answer"] = answer
                             }
                         }
                     Text("Quite a Bit")
@@ -102,6 +108,7 @@ struct FourthView: View {
                                 button3Pushed = false
                                 button0Pushed = false
                                 answer = "4"
+                                globalVariable.dataCollected["Page 3 answer"] = answer
                             }
                         }
                     Text("Extremly")
@@ -129,5 +136,6 @@ struct FourthView: View {
 struct FourthView_Previews: PreviewProvider {
     static var previews: some View {
         FourthView()
+            .environmentObject(globalVariables())
     }
 }

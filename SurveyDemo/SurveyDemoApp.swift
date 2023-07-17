@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct SurveyDemoApp: App {
+    
+    @StateObject var globalVariable = globalVariables()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(globalVariable)
         }
     }
 }
