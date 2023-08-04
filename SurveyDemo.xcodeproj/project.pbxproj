@@ -10,6 +10,7 @@
 		BA0123452A5382880029215C /* customEnvProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0123442A5382880029215C /* customEnvProperties.swift */; };
 		BA0123482A53A2C40029215C /* selectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0123472A53A2C40029215C /* selectButton.swift */; };
 		BA1525612A5F43C900E525B2 /* createUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1525602A5F43C900E525B2 /* createUserRequest.swift */; };
+		BA2371D92A73132800250EE8 /* demographicQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2371D82A73132800250EE8 /* demographicQuestions.swift */; };
 		BA3889972A4620BB000870E8 /* secondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3889962A4620BB000870E8 /* secondView.swift */; };
 		BA3889992A462172000870E8 /* ThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3889982A462172000870E8 /* ThirdView.swift */; };
 		BA38899B2A4621BD000870E8 /* FourthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA38899A2A4621BD000870E8 /* FourthView.swift */; };
@@ -18,6 +19,7 @@
 		BA66EE452A4CC9150040326C /* DemoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66EE442A4CC9150040326C /* DemoRequest.swift */; };
 		BA6C58812A5F8B2000AD2F3E /* getLoginUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6C58802A5F8B2000AD2F3E /* getLoginUserRequest.swift */; };
 		BA94015B2A462877000E3F9E /* SixthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA94015A2A462877000E3F9E /* SixthView.swift */; };
+		BA9E9E782A6A4093003614C4 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9E9E772A6A4093003614C4 /* MapView.swift */; };
 		BAB9428D2A0D63F000C837D4 /* SurveyDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB9428C2A0D63F000C837D4 /* SurveyDemoApp.swift */; };
 		BAB9428F2A0D63F000C837D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB9428E2A0D63F000C837D4 /* ContentView.swift */; };
 		BAB942912A0D63F200C837D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAB942902A0D63F200C837D4 /* Assets.xcassets */; };
@@ -26,6 +28,8 @@
 		BAB942A82A0D63F300C837D4 /* SurveyDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB942A72A0D63F300C837D4 /* SurveyDemoUITests.swift */; };
 		BAB942AA2A0D63F300C837D4 /* SurveyDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB942A92A0D63F300C837D4 /* SurveyDemoUITestsLaunchTests.swift */; };
 		BAD25C5E2A5DCD0000A9E84E /* postRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD25C5D2A5DCD0000A9E84E /* postRequest.swift */; };
+		BAE92D912A69D32E0049C11E /* timedNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE92D902A69D32E0049C11E /* timedNotification.swift */; };
+		BAF6B6B22A7B3E51007C0F95 /* locationNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF6B6B12A7B3E51007C0F95 /* locationNotification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,7 @@
 		BA0123442A5382880029215C /* customEnvProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customEnvProperties.swift; sourceTree = "<group>"; };
 		BA0123472A53A2C40029215C /* selectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectButton.swift; sourceTree = "<group>"; };
 		BA1525602A5F43C900E525B2 /* createUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createUserRequest.swift; sourceTree = "<group>"; };
+		BA2371D82A73132800250EE8 /* demographicQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demographicQuestions.swift; sourceTree = "<group>"; };
 		BA3889962A4620BB000870E8 /* secondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondView.swift; sourceTree = "<group>"; };
 		BA3889982A462172000870E8 /* ThirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdView.swift; sourceTree = "<group>"; };
 		BA38899A2A4621BD000870E8 /* FourthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthView.swift; sourceTree = "<group>"; };
@@ -58,6 +63,7 @@
 		BA6C58802A5F8B2000AD2F3E /* getLoginUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getLoginUserRequest.swift; sourceTree = "<group>"; };
 		BA7546322A24079900CD7320 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BA94015A2A462877000E3F9E /* SixthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixthView.swift; sourceTree = "<group>"; };
+		BA9E9E772A6A4093003614C4 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		BAB942892A0D63F000C837D4 /* SurveyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurveyDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB9428C2A0D63F000C837D4 /* SurveyDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDemoApp.swift; sourceTree = "<group>"; };
 		BAB9428E2A0D63F000C837D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,6 +75,8 @@
 		BAB942A72A0D63F300C837D4 /* SurveyDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDemoUITests.swift; sourceTree = "<group>"; };
 		BAB942A92A0D63F300C837D4 /* SurveyDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BAD25C5D2A5DCD0000A9E84E /* postRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postRequest.swift; sourceTree = "<group>"; };
+		BAE92D902A69D32E0049C11E /* timedNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timedNotification.swift; sourceTree = "<group>"; };
+		BAF6B6B12A7B3E51007C0F95 /* locationNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = locationNotification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +122,7 @@
 				BA38899C2A462218000870E8 /* FifthView.swift */,
 				BA94015A2A462877000E3F9E /* SixthView.swift */,
 				BA0123442A5382880029215C /* customEnvProperties.swift */,
+				BA2371D82A73132800250EE8 /* demographicQuestions.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -137,9 +146,19 @@
 			path = "HTTP Requests";
 			sourceTree = "<group>";
 		};
+		BA9E9E762A6A4077003614C4 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				BA9E9E772A6A4093003614C4 /* MapView.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		BAB942802A0D63F000C837D4 = {
 			isa = PBXGroup;
 			children = (
+				BA9E9E762A6A4077003614C4 /* Location */,
+				BAE92D8F2A69D2FD0049C11E /* Notifications */,
 				BA4B67572A6105B700D8216A /* Data */,
 				BA66EE432A4CC8C50040326C /* HTTP Requests */,
 				BA3889952A462048000870E8 /* Views */,
@@ -195,6 +214,15 @@
 				BAB942A92A0D63F300C837D4 /* SurveyDemoUITestsLaunchTests.swift */,
 			);
 			path = SurveyDemoUITests;
+			sourceTree = "<group>";
+		};
+		BAE92D8F2A69D2FD0049C11E /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				BAE92D902A69D32E0049C11E /* timedNotification.swift */,
+				BAF6B6B12A7B3E51007C0F95 /* locationNotification.swift */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,13 +356,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA3889992A462172000870E8 /* ThirdView.swift in Sources */,
+				BA9E9E782A6A4093003614C4 /* MapView.swift in Sources */,
 				BAB9428F2A0D63F000C837D4 /* ContentView.swift in Sources */,
 				BA66EE452A4CC9150040326C /* DemoRequest.swift in Sources */,
 				BA3889972A4620BB000870E8 /* secondView.swift in Sources */,
 				BAB9428D2A0D63F000C837D4 /* SurveyDemoApp.swift in Sources */,
+				BA2371D92A73132800250EE8 /* demographicQuestions.swift in Sources */,
 				BA94015B2A462877000E3F9E /* SixthView.swift in Sources */,
 				BA38899D2A462218000870E8 /* FifthView.swift in Sources */,
+				BAF6B6B22A7B3E51007C0F95 /* locationNotification.swift in Sources */,
 				BA0123452A5382880029215C /* customEnvProperties.swift in Sources */,
+				BAE92D912A69D32E0049C11E /* timedNotification.swift in Sources */,
 				BA38899B2A4621BD000870E8 /* FourthView.swift in Sources */,
 				BAD25C5E2A5DCD0000A9E84E /* postRequest.swift in Sources */,
 				BA1525612A5F43C900E525B2 /* createUserRequest.swift in Sources */,
@@ -503,6 +535,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SurveyDemo/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Allow this app to use your location.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow this app to use your location.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -538,6 +571,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SurveyDemo/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Allow this app to use your location.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow this app to use your location.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

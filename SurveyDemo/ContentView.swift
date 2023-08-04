@@ -8,15 +8,27 @@
 import SwiftUI
 
 
-
 struct ContentView: View {
+    
+    @AppStorage("welcomeScreenShown") var welcomeScreenShown: Bool = false
+    
+    var body: some View {
+        if welcomeScreenShown {
+            HomeView()
+        }else{
+            demographicQuestions()
+        }
+    }
+}
+
+struct HomeView: View {
     
     @State private var isActive: Bool = false
     
     @EnvironmentObject var globalVariable : globalVariables
     
     @AppStorage("userName") var username : String = ""
-    
+     
     var body: some View {
         NavigationView(){ 
             VStack {
@@ -28,6 +40,15 @@ struct ContentView: View {
                 Text("Start Survey Below")
                 .bold()
                 .font(.system(size: 25))
+                
+                Button("Schedule Notification" ){
+                    NotificationManager().schedulesTimedNotification()
+                    print("pressed")
+                }
+                .buttonStyle(.borderedProminent)
+                .bold()
+                .font(.system(size: 20))
+                .padding()
                 
                 Button("Generate Unique ID" ){
                     getData(username: username)
@@ -48,7 +69,7 @@ struct ContentView: View {
                 .padding(.leading,-40)
                 .padding(.bottom,15)
                 
-                TextField("Username", text: $username , prompt: Text("Username")  )
+                TextField("Username", text: $username , prompt: Text("Username"))
                     .padding(.horizontal,110)
                     .textFieldStyle(.roundedBorder)
                     .font(.title2)
@@ -64,8 +85,6 @@ struct ContentView: View {
                     print("Global Variable: \(globalVariable.userNameId)")
                 }.disabled(username.isEmpty)
                 
-                
-                      
                 NavigationLink(destination: SecondView(), isActive: $isActive){
                     Text("Start Surevy")
                 }
@@ -76,6 +95,9 @@ struct ContentView: View {
         }
         .environment(\.rootPresentation, $isActive)
         .navigationBarBackButtonHidden(true)
+        .onAppear{
+            UIApplication.shared.applicationIconBadgeNumber = 0
+        }
     }
 }
 

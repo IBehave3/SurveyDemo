@@ -6,11 +6,16 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 @main
 struct SurveyDemoApp: App {
     
     @StateObject var globalVariable = globalVariables()
+    
+    init(){
+        NotificationManager().requestAuthorization()
+    }
     
     var body: some Scene {
         WindowGroup {

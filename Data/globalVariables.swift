@@ -12,7 +12,6 @@ class globalVariables : ObservableObject {
     
     @Published var userNameId : String = ""
     
-    
     @Published var dataCollected : [String:Any] = [:]
     
 }

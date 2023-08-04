@@ -29,7 +29,7 @@ struct ThirdView: View {
             .padding(.top,-100)
             .padding(.bottom,50)
             VStack{
-                Text(" Your health")
+                Text(" Your health: \(scale1)")
                     .multilineTextAlignment(.leading)
                     .font(.system(size: 20))
                 HStack{
@@ -43,7 +43,7 @@ struct ThirdView: View {
                 
             }
             VStack{
-                Text(" Your finances")
+                Text("Your finances: \(scale2)")
                     .multilineTextAlignment(.leading)
                     .font(.system(size: 20))
                 HStack{
@@ -55,7 +55,7 @@ struct ThirdView: View {
                 .padding()
             }
             VStack{
-                Text(" Your family or social relationships")
+                Text("Your family or social relationships: \(scale3)")
                     .multilineTextAlignment(.leading)
                     .font(.system(size: 20))
                 HStack{
@@ -67,7 +67,7 @@ struct ThirdView: View {
                 .padding()
             }
             VStack{
-                Text(" Your work")
+                Text("Your work: \(scale4)")
                     .multilineTextAlignment(.leading)
                     .font(.system(size: 20))
                 HStack{

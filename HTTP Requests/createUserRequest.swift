@@ -35,7 +35,7 @@ func createUser(username: String){
                     return
                 }
                 
-        let  code = response.statusCode
+        let code = response.statusCode
         
         if( code == 201){
             print("Created : \(code)")

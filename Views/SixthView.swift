@@ -16,6 +16,8 @@ struct SixthView: View {
     @State var answer2 = ""
     @State var answer3 = ""
     @State var answer4 = ""
+    //@State var isSelected : Bool
+    //@State var color : Color
     
     var body: some View {
         ScrollView{

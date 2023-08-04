@@ -17,18 +17,22 @@ struct secondView: View {
     @State private var buttonPushed2 = false
     @State private var buttonPushed3 = false
     @State private var buttonPushed4 = false
+    @State private var buttonPushed5 = false
     @State private var buttonPushedB1 = false
     @State private var buttonPushedB2 = false
     @State private var buttonPushedB3 = false
     @State private var buttonPushedB4 = false
+    @State private var buttonPushedB5 = false
     @State private var buttonPushedC1 = false
     @State private var buttonPushedC2 = false
     @State private var buttonPushedC3 = false
     @State private var buttonPushedC4 = false
+    @State private var buttonPushedC5 = false
     @State private var buttonPushedD1 = false
     @State private var buttonPushedD2 = false
     @State private var buttonPushedD3 = false
     @State private var buttonPushedD4 = false
+    @State private var buttonPushedD5 = false
     @State private var nextButtonDisabled = true
     @State private var answer1 = ""
     @State private var answer2 = ""
@@ -51,12 +55,13 @@ struct secondView: View {
                                 buttonPushed2 = false
                                 buttonPushed3 = false
                                 buttonPushed4 = false
+                                buttonPushed5 = false
                                 answer1 = "1"
                                 globalVariable.dataCollected["Page 1 answer1"] = answer1
                             }
                             
                         }
-                    Text("No")
+                    Text("Strongly Disagree")
                 }
                 VStack{
                     selectButton(isSelected: $buttonPushed2, color: .blue, text: "2")
@@ -66,11 +71,12 @@ struct secondView: View {
                                 buttonPushed1 = false
                                 buttonPushed3 = false
                                 buttonPushed4 = false
+                                buttonPushed5 = false
                                 answer1 = "2"
                                 globalVariable.dataCollected["Page 1 answer1"] = answer1
                             }
                         }
-                    Text("Kinda")
+                    Text("Disagree")
                 }
                 VStack{
                     selectButton(isSelected: $buttonPushed3, color: .blue, text: "3")
@@ -80,11 +86,12 @@ struct secondView: View {
                                 buttonPushed1 = false
                                 buttonPushed2 = false
                                 buttonPushed4 = false
+                                buttonPushed5 = false
                                 answer1 = "3"
                                 globalVariable.dataCollected["Page 1 answer1"] = answer1
                             }
                         }
-                    Text("Eh")
+                    Text("Neutral")
                 }
                 VStack{
                     selectButton(isSelected: $buttonPushed4, color: .blue, text: "4")
@@ -94,11 +101,27 @@ struct secondView: View {
                                 buttonPushed1 = false
                                 buttonPushed2 = false
                                 buttonPushed3 = false
+                                buttonPushed5 = false
                                 answer1 = "4"
                                 globalVariable.dataCollected["Page 1 answer1"] = answer1
                             }
                         }
-                    Text("Sure")
+                    Text("Agree")
+                }
+                VStack{
+                    selectButton(isSelected: $buttonPushed5, color: .blue, text: "5")
+                        .onTapGesture {
+                            buttonPushed5.toggle()
+                            if buttonPushed5 {
+                                buttonPushed1 = false
+                                buttonPushed2 = false
+                                buttonPushed3 = false
+                                buttonPushed4 = false
+                                answer1 = "5"
+                                globalVariable.dataCollected["Page 1 answer1"] = answer1
+                            }
+                        }
+                    Text("Strongly Agree")
                 }
                 
             }
@@ -117,11 +140,12 @@ struct secondView: View {
                                 buttonPushedB2 = false
                                 buttonPushedB3 = false
                                 buttonPushedB4 = false
+                                buttonPushedB5 = false
                                 answer2 = "1"
                                 globalVariable.dataCollected["Page 1 answer2"] = answer2
                             }
                         }
-                    Text("No")
+                    Text("Strongly Disagree")
                 }
                 VStack{
                     selectButton(isSelected: $buttonPushedB2, color: .blue, text: "2")
@@ -131,11 +155,12 @@ struct secondView: View {
                                 buttonPushedB1 = false
                                 buttonPushedB3 = false
                                 buttonPushedB4 = false
+                                buttonPushedB5 = false
                                 answer2 = "2"
                                 globalVariable.dataCollected["Page 1 answer2"] = answer2
                             }
                         }
-                    Text("Kinda")
+                    Text("Disagree")
                 }
                 VStack{
                     selectButton(isSelected: $buttonPushedB3, color: .blue, text: "3")
@@ -145,11 +170,12 @@ struct secondView: View {
                                 buttonPushedB1 = false
                                 buttonPushedB2 = false
                                 buttonPushedB4 = false
+                                buttonPushedB5 = false
                                 answer2 = "3"
                                 globalVariable.dataCollected["Page 1 answer2"] = answer2
                             }
                         }
-                    Text("Eh")
+                    Text("Neutral")
                 }
                 VStack{
                     selectButton(isSelected: $buttonPushedB4, color: .blue, text: "4")
@@ -159,11 +185,27 @@ struct secondView: View {
                                 buttonPushedB1 = false
                                 buttonPushedB2 = false
                                 buttonPushedB3 = false
+                                buttonPushedB5 = false
                                 answer2 = "4"
                                 globalVariable.dataCollected["Page 1 answer2"] = answer2
                             }
                         }
-                    Text("Sure")
+                    Text("Agree")
+                }
+                VStack{
+                    selectButton(isSelected: $buttonPushedB5, color: .blue, text: "5")
+                        .onTapGesture {
+                            buttonPushedB5.toggle()
+                            if buttonPushedB4 {
+                                buttonPushedB1 = false
+                                buttonPushedB2 = false
+                                buttonPushedB3 = false
+                                buttonPushedB4 = false
+                                answer2 = "5"
+                                globalVariable.dataCollected["Page 1 answer2"] = answer2
+                            }
+                        }
+                    Text("Strongly Agree")
                 }
                 
             }
@@ -186,7 +228,7 @@ struct secondView: View {
                                 globalVariable.dataCollected["Page 1 answer3"] = answer3
                             }
                         }
-                    Text("No")
+                    Text("Strongly Disagree")
                 }
                 VStack{
                     selectButton(isSelected: $buttonPushedC2, color: .blue, text: "2")
@@ -196,11 +238,12 @@ struct secondView: View {
                                 buttonPushedC1 = false
                                 buttonPushedC3 = false
                                 buttonPushedC4 = false
+                                buttonPushedC5 = false
                                 answer3 = "2"
                                 globalVariable.dataCollected["Page 1 answer3"] = answer3
                             }
                         }
-                    Text("Kinda")
+                    Text("Disagree")
                 }
                 VStack{
                     selectButton(isSelected: $buttonPushedC3, color: .blue, text: "3")
@@ -210,11 +253,12 @@ struct secondView: View {
                                 buttonPushedC1 = false
                                 buttonPushedC2 = false
                                 buttonPushedC4 = false
+                                buttonPushedC5 = false
                                 answer3 = "3"
                                 globalVariable.dataCollected["Page 1 answer3"] = answer3
                             }
                         }
-                    Text("Eh")
+                    Text("Neutral")
                 }
                 VStack{
                     selectButton(isSelected: $buttonPushedC4, color: .blue, text: "4")
@@ -224,11 +268,27 @@ struct secondView: View {
                                 buttonPushedC1 = false
                                 buttonPushedC2 = false
                                 buttonPushedC3 = false
+                                buttonPushedC5 = false
                                 answer3 = "4"
                                 globalVariable.dataCollected["Page 1 answer3"] = answer3
                             }
                         }
-                    Text("Sure")
+                    Text("Agree")
+                }
+                VStack{
+                    selectButton(isSelected: $buttonPushedC5, color: .blue, text: "5")
+                        .onTapGesture {
+                            buttonPushedC5.toggle()
+                            if buttonPushedC5 {
+                                buttonPushedC1 = false
+                                buttonPushedC2 = false
+                                buttonPushedC3 = false
+                                buttonPushedC4 = false
+                                answer3 = "5"
+                                globalVariable.dataCollected["Page 1 answer3"] = answer3
+                            }
+                        }
+                    Text("Strongly Agree")
                 }
                 
             }
@@ -247,11 +307,12 @@ struct secondView: View {
                                 buttonPushedD2 = false
                                 buttonPushedD3 = false
                                 buttonPushedD4 = false
+                                buttonPushedD5 = false
                                 answer4 = "1"
                                 globalVariable.dataCollected["Page 1 answer4"] = answer4
                             }
                         }
-                    Text("No")
+                    Text("Strongly Disagree")
                 }
                 VStack{
                     selectButton(isSelected: $buttonPushedD2, color: .blue, text: "2")
@@ -261,11 +322,12 @@ struct secondView: View {
                                 buttonPushedD1 = false
                                 buttonPushedD3 = false
                                 buttonPushedD4 = false
+                                buttonPushedD5 = false
                                 answer4 = "2"
                                 globalVariable.dataCollected["Page 1 answer4"] = answer4
                             }
                         }
-                    Text("Kinda")
+                    Text("Disagree")
                 }
                 VStack{
                     selectButton(isSelected: $buttonPushedD3, color: .blue, text: "3")
@@ -275,11 +337,12 @@ struct secondView: View {
                                 buttonPushedD1 = false
                                 buttonPushedD2 = false
                                 buttonPushedD4 = false
+                                buttonPushedD5 = false
                                 answer4 = "3"
                                 globalVariable.dataCollected["Page 1 answer4"] = answer4
                             }
                         }
-                    Text("Eh")
+                    Text("Neutral")
                 }
                 VStack{
                     selectButton(isSelected: $buttonPushedD4, color: .blue, text: "4")
@@ -289,11 +352,27 @@ struct secondView: View {
                                 buttonPushedD1 = false
                                 buttonPushedD2 = false
                                 buttonPushedD3 = false
+                                buttonPushedD5 = false
                                 answer4 = "4"
                                 globalVariable.dataCollected["Page 1 answer4"] = answer4
                             }
                         }
-                    Text("Sure")
+                    Text("Agree")
+                }
+                VStack{
+                    selectButton(isSelected: $buttonPushedD5, color: .blue, text: "5")
+                        .onTapGesture {
+                            buttonPushedD5.toggle()
+                            if buttonPushedD5 {
+                                buttonPushedD1 = false
+                                buttonPushedD2 = false
+                                buttonPushedD3 = false
+                                buttonPushedD4 = false
+                                answer4 = "5"
+                                globalVariable.dataCollected["Page 1 answer4"] = answer4
+                            }
+                        }
+                    Text("Strongly Agree")
                 }
                 
             }
@@ -301,6 +380,7 @@ struct secondView: View {
         }
         .navigationBarBackButtonHidden(false)
         .frame(maxWidth: .infinity)
+        .frame(maxHeight: .infinity)
         
         
        
