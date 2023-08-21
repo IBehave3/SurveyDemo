@@ -18,11 +18,11 @@ func createUser(username: String){
     
     var request = URLRequest(url: url)
     request.httpMethod = "POST"
-    //request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
     let body: [String: Any] = [
         "dataStructureDeviceMapping": [
             [
-                "dataStructureId": "appTest"
+                "dataStructureId": "surveyApp"
             ]
         ]
     ]
@@ -34,10 +34,10 @@ func createUser(username: String){
                     print("Invalid response")
                     return
                 }
-                
+        
         let code = response.statusCode
         
-        if( code == 201){
+        if( code == 200){
             print("Created : \(code)")
         }else{
             print("Conflict : \(code)")
@@ -54,8 +54,10 @@ func createUser(username: String){
         catch{
             print(String(describing: error))
         }
-         
-        */
+         */
+        
     }
     task.resume()
 }
+
+

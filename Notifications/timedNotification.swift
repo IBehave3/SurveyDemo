@@ -33,14 +33,14 @@ class NotificationManager {
         
         let content = UNMutableNotificationContent()
         
-        content.title = "Time for next Survey"
+        content.title = "Time for your next Survey"
         content.body = "You have a survey waiting for you"
         content.sound = .default
         content.badge = 1
         
         
         //time
-        let trigger =  UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: false)
+        let trigger =  UNTimeIntervalNotificationTrigger(timeInterval: 3600, repeats: false)
         //calender
 //        var dateComponents = DateComponents()
         // military time

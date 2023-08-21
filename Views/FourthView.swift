@@ -115,8 +115,9 @@ struct FourthView: View {
                         .font(.system(size: 14))
                 }
                 .padding(.horizontal, 5)
-            }
         }
+        }
+        .padding(.bottom,100)
         HStack{
             let _ = print("Answer: \(answer)")
             NavigationLink(destination: FifthView()){
@@ -126,7 +127,6 @@ struct FourthView: View {
             
             Image(systemName: "arrow.right.circle.fill")
         }
-        
         .padding()
         .navigationBarBackButtonHidden(false)
         

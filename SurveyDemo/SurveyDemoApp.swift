@@ -12,6 +12,7 @@ import UserNotifications
 struct SurveyDemoApp: App {
     
     @StateObject var globalVariable = globalVariables()
+    @StateObject var locationManager = LocationManager()
     
     init(){
         NotificationManager().requestAuthorization()
@@ -21,6 +22,7 @@ struct SurveyDemoApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(globalVariable)
+                .environmentObject(locationManager)
         }
     }
 }

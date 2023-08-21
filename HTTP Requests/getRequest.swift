@@ -12,7 +12,7 @@ import Combine
 
 func getData (username: String){
     // appTest userId used as dummy user
-    let url = "https://www.acp-research.com:443/api/push-data?dataStructureId=testDevice&userId=\(username)"
+    let url = "https://www.acp-research.com:443/api/push-data?dataStructureId=surveyApp&userId=\(username)"
             
     getData(from: url)
 }

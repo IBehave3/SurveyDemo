@@ -67,7 +67,7 @@ class LocationNotificationManager {
         let trigger2 = UNLocationNotificationTrigger(region: region2 ,repeats: false)
         
         
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger )
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger ) 
         
         center.add(request)
         

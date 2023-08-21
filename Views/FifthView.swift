@@ -68,7 +68,8 @@ struct FifthView: View {
                     }
                     
                 }
-                .padding(.leading,5.0)
+                .frame(width: 400)
+                .padding(.leading,10)
                 
                 HStack{
                     Text("I can get things done even when I am feeling stressed")
@@ -113,6 +114,7 @@ struct FifthView: View {
                     }
                     
                 }
+                .frame(width: 400)
                 .padding(.leading, -10.0)
                 
                 HStack{
@@ -159,8 +161,8 @@ struct FifthView: View {
                     }
                     
                 }
-                .padding(.leading,-20)
-                .padding(.trailing)
+                .frame(width: 400)
+                .padding(.leading,-80)
                 
                 
                 HStack{
@@ -205,6 +207,7 @@ struct FifthView: View {
                         )
                     }
                 }
+                .frame(width: 400)
                 .padding(.leading,-35)
                 
                 HStack{
@@ -249,6 +252,7 @@ struct FifthView: View {
                         )
                     }
                 }
+                .frame(width: 400)
                 .padding(.leading,0)
                 
                 HStack{
@@ -293,7 +297,8 @@ struct FifthView: View {
                         )
                     }
                 }
-                .padding(.leading,0)
+                .frame(width: 400)
+                .padding(.leading,-40)
                 
                 HStack{
                     Text("I am so stressed I feel numb")
@@ -337,7 +342,8 @@ struct FifthView: View {
                         )
                     }
                 }
-                .padding(.leading,0)
+                .frame(width: 400)
+                .padding(.leading,-100)
                 
                 HStack{
                     Text("My stress level has made me have less patience for others")
@@ -381,6 +387,7 @@ struct FifthView: View {
                         )
                     }
                 }
+                .frame(width: 400)
                 .padding(.leading,0)
                 
                 HStack{
@@ -425,7 +432,10 @@ struct FifthView: View {
                         )
                     }
                 }
+                .frame(width: 400)
+                .padding(.leading,-120)
             }
+            .frame(width: 400)
             .padding()
             
             HStack{

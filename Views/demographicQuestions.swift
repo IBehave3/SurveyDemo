@@ -10,10 +10,10 @@ import SwiftUI
 struct demographicQuestions: View {
     
     @AppStorage("welcomeScreenShown") var welcomeScreenShown: Bool = false
+    @EnvironmentObject var globalVariable : globalVariables
     
     @State var demographicData : [String:Any] = [:]
     
-    @State var name : String = ""
     @State var age : String = ""
     
     @State var placeOfBirth : String = ""
@@ -55,16 +55,18 @@ struct demographicQuestions: View {
     var body: some View {
         ScrollView{
             VStack{
-                TextField("Name", text: $name , prompt: Text("Name"))
-                    .textFieldStyle(.roundedBorder)
-                    .font(.title2)
+                Text("Please fill out the preliminary questions below:")
+                    .font(.title)
+                    .padding(.leading,-60)
+            }
+            VStack{
                 TextField("Age", text: $age , prompt: Text("Age"))
                     .textFieldStyle(.roundedBorder)
                     .font(.title2)
-                Text("________________________________________________")
+                Text("______________________________________________")
                 VStack{
                     Text("Gender:")
-                        .padding(.leading,-210)
+                        .padding(.leading,-205)
                         .font(.title2)
                     selectButton2(isSelected2: $buttonA1, color2: .blue, text2: "Male")
                         .onTapGesture {
@@ -74,7 +76,6 @@ struct demographicQuestions: View {
                                 buttonA3 = false
                             }
                             demographicData["Gender:"] = "male"
-                            demographicData["Name:"] = name
                             demographicData["Age:"] = age
                         }
                     selectButton2(isSelected2: $buttonA2, color2: .blue, text2: "Female")
@@ -85,7 +86,6 @@ struct demographicQuestions: View {
                                 buttonA3 = false
                             }
                             demographicData["Gender:"] = "female"
-                            demographicData["Name:"] = name
                             demographicData["Age:"] = age
                         }
                     selectButton2(isSelected2: $buttonA3, color2: .blue, text2: "Prefer not to say")
@@ -96,12 +96,13 @@ struct demographicQuestions: View {
                                 buttonA1 = false
                             }
                             demographicData["Gender:"] = "prefer not to say"
+                            demographicData["Age:"] = age
                         }
                 }
                 VStack{
-                    Text("________________________________________________")
+                    Text("______________________________________________")
                     Text("Race/Ethnicity: ")
-                        .padding(.leading,-210)
+                        .padding(.leading,-205)
                         .font(.title2)
                     selectButton2(isSelected2: $buttonB1, color2: .blue, text2: "White")
                         .onTapGesture {
@@ -217,35 +218,36 @@ struct demographicQuestions: View {
                         }
                 }
                 VStack{
-                    Text("________________________________________________")
+                    Text("______________________________________________")
                     Text("I was born in (Country and State): ")
-                        .padding(.leading,-210)
+                        .padding(.leading,-205)
                         .padding(.trailing,-200)
                         .font(.title2)
                     TextField("Place of birth", text: $placeOfBirth, prompt: Text("Place of birth"))
                         .textFieldStyle(.roundedBorder)
                 }
                 VStack{
-                    Text("________________________________________________")
+                    Text("______________________________________________")
                     Text("I was raised in (Country, State, City): ")
-                        .padding(.leading,-210)
+                        .padding(.leading,-205)
                         .padding(.trailing,-200)
                         .font(.title2)
                     TextField("Place Riased", text: $placeRaised, prompt: Text("Place Raised"))
                         .textFieldStyle(.roundedBorder)
                 }
                 VStack{
-                    Text("________________________________________________")
+                    Text("______________________________________________")
                     Text("Please list the places in which you have been living for the past 5 years: ")
-                        .padding(.leading,3)
+                        .padding(.leading,2)
+                        .padding(.trailing,5)
                         .font(.title2)
                     TextField("Places Lived", text: $placesLived, prompt: Text("Places Lived"))
                         .textFieldStyle(.roundedBorder)
                 }
                 VStack{
-                    Text("________________________________________________")
+                    Text("______________________________________________")
                     Text("Level of Education: ")
-                        .padding(.leading,-210)
+                        .padding(.leading,-205)
                         .font(.title2)
                     selectButton2(isSelected2: $buttonC1, color2: .blue, text2: "Less than Highschool")
                         .onTapGesture {
@@ -385,9 +387,9 @@ struct demographicQuestions: View {
                         }
                 }
                 VStack{
-                    Text("________________________________________________")
+                    Text("______________________________________________")
                     Text("Employment Status: ")
-                        .padding(.leading,-210)
+                        .padding(.leading,-205)
                         .font(.title2)
                     selectButton2(isSelected2: $buttonD1, color2: .blue, text2: "Employed full time")
                         .onTapGesture {
@@ -483,21 +485,37 @@ struct demographicQuestions: View {
                 }
                 
             }
+            ZStack{
+                var _ = print(demographicData)
+                Rectangle()
+                    .frame(height: 40)
+                    .frame(width: 120)
+                    .cornerRadius(10)
+                    .foregroundColor(.blue)
+                Text("Submit")
+                    .foregroundColor(.white)
+            }
+            .onTapGesture {
+                welcomeScreenShown.toggle()
+                globalVariable.demographicData = demographicData
+            }
+            /*
             VStack{
                 var _ = print(demographicData)
                 selectButton(isSelected: $submit, color: .blue, text: "Submit")
                     .onTapGesture {
                         welcomeScreenShown.toggle()
                         NotificationManager().schedulesTimedNotification()
-                        //postData(username: <#T##String#>, body: <#T##[String : Any]#>)
+                        postData(username: globalVariable.userNameId, body: demographicData)
                     }
             }
             //.frame(maxWidth: .infinity)
+             */
         }
     }
 }
 struct demographicQuestions_Previews: PreviewProvider {
     static var previews: some View {
-        demographicQuestions()
+        demographicQuestions().environmentObject(globalVariables())
     }
 }

@@ -16,13 +16,13 @@ func postData(username:String, body:[String:Any]){
     // make dataStructureId and userId variables that can be changed
     // appTest userId amde july 12 2023 to test some different users/ dummy user examples
     
-    guard let url = URL(string: "https://www.acp-research.com:443/api/push-data?dataStructureId=testDevice&userId=\(username)" ) else{
+    guard let url = URL(string: "https://www.acp-research.com:443/api/push-data?dataStructureId=surveyApp&userId=\(username)" ) else{
         return
     }
     
     var request = URLRequest(url: url)
     request.httpMethod = "POST"
-    //request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
     //var body2 = globalVariable.dataCollected
     //let body: [String: Any] = [
       //  "timestamp" : 103,

@@ -39,7 +39,7 @@ struct selectButton2: View {
             Rectangle()
                 .cornerRadius(10)
                 .frame(height: 50)
-                .frame(width: 420)
+                .frame(width: 410)
                 .foregroundColor(isSelected2 ? color2 : .gray)
             Text(text2)
                 .foregroundColor(.white )

@@ -6,11 +6,11 @@
 //
 
 import SwiftUI
-
+import MapKit
 
 struct ContentView: View {
     
-    @AppStorage("welcomeScreenShown") var welcomeScreenShown: Bool = false
+    @AppStorage("welcomeScreenShown") var welcomeScreenShown: Bool = true
     
     var body: some View {
         if welcomeScreenShown {
@@ -22,15 +22,22 @@ struct ContentView: View {
 }
 
 struct HomeView: View {
-    
     @State private var isActive: Bool = false
+    
+    @State private var showPlaceLookUpSheet = false
+    
+    @State private var locationSheet = false
+    
+    @State private var isSubmitted = true
+    
+    @State var returnedPlace = Place(mapItem: MKMapItem())
     
     @EnvironmentObject var globalVariable : globalVariables
     
     @AppStorage("userName") var username : String = ""
-     
+    
     var body: some View {
-        NavigationView(){ 
+        NavigationView{
             VStack {
                 Image("Logo_LSU")
                     .imageScale(.large)
@@ -38,9 +45,9 @@ struct HomeView: View {
                     .padding()
                 
                 Text("Start Survey Below")
-                .bold()
-                .font(.system(size: 25))
-                
+                    .bold()
+                    .font(.system(size: 25))
+                /*
                 Button("Schedule Notification" ){
                     NotificationManager().schedulesTimedNotification()
                     print("pressed")
@@ -50,25 +57,25 @@ struct HomeView: View {
                 .font(.system(size: 20))
                 .padding()
                 
-                Button("Generate Unique ID" ){
-                    getData(username: username)
-                    print("pressed")
-                }
-                .buttonStyle(.borderedProminent)
-                .bold()
-                .font(.system(size: 20))
-                .padding()
-                
-                Button("Test POST data" ){
-                    //postData(username: username)
-                    print("pressed POST request")
-                }
-                .buttonStyle(.borderedProminent)
-                .bold()
-                .font(.system(size: 20))
-                .padding(.leading,-40)
-                .padding(.bottom,15)
-                
+                 Button("Generate Unique ID" ){
+                 getData(username: username)
+                 print("pressed")
+                 }
+                 .buttonStyle(.borderedProminent)
+                 .bold()
+                 .font(.system(size: 20))
+                 .padding()
+                 
+                 Button("Test POST data" ){
+                 postData(username: username)
+                 print("pressed POST request")
+                 }
+                 .buttonStyle(.borderedProminent)
+                 .bold()
+                 .font(.system(size: 20))
+                 .padding(.leading,-40)
+                 .padding(.bottom,15)
+                 */
                 TextField("Username", text: $username , prompt: Text("Username"))
                     .padding(.horizontal,110)
                     .textFieldStyle(.roundedBorder)
@@ -76,29 +83,69 @@ struct HomeView: View {
                     .textInputAutocapitalization(.never)
                     .disableAutocorrection(true)
                     .textContentType(.username)
-                    
+                
                 Button("Submit"){
                     globalVariable.userNameId = username
                     createUser(username: username)
-                    getLogin(username: username)
+                    //getLogin(username: username)
+                    postData(username: username, body: globalVariable.demographicData)
+                    isSubmitted.toggle()
                     print(username)
                     print("Global Variable: \(globalVariable.userNameId)")
                 }.disabled(username.isEmpty)
                 
-                NavigationLink(destination: SecondView(), isActive: $isActive){
-                    Text("Start Surevy")
+                NavigationLink(destination: SecondView(),isActive: $isActive){
+                    ZStack{
+                        Rectangle()
+                            .frame(height: 40)
+                            .frame(width: 120)
+                            .cornerRadius(10)
+                            .foregroundColor(isSubmitted ? .gray : .blue)
+                        Text("Start Survey")
+                            .foregroundColor(.white)
+                    }
                 }
-                .padding()
-                
-            }  
-            
+                .animation(.easeInOut)
+                .disabled(isSubmitted)
+                //.padding()
+            }
+            /*
+            .toolbar{
+                ToolbarItem(placement: .navigationBarLeading ) {
+                    Button {
+                        showPlaceLookUpSheet.toggle()
+                    } label: {
+                        Image(systemName: "magnifyingglass")
+                        Text("Look up Place")
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        locationSheet.toggle()
+                    } label: {
+                        Image(systemName: "plus")
+                        Text("Add Frequent Location")
+                    }
+                }
+            }
+            .sheet(isPresented: $locationSheet) {
+                NavigationStack{
+                    savedLocationsView(savedLo: savedLocations())
+                }
+            }
+             */
         }
         .environment(\.rootPresentation, $isActive)
-        .navigationBarBackButtonHidden(true)
+        //.fullScreenCover(isPresented: $showPlaceLookUpSheet, content: {
+            //demographicQuestions()
+            //})
+        //.navigationBarBackButtonHidden(true)
         .onAppear{
             UIApplication.shared.applicationIconBadgeNumber = 0
+            
         }
     }
+        
 }
 
 struct SecondView: View {
@@ -128,7 +175,6 @@ struct fifthView: View {
         FifthView()
     }
 }
-
 
     struct ContentView_Previews: PreviewProvider {
         
