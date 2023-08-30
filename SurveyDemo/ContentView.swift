@@ -10,7 +10,7 @@ import MapKit
 
 struct ContentView: View {
     
-    @AppStorage("welcomeScreenShown") var welcomeScreenShown: Bool = true
+    @AppStorage("welcomeScreenShown") var welcomeScreenShown: Bool = false
     
     var body: some View {
         if welcomeScreenShown {
