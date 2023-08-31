@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8454799A2AA14D5B0092FF35 /* GeneralStress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845479992AA14D5B0092FF35 /* GeneralStress.swift */; };
 		BA0123452A5382880029215C /* customEnvProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0123442A5382880029215C /* customEnvProperties.swift */; };
 		BA0123482A53A2C40029215C /* selectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0123472A53A2C40029215C /* selectButton.swift */; };
 		BA1525612A5F43C900E525B2 /* createUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1525602A5F43C900E525B2 /* createUserRequest.swift */; };
@@ -56,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		845479992AA14D5B0092FF35 /* GeneralStress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralStress.swift; sourceTree = "<group>"; };
 		BA0123442A5382880029215C /* customEnvProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customEnvProperties.swift; sourceTree = "<group>"; };
 		BA0123472A53A2C40029215C /* selectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectButton.swift; sourceTree = "<group>"; };
 		BA1525602A5F43C900E525B2 /* createUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createUserRequest.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				BA94015A2A462877000E3F9E /* SixthView.swift */,
 				BA0123442A5382880029215C /* customEnvProperties.swift */,
 				BA2371D82A73132800250EE8 /* demographicQuestions.swift */,
+				845479992AA14D5B0092FF35 /* GeneralStress.swift */,
 				BAB496AC2A85A17D006A5DFC /* UserLocations.swift */,
 				BAB496B42A85F9E4006A5DFC /* savedLocationsView.swift */,
 				BAB496B62A86EC83006A5DFC /* frequentLocations.swift */,
@@ -395,6 +398,7 @@
 				BA0123482A53A2C40029215C /* selectButton.swift in Sources */,
 				BA4B67592A6105CD00D8216A /* globalVariables.swift in Sources */,
 				BA6C58812A5F8B2000AD2F3E /* getLoginUserRequest.swift in Sources */,
+				8454799A2AA14D5B0092FF35 /* GeneralStress.swift in Sources */,
 				BAB496AF2A85E176006A5DFC /* Place.swift in Sources */,
 				BAB496B12A85E615006A5DFC /* PlaceViewModel.swift in Sources */,
 			);

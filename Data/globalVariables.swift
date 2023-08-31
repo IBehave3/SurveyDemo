@@ -16,5 +16,7 @@ class globalVariables : ObservableObject {
     
     @Published var demographicData : [String:Any] = [:]
     
+    @Published var generalStress : [String:Any] = [:]
+    
 }
 
