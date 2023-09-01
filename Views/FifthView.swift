@@ -26,8 +26,12 @@ struct FifthView: View {
         ScrollView{
             VStack{
                 HStack(alignment: .top){
-                    Text("When I am stressed, I can't bring myself to do anything")
+                    Text("I tend to bounce back quickly after hard times.")
                         .font(.system(size: 20))
+                        .padding(.leading, 20)
+
+                    Spacer()
+                    
                     Menu{
                         Button(action:{
                             choice1 = "1"
@@ -69,11 +73,14 @@ struct FifthView: View {
                     
                 }
                 .frame(width: 400)
-                .padding(.leading,10)
                 
                 HStack{
-                    Text("I can get things done even when I am feeling stressed")
+                    Text("I have a hard time making it through stressful events.")
                         .font(.system(size: 20))
+                        .padding(.leading, 20)
+
+                    Spacer()
+                    
                     Menu{
                         Button(action:{
                             choice2 = "1"
@@ -115,12 +122,14 @@ struct FifthView: View {
                     
                 }
                 .frame(width: 400)
-                .padding(.leading, -10.0)
                 
                 HStack{
-                    Text("Most days I am so stressed I can't function")
+                    Text("It does not take me long to recover from a stressful event.")
                         .font(.system(size: 20))
-                        .padding(.leading, -6)
+                        .padding(.leading, 20)
+                    
+                    Spacer()
+                    
                     Menu{
                         Button(action:{
                             choice3 = "1"
@@ -162,12 +171,15 @@ struct FifthView: View {
                     
                 }
                 .frame(width: 400)
-                .padding(.leading,-80)
                 
                 
                 HStack{
-                    Text("Most days my stress is completley overwhelming")
+                    Text("It is hard for me to snap back when something bad happens.")
                         .font(.system(size: 20))
+                        .padding(.leading, 20)
+                    
+                    Spacer()
+
                     Menu{
                         Button(action:{
                             choice4 = "1"
@@ -208,11 +220,14 @@ struct FifthView: View {
                     }
                 }
                 .frame(width: 400)
-                .padding(.leading,-35)
                 
                 HStack{
-                    Text("My stress makes going to work/school increasingly difficult ")
+                    Text("I usually come through difficult times with little trouble.")
                         .font(.system(size: 20))
+                        .padding(.leading, 20)
+
+                    Spacer()
+                    
                     Menu{
                         Button(action:{
                             choice5 = "1"
@@ -253,11 +268,14 @@ struct FifthView: View {
                     }
                 }
                 .frame(width: 400)
-                .padding(.leading,0)
                 
                 HStack{
-                    Text("When I feel stressed I can get over it quickly")
+                    Text("I tend to take a long time to get over set-backs in my life.")
                         .font(.system(size: 20))
+                        .padding(.leading, 20)
+                    
+                    Spacer()
+                    
                     Menu{
                         Button(action:{
                             choice6 = "1"
@@ -298,163 +316,15 @@ struct FifthView: View {
                     }
                 }
                 .frame(width: 400)
-                .padding(.leading,-40)
-                
-                HStack{
-                    Text("I am so stressed I feel numb")
-                        .font(.system(size: 20))
-                    Menu{
-                        Button(action:{
-                            choice7 = "1"
-                            globalVariable.dataCollected["Page 4 answer7"] = choice7
-                        }, label: {
-                            Text("1: Strongly Agree")
-                        })
-                        Button(action:{
-                            choice7 = "2"
-                            globalVariable.dataCollected["Page 4 answer7"] = choice7
-                        }, label: {
-                            Text("2: Agree")
-                        })
-                        Button(action:{
-                            choice7 = "3"
-                            globalVariable.dataCollected["Page 4 answer7"] = choice7
-                        }, label: {
-                            Text("3: Neutral")
-                        })
-                        Button(action:{
-                            choice7 = "4"
-                            globalVariable.dataCollected["Page 4 answer7"] = choice7
-                        }, label: {
-                            Text("4: Disagree")
-                        })
-                        Button(action:{
-                            choice7 = "5"
-                            globalVariable.dataCollected["Page 4 answer7"] = choice7
-                        }, label: {
-                            Text("5: Strongly Disagree")
-                        })
-                        
-                    } label: {
-                        Label(
-                            title: { Text("\(choice7)")},
-                            icon: {Image(systemName: "list.number.rtl")}
-                        )
-                    }
-                }
-                .frame(width: 400)
-                .padding(.leading,-100)
-                
-                HStack{
-                    Text("My stress level has made me have less patience for others")
-                        .font(.system(size: 20))
-                    Menu{
-                        Button(action:{
-                            choice8 = "1"
-                            globalVariable.dataCollected["Page 4 answer8"] = choice8
-                        }, label: {
-                            Text("1: Strongly Agree")
-                        })
-                        Button(action:{
-                            choice8 = "2"
-                            globalVariable.dataCollected["Page 4 answer8"] = choice8
-                        }, label: {
-                            Text("2: Agree")
-                        })
-                        Button(action:{
-                            choice8 = "3"
-                            globalVariable.dataCollected["Page 4 answer8"] = choice8
-                        }, label: {
-                            Text("3: Neutral")
-                        })
-                        Button(action:{
-                            choice8 = "4"
-                            globalVariable.dataCollected["Page 4 answer8"] = choice8
-                        }, label: {
-                            Text("4: Disagree")
-                        })
-                        Button(action:{
-                            choice8 = "5"
-                            globalVariable.dataCollected["Page 4 answer8"] = choice8
-                        }, label: {
-                            Text("5: Strongly Disagree")
-                        })
-                        
-                    } label: {
-                        Label(
-                            title: { Text("\(choice8)")},
-                            icon: {Image(systemName: "list.number.rtl")}
-                        )
-                    }
-                }
-                .frame(width: 400)
-                .padding(.leading,0)
-                
-                HStack{
-                    Text("My stress keeps piling up")
-                        .font(.system(size: 20))
-                    Menu{
-                        Button(action:{
-                            choice9 = "1"
-                            globalVariable.dataCollected["Page 4 answer9"] = choice9
-                        }, label: {
-                            Text("1: Strongly Agree")
-                        })
-                        Button(action:{
-                            choice9 = "2"
-                            globalVariable.dataCollected["Page 4 answer9"] = choice9
-                        }, label: {
-                            Text("2: Agree")
-                        })
-                        Button(action:{
-                            choice9 = "3"
-                            globalVariable.dataCollected["Page 4 answer9"] = choice9
-                        }, label: {
-                            Text("3: Neutral")
-                        })
-                        Button(action:{
-                            choice9 = "4"
-                            globalVariable.dataCollected["Page 4 answer9"] = choice9
-                        }, label: {
-                            Text("4: Disagree")
-                        })
-                        Button(action:{
-                            choice9 = "5"
-                            globalVariable.dataCollected["Page 4 answer9"] = choice9
-                        }, label: {
-                            Text("5: Strongly Disagree")
-                        })
-                        
-                    } label: {
-                        Label(
-                            title: { Text("\(choice9)")},
-                            icon: {Image(systemName: "list.number.rtl")}
-                        )
-                    }
-                }
-                .frame(width: 400)
-                .padding(.leading,-120)
             }
-            .frame(width: 400)
-            .padding()
             
-            HStack{
-                let _ = print("Answer1: \(choice1)")
-                let _ = print("Answer2: \(choice2)")
-                let _ = print("Answer3: \(choice3)")
-                let _ = print("Answer4: \(choice4)")
-                let _ = print("Answer5: \(choice5)")
-                let _ = print("Answer6: \(choice6)")
-                let _ = print("Answer7: \(choice7)")
-                let _ = print("Answer8: \(choice8)")
-                let _ = print("Answer9: \(choice9)")
-                
-                NavigationLink(destination: SixthView()){
-                    Text("Next Question")
-                }
-                Image(systemName: "arrow.right.circle.fill")
+            Button("Finish Survey"){
+                isActive.wrappedValue = false
+                NotificationManager().schedulesTimedNotification()
+                postData(username: globalVariable.userNameId, body: globalVariable.dataCollected)
             }
-            .disabled(choice1.isEmpty || choice2.isEmpty || choice3.isEmpty || choice4.isEmpty || choice5.isEmpty || choice6.isEmpty || choice7.isEmpty || choice8.isEmpty || choice9.isEmpty)
+            .buttonStyle(.borderedProminent)
+            .disabled(choice1.isEmpty || choice2.isEmpty || choice3.isEmpty || choice4.isEmpty || choice5.isEmpty || choice6.isEmpty)
             .padding()
             
         }
