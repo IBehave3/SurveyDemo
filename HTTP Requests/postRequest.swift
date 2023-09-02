@@ -10,7 +10,7 @@ import SwiftUI
 import Combine
 
 
-func postData(username:String, body:[String:Any]){
+func postData(username:String, body: Any){
     
     @EnvironmentObject var globalVariable : globalVariables
     // make dataStructureId and userId variables that can be changed
