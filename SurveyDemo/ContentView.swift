@@ -13,11 +13,12 @@ struct ContentView: View {
     @AppStorage("welcomeScreenShown") var welcomeScreenShown: Bool = false
     
     var body: some View {
-        if welcomeScreenShown {
-            HomeView()
-        }else{
-            demographicQuestions()
-        }
+//        if welcomeScreenShown {
+//            HomeView()
+//        }else{
+//            demographicQuestions()
+//        }
+        SignupLoginView()
     }
 }
 
