@@ -279,6 +279,7 @@ struct demographicQuestions: View {
                     }
                 }
             }
+            .navigationBarBackButtonHidden(true)
         }
         .frame(maxWidth: .infinity)
         .frame(maxHeight: .infinity)

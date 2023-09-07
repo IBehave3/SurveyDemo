@@ -72,6 +72,7 @@ struct SignupLoginView: View {
             }
             .padding()
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
