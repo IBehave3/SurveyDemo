@@ -59,23 +59,43 @@ struct SignupLoginView: View {
                     .background(NavigationLink("", destination: demographicQuestions(), isActive: $redirectToViewA))
                     .alert(isPresented: $showAlert) {
                                 Alert(
-                                    title: Text("Signup Failed"),
+                                    title: Text("Signup Failed!"),
                                     message: Text(errMsg),
                                     dismissButton: .default(Text("OK"))
                                 )
                             }
                 } else {
                     Button(action: {
-                        // Handle login logic here
-                        redirectToViewB = true
+                        let credentials: [String: Any] = [
+                            "username": username,
+                            "password": password
+                        ]
+                        
+                        loginUser(data: credentials) {
+                            result in switch result {
+                            case .success(let data):
+                                let responseString = String(data: data, encoding: .utf8)
+                                redirectToViewB.toggle()
+                            case .failure(let error):
+                                errMsg = error.localizedDescription
+                                showAlert.toggle()
+                            }
+                        }
                     }) {
                         Text("Log In")
-                                    .foregroundColor(.white)
-                                    .padding()
-                                    .background(Color.blue)
-                                    .cornerRadius(10)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color.blue)
+                            .cornerRadius(10)
                     }
                     .background(NavigationLink("", destination: secondView(), isActive: $redirectToViewB))
+                    .alert(isPresented: $showAlert) {
+                                Alert(
+                                    title: Text("Login Failed!"),
+                                    message: Text(errMsg),
+                                    dismissButton: .default(Text("OK"))
+                                )
+                            }
                 }
 
                 Button(action: {
