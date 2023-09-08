@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8454799A2AA14D5B0092FF35 /* GeneralStress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845479992AA14D5B0092FF35 /* GeneralStress.swift */; };
+		84B49E402AABA4F300A7C64E /* LoginSignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B49E3F2AABA4F300A7C64E /* LoginSignupView.swift */; };
+		84B49E422AABACD400A7C64E /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B49E412AABACD400A7C64E /* AuthRequest.swift */; };
 		BA0123452A5382880029215C /* customEnvProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0123442A5382880029215C /* customEnvProperties.swift */; };
 		BA0123482A53A2C40029215C /* selectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0123472A53A2C40029215C /* selectButton.swift */; };
 		BA1525612A5F43C900E525B2 /* createUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1525602A5F43C900E525B2 /* createUserRequest.swift */; };
@@ -58,6 +60,8 @@
 
 /* Begin PBXFileReference section */
 		845479992AA14D5B0092FF35 /* GeneralStress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralStress.swift; sourceTree = "<group>"; };
+		84B49E3F2AABA4F300A7C64E /* LoginSignupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginSignupView.swift; path = Views/LoginSignupView.swift; sourceTree = SOURCE_ROOT; };
+		84B49E412AABACD400A7C64E /* AuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
 		BA0123442A5382880029215C /* customEnvProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customEnvProperties.swift; sourceTree = "<group>"; };
 		BA0123472A53A2C40029215C /* selectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectButton.swift; sourceTree = "<group>"; };
 		BA1525602A5F43C900E525B2 /* createUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createUserRequest.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 		BA3889952A462048000870E8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				84B49E3F2AABA4F300A7C64E /* LoginSignupView.swift */,
 				BA0123462A53A29C0029215C /* SelectedButtons */,
 				BA3889962A4620BB000870E8 /* secondView.swift */,
 				BA3889982A462172000870E8 /* ThirdView.swift */,
@@ -160,6 +165,7 @@
 				BAD25C5D2A5DCD0000A9E84E /* postRequest.swift */,
 				BA1525602A5F43C900E525B2 /* createUserRequest.swift */,
 				BA6C58802A5F8B2000AD2F3E /* getLoginUserRequest.swift */,
+				84B49E412AABACD400A7C64E /* AuthRequest.swift */,
 			);
 			path = "HTTP Requests";
 			sourceTree = "<group>";
@@ -388,6 +394,7 @@
 				BA2371D92A73132800250EE8 /* demographicQuestions.swift in Sources */,
 				BA94015B2A462877000E3F9E /* SixthView.swift in Sources */,
 				BA38899D2A462218000870E8 /* FifthView.swift in Sources */,
+				84B49E402AABA4F300A7C64E /* LoginSignupView.swift in Sources */,
 				BAB496AB2A85991D006A5DFC /* LocationManager.swift in Sources */,
 				BAF6B6B22A7B3E51007C0F95 /* locationNotification.swift in Sources */,
 				BA0123452A5382880029215C /* customEnvProperties.swift in Sources */,
@@ -396,6 +403,7 @@
 				BAD25C5E2A5DCD0000A9E84E /* postRequest.swift in Sources */,
 				BA1525612A5F43C900E525B2 /* createUserRequest.swift in Sources */,
 				BA0123482A53A2C40029215C /* selectButton.swift in Sources */,
+				84B49E422AABACD400A7C64E /* AuthRequest.swift in Sources */,
 				BA4B67592A6105CD00D8216A /* globalVariables.swift in Sources */,
 				BA6C58812A5F8B2000AD2F3E /* getLoginUserRequest.swift in Sources */,
 				8454799A2AA14D5B0092FF35 /* GeneralStress.swift in Sources */,
@@ -559,7 +567,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SurveyDemo/Preview Content\"";
-				DEVELOPMENT_TEAM = L25PSJA7DF;
+				DEVELOPMENT_TEAM = 9HLYA4U6NA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SurveyDemo/Info.plist;
@@ -595,7 +603,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SurveyDemo/Preview Content\"";
-				DEVELOPMENT_TEAM = L25PSJA7DF;
+				DEVELOPMENT_TEAM = 9HLYA4U6NA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SurveyDemo/Info.plist;

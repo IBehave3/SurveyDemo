@@ -13,6 +13,9 @@ struct SignupLoginView: View {
     @State private var isSignUp: Bool = true
     @State private var redirectToViewA: Bool = false
     @State private var redirectToViewB: Bool = false
+    
+    @State private var showAlert = false
+    @State private var errMsg = ""
 
     var body: some View {
         NavigationView {
@@ -31,16 +34,36 @@ struct SignupLoginView: View {
 
                 if isSignUp {
                     Button(action: {
-                        // Handle signup logic here
-                        redirectToViewA = true
+                        let credentials: [String: Any] = [
+                            "username": username,
+                            "password": password
+                        ]
+                        
+                        signupUser(data: credentials) {
+                            result in switch result {
+                                case .success(let data):
+                                    let responseString = String(data: data, encoding: .utf8)
+                                    redirectToViewA.toggle()
+                                case .failure(let error):
+                                    errMsg = error.localizedDescription
+                                    showAlert.toggle()
+                                }
+                        }
                     }) {
                         Text("Sign Up")
-                                    .foregroundColor(.white)
-                                    .padding()
-                                    .background(Color.blue)
-                                    .cornerRadius(10)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color.blue)
+                            .cornerRadius(10)
                     }
                     .background(NavigationLink("", destination: demographicQuestions(), isActive: $redirectToViewA))
+                    .alert(isPresented: $showAlert) {
+                                Alert(
+                                    title: Text("Signup Failed"),
+                                    message: Text(errMsg),
+                                    dismissButton: .default(Text("OK"))
+                                )
+                            }
                 } else {
                     Button(action: {
                         // Handle login logic here

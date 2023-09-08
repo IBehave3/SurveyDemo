@@ -9,6 +9,46 @@ import Foundation
 import SwiftUI
 import Combine
 
+let baseURL = "https://www.acp-research.com:443"
+
+func sendPostRequestWithJSON(jsonString: String, urlString: String, completionHandler: @escaping (Result<Data, Error>) -> Void) {
+    guard let url = URL(string: baseURL + urlString) else {
+        completionHandler(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
+        return
+    }
+    
+    var request = URLRequest(url: url)
+    request.httpMethod = "POST"
+    request.httpBody = jsonString.data(using: .utf8)
+    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+    
+    let session = URLSession.shared
+    
+    let task = session.dataTask(with: request) { (data, response, error) in
+        if let error = error {
+            completionHandler(.failure(error))
+            return
+        }
+        
+        guard let httpResponse = response as? HTTPURLResponse else {
+            completionHandler(.failure(NSError(domain: "Invalid HTTP Response", code: 0, userInfo: nil)))
+            return
+        }
+        
+        if httpResponse.statusCode == 200 {
+            if let data = data {
+                completionHandler(.success(data))
+            } else {
+                completionHandler(.failure(NSError(domain: "No Data Received", code: 0, userInfo: nil)))
+            }
+        } else {
+            completionHandler(.failure(NSError(domain: "Server Error", code: httpResponse.statusCode, userInfo: nil)))
+        }
+    }
+    
+    task.resume()
+}
+
 
 func postData(username:String, body: Any){
     
