@@ -123,12 +123,12 @@ struct FourthView: View {
             NavigationLink(destination: FifthView()){
                 Text("Next Question")
             }
+            .navigationBarBackButtonHidden(true)
             .disabled(answer.isEmpty)
             
             Image(systemName: "arrow.right.circle.fill")
         }
         .padding()
-        .navigationBarBackButtonHidden(false)
         
     }
 }

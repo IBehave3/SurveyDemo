@@ -428,6 +428,7 @@ struct ThirdView: View {
                     NavigationLink(destination: FourthView()){
                         Text("Next question")
                     }
+                    .navigationBarBackButtonHidden(true)
                     Image(systemName:"arrow.right.circle.fill")
                 }
                 .disabled(answer1.isEmpty || answer2.isEmpty || answer3.isEmpty || answer4.isEmpty)

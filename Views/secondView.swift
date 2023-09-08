@@ -426,6 +426,7 @@ struct secondView: View {
             NavigationLink(destination: ThirdView()){
                 Text("Next Question")
             }
+            .navigationBarBackButtonHidden(true)
             Image(systemName:"arrow.right.circle.fill")
             
         }
