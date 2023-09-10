@@ -12,7 +12,7 @@ struct secondView: View {
     @EnvironmentObject var globalVariable : globalVariables
     
     @Environment(\.rootPresentation) var isActive: Binding<Bool>
-    
+        
     @State private var buttonPushed1 = false
     @State private var buttonPushed2 = false
     @State private var buttonPushed3 = false
@@ -212,7 +212,7 @@ struct secondView: View {
                         selectButton(isSelected: $buttonPushedB5, color: .blue, text: "5")
                             .onTapGesture {
                                 buttonPushedB5.toggle()
-                                if buttonPushedB4 {
+                                if buttonPushedB5 {
                                     buttonPushedB1 = false
                                     buttonPushedB2 = false
                                     buttonPushedB3 = false
@@ -244,6 +244,7 @@ struct secondView: View {
                                     buttonPushedC2 = false
                                     buttonPushedC3 = false
                                     buttonPushedC4 = false
+                                    buttonPushedC5 = false
                                     answer3 = "Strongly Disagree"
                                     globalVariable.dataCollected["Page 1 answer3"] = answer3
                                 }
@@ -423,6 +424,7 @@ struct secondView: View {
             let _ = print("answer 4: \(answer4)")
             let _ = print("Global Variable: \(globalVariable.userNameId)")
             let _ = print(globalVariable.dataCollected)
+
             NavigationLink(destination: ThirdView()){
                 Text("Next Question")
             }

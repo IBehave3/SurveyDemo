@@ -49,6 +49,44 @@ func getData (from url: String){
      
 }
 
+func fetchGETRequest(apiURL: String, token:String, completion: @escaping (Result<Data, Error>) -> Void) {
+    let session = URLSession.shared
+
+    guard let url = URL(string: baseURL + apiURL) else {
+        completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
+        return
+    }
+    
+    var request = URLRequest(url: url)
+    request.httpMethod = "GET"
+    request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+    let task = session.dataTask(with: request) { (data, response, error) in
+        if let error = error {
+            completion(.failure(error))
+            return
+        }
+
+        guard let httpResponse = response as? HTTPURLResponse else {
+            completion(.failure(NSError(domain: "Invalid HTTP response", code: -1, userInfo: nil)))
+            return
+        }
+
+        if httpResponse.statusCode == 200 {
+            if let data = data {
+                completion(.success(data))
+            } else {
+                completion(.failure(NSError(domain: "No data received", code: -2, userInfo: nil)))
+            }
+        } else {
+            completion(.failure(NSError(domain: "HTTP status code \(httpResponse.statusCode)", code: httpResponse.statusCode, userInfo: nil)))
+        }
+    }
+
+    task.resume()
+}
+
 
 struct serverMessage: Codable{
     let sessionId : String

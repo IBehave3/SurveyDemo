@@ -48,7 +48,6 @@ func loginUser(data: Any, completionHandler: @escaping (Result<Data, Error>) -> 
                 result in switch result {
                     case .success(let data):
                         if let responseString = String(data: data, encoding: .utf8) {
-                            print("Response: \(responseString)")
                             completionHandler(.success(data))
                         } else {
                             completionHandler(.failure(NSError(domain: "Unable to convert response data to string.", code: 0, userInfo: nil)))

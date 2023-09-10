@@ -268,6 +268,8 @@
 			dependencies = (
 			);
 			name = SurveyDemo;
+			packageProductDependencies = (
+			);
 			productName = SurveyDemo;
 			productReference = BAB942892A0D63F000C837D4 /* SurveyDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -340,6 +342,11 @@
 				Base,
 			);
 			mainGroup = BAB942802A0D63F000C837D4;
+			packageReferences = (
+				84B49E432AABBD7D00A7C64E /* XCRemoteSwiftPackageReference "Swift-JWT" */,
+				84B49E492AABBEFD00A7C64E /* XCRemoteSwiftPackageReference "JSONWebToken.swift" */,
+				84B49E4A2AABBFB100A7C64E /* XCRemoteSwiftPackageReference "JWTDecode.swift" */,
+			);
 			productRefGroup = BAB9428A2A0D63F000C837D4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -743,6 +750,33 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		84B49E432AABBD7D00A7C64E /* XCRemoteSwiftPackageReference "Swift-JWT" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/IBM-Swift/Swift-JWT.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		84B49E492AABBEFD00A7C64E /* XCRemoteSwiftPackageReference "JSONWebToken.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kylef/JSONWebToken.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		84B49E4A2AABBFB100A7C64E /* XCRemoteSwiftPackageReference "JWTDecode.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/auth0/JWTDecode.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = BAB942812A0D63F000C837D4 /* Project object */;
 }
