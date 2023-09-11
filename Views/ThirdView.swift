@@ -41,22 +41,20 @@ struct ThirdView: View {
 
     
     var body: some View{
-        VStack{
-            VStack{
+        
+            ScrollView {
                 Text("To What Extent are you currently feeling stress with regard to the following topics:")
                     .font(.title)
-            }
-            .padding(.horizontal,10)
-            .padding(.bottom,50)
-            
-            ScrollView {
+                    .padding(.horizontal,10)
+                
                 VStack {
+                    Spacer()
                     
-                    Text("Your health:")
+                    Text("1. Your health:")
                         .font(.system(size:20))
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.leading, 5)
-
+                    
                     HStack {
                         VStack{
                             selectButton(isSelected: $buttonPushed1, color: .blue, text: "1")
@@ -146,11 +144,11 @@ struct ThirdView: View {
                     .padding(.bottom, 10)
                     .controlSize(.mini)
                     
-                    Text("Your finances:")
+                    Text("2. Your finances:")
                         .font(.system(size: 20))
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.leading, 5)
-
+                    
                     HStack {
                         VStack{
                             selectButton(isSelected: $buttonPushedB1, color: .blue, text: "1")
@@ -238,11 +236,11 @@ struct ThirdView: View {
                     .controlSize(.mini)
                     .padding(.bottom, 10)
                     
-                    Text("Your family or social relationships:")
+                    Text("3. Your family or social relationships:")
                         .font(.system(size: 20))
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.leading, 5)
-
+                    
                     HStack {
                         VStack{
                             selectButton(isSelected: $buttonPushedC1, color: .blue, text: "1")
@@ -329,11 +327,11 @@ struct ThirdView: View {
                     .controlSize(.mini)
                     .padding(.bottom, 10)
                     
-                    Text("Your work:")
+                    Text("4. Your work:")
                         .font(.system(size: 20))
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.leading, 5)
-
+                    
                     HStack {
                         VStack{
                             selectButton(isSelected: $buttonPushedD1, color: .blue, text: "1")
@@ -421,20 +419,18 @@ struct ThirdView: View {
                     .controlSize(.mini)
                     .padding(.bottom, 10)
                 }
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            
-                HStack {
-                    NavigationLink(destination: FourthView()){
-                        Text("Next question")
-                    }
-                    .navigationBarBackButtonHidden(true)
-                    Image(systemName:"arrow.right.circle.fill")
+                
+                Button("Finish Survey"){
+                    isActive.wrappedValue = false
+                    NotificationManager().schedulesTimedNotification()
+                    postData(username: globalVariable.userNameId, body: globalVariable.dataCollected)
                 }
+                .buttonStyle(.borderedProminent)
                 .disabled(answer1.isEmpty || answer2.isEmpty || answer3.isEmpty || answer4.isEmpty)
-                .padding(.top,20)
-                .padding(.bottom, 20.0)
+                .padding()
+                
             }
+            .frame(maxWidth: .infinity)
             
         }
     

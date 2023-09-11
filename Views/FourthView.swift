@@ -22,8 +22,9 @@ struct FourthView: View {
     
     var body: some View{
         VStack{
-            Text("Currently Do you feel stressed?")
+            Text("To what extent do you currently feel stressed?")
                 .font(.title)
+                .padding(.horizontal, 5)
             HStack{
                 VStack{
                     selectButton(isSelected: $button0Pushed, color: .blue, text: "0")
@@ -118,16 +119,14 @@ struct FourthView: View {
         }
         }
         .padding(.bottom,100)
-        HStack{
-            let _ = print("Answer: \(answer)")
-            NavigationLink(destination: FifthView()){
-                Text("Next Question")
-            }
-            .navigationBarBackButtonHidden(true)
-            .disabled(answer.isEmpty)
-            
-            Image(systemName: "arrow.right.circle.fill")
+        
+        Button("Finish Survey"){
+            isActive.wrappedValue = false
+            NotificationManager().schedulesTimedNotification()
+            postData(username: globalVariable.userNameId, body: globalVariable.dataCollected)
         }
+        .buttonStyle(.borderedProminent)
+        .disabled(answer.isEmpty)
         .padding()
         
     }

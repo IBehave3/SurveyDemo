@@ -54,9 +54,9 @@ struct GeneralStress: View {
         NavigationView() {
             VStack {
                 
-                Text("How often have you felt that you were unable to control the important things in your life?")
-                    .font(.system(size:16))
-                    .padding()
+                Text("1. How often have you felt that you were unable to control the important things in your life?")
+                    .font(.system(size:20))
+
                 HStack {
                     VStack{
                         selectButton(isSelected: $buttonPushed1, color: .blue, text: "1")
@@ -145,9 +145,10 @@ struct GeneralStress: View {
                 }
                 .controlSize(.mini)
                 
-                Text("How often have you felt confident about your ability to handle your personal problems?")
-                    .font(.system(size: 16))
-                    .padding()
+                Text("2. How often have you felt confident about your ability to handle your personal problems?")
+                    .font(.system(size: 20))
+                    .padding(.top, 10)
+
                 HStack {
                     VStack{
                         selectButton(isSelected: $buttonPushedB1, color: .blue, text: "1")
@@ -234,9 +235,10 @@ struct GeneralStress: View {
                 }
                 .controlSize(.mini)
                 
-                Text("How often have you felt that things were going your way?")
-                    .font(.system(size: 16))
-                    .padding()
+                Text("3. How often have you felt that things were going your way?")
+                    .font(.system(size: 20))
+                    .padding(.top, 10)
+
                 HStack {
                     VStack{
                         selectButton(isSelected: $buttonPushedC1, color: .blue, text: "1")
@@ -323,9 +325,10 @@ struct GeneralStress: View {
                 }
                 .controlSize(.mini)
                 
-                Text("How often have you felt difficulties were piling up so high that you could not overcome them?")
-                    .font(.system(size: 16))
-                    .padding()
+                Text("4. How often have you felt difficulties were piling up so high that you could not overcome them?")
+                    .font(.system(size: 20))
+                    .padding(.top, 10)
+                
                 HStack {
                     VStack{
                         selectButton(isSelected: $buttonPushedD1, color: .blue, text: "1")
@@ -416,31 +419,18 @@ struct GeneralStress: View {
                 }
                 .controlSize(.mini)
                 
-                Button(action: {
-                    // Handle signup logic here
-                    isLinkActive.toggle()
-                }) {
-                    Text("Submit")
-                                .foregroundColor(.white)
-                                .padding()
-                                .background(Color.blue)
-                                .cornerRadius(10)
+                HStack {
+                    Button("Next", action: {
+                        isLinkActive.toggle()
+                    })
+                    Image(systemName:"arrow.right.circle.fill")
+                    NavigationLink("", destination: fifthView(), isActive: $isLinkActive)
                 }
-                .background(NavigationLink("", destination: SignupLoginView(), isActive: $isLinkActive))
-                .disabled(!isAnswer1Selected || !isAnswer2Selected || !isAnswer3Selected || !isAnswer4Selected)
-
+                .padding(.top, 10)
+                .padding(.bottom, 10)
             }
-            .frame(maxWidth: .infinity)
-            .frame(maxHeight: .infinity)
-            
-           
-//             Button("Submit"){
-//                 welcomeScreenShown.toggle()
-//             }
-//             .buttonStyle(.borderedProminent)
-//             .disabled(!isAnswer1Selected || !isAnswer2Selected || !isAnswer3Selected || !isAnswer4Selected)
         }
-        .navigationBarBackButtonHidden(true)
+        .navigationBarBackButtonHidden(false)
 
     }
         

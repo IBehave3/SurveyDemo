@@ -110,7 +110,7 @@ struct SignupLoginView: View {
                                 .background(Color.blue)
                                 .cornerRadius(10)
                         }
-                        .background(NavigationLink("", destination: secondView(), isActive: $redirectToViewB))
+                        .background(NavigationLink("", destination: homeView(), isActive: $redirectToViewB))
                         .alert(isPresented: $showAlert) {
                                     Alert(
                                         title: Text("Login Failed!"),

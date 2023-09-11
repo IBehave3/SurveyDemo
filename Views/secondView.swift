@@ -43,9 +43,8 @@ struct secondView: View {
         ScrollView {
             VStack {
                 
-                Text("Currently, I am unable to control the important things in my life")
+                Text("1. Currently, I am unable to control the important things in my life")
                     .font(.system(size:20))
-                    .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading, 5)
 
                 HStack {
@@ -137,9 +136,8 @@ struct secondView: View {
                 .padding(.bottom, 10)
                 .controlSize(.mini)
                 
-                Text("Currently, I feel confident about my ability to handle my personal problems")
+                Text("2. Currently, I feel confident about my ability to handle my personal problems")
                     .font(.system(size: 20))
-                    .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading, 5)
 
                 HStack {
@@ -229,9 +227,8 @@ struct secondView: View {
                 .controlSize(.mini)
                 .padding(.bottom, 10)
                 
-                Text("Currently, I feel things are going my way")
+                Text("3. Currently, I feel things are going my way")
                     .font(.system(size: 20))
-                    .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading, 5)
 
                 HStack {
@@ -321,9 +318,8 @@ struct secondView: View {
                 .controlSize(.mini)
                 .padding(.bottom, 10)
                 
-                Text("Currently, I feel difficulties are piling up so high that I could not overcome them")
+                Text("4. Currently, I feel difficulties are piling up so high that I could not overcome them")
                     .font(.system(size: 20))
-                    .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading, 5)
 
                 HStack {
@@ -428,12 +424,10 @@ struct secondView: View {
             NavigationLink(destination: ThirdView()){
                 Text("Next Question")
             }
-            .navigationBarBackButtonHidden(true)
             Image(systemName:"arrow.right.circle.fill")
             
         }
         .disabled(answer1.isEmpty || answer2.isEmpty || answer3.isEmpty || answer4.isEmpty)
-        .padding(.top,20)
         .padding(.bottom, 20.0)
     }
         
