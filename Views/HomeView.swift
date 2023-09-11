@@ -9,6 +9,10 @@ import Foundation
 import SwiftUI
 
 struct homeView: View {
+    let tokenKey = "token"
+    
+    @State private var logout: Bool = false
+
     var body: some View {
         NavigationView {
             List {
@@ -20,6 +24,17 @@ struct homeView: View {
                 }
             }
             .navigationBarTitle("Menu")
+            .toolbar {
+                            ToolbarItem(placement: .navigationBarTrailing) {
+                                Button(action: {
+                                    UserDefaults.standard.removeObject(forKey: tokenKey)
+                                    logout.toggle()
+                                }) {
+                                    Text("Logout")
+                                }
+                                .background(NavigationLink("", destination: SignupLoginView(), isActive: $logout))
+                            }
+                        }
         }
         .navigationBarBackButtonHidden(true)
     }
@@ -39,18 +54,3 @@ struct MenuItemView: View {
         }
     }
 }
-
-struct DailySurveyView: View {
-    var body: some View {
-        Text("Daily Survey Content Goes Here")
-            .navigationBarTitle("Daily Survey")
-    }
-}
-
-struct HourlySurveyView: View {
-    var body: some View {
-        Text("Hourly Survey Content Goes Here")
-            .navigationBarTitle("Hourly Survey")
-    }
-}
-
