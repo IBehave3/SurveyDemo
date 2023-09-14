@@ -33,35 +33,27 @@ class NotificationManager {
         
         let content = UNMutableNotificationContent()
         
-        content.title = "Time for your next Survey"
-        content.body = "You have a survey waiting for you"
+        content.title = "Daily Survey"
+        content.body = "You have a survey waiting for you."
         content.sound = .default
         content.badge = 1
         
-        
-        //time
-        let trigger =  UNTimeIntervalNotificationTrigger(timeInterval: 3600, repeats: false)
-        //calender
-//        var dateComponents = DateComponents()
-        // military time
-//        dateComponents.hour = 20
-//        dateComponents.minute = 30
-//        dateComponents.weekday = 6
-//        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-        //location
-        /*
-        let coordinate = CLLocationCoordinate2D(latitude: 40.00,
-                                                longitude: 50.00)
-        let region = CLCircularRegion(center: coordinate,
-                                      radius: 100,
-                                      identifier: UUID().uuidString)
-        region.notifyOnEntry = true
-        let trigger = UNLocationNotificationTrigger(region: region ,repeats: false)
-        */
-        
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger )
-        
-        center.add(request)
+        var dateComponents = DateComponents()
+        dateComponents.hour = 19
+        dateComponents.minute = 0
+        dateComponents.second = 0
+
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+
+        let request = UNNotificationRequest(identifier: "notificationIdentifier", content: content, trigger: trigger)
+
+        UNUserNotificationCenter.current().add(request) { (error) in
+            if let error = error {
+                print("Error scheduling notification: \(error.localizedDescription)")
+            } else {
+                print("Notification scheduled successfully")
+                }
+            }
         
     }
     
