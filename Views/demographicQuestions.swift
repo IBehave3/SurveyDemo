@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct demographicQuestions: View {
-    
-    @AppStorage("welcomeScreenShown") var welcomeScreenShown: Bool = false
-    
+        
     @EnvironmentObject var signupVariables : SignupVariables
     
     @State var demographic : [String:Any] = [:]
@@ -45,7 +43,6 @@ struct demographicQuestions: View {
     
     var body: some View {
         VStack {
-            NavigationView {
                 ScrollView{
                     VStack{
                         Text("Please fill out the preliminary questions below:")
@@ -268,8 +265,6 @@ struct demographicQuestions: View {
                         NavigationLink("", destination: GeneralStress(), isActive: $submit)
                     }
                 }
-            }
-            .navigationBarBackButtonHidden(true)
         }
         .frame(maxWidth: .infinity)
         .frame(maxHeight: .infinity)

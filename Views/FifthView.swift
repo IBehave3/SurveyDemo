@@ -28,7 +28,6 @@ struct FifthView: View {
     @State var errMsg = ""
     
     var body: some View{
-        NavigationView {
             ScrollView{
                 VStack{
                     HStack{
@@ -318,6 +317,7 @@ struct FifthView: View {
                         result in switch result {
                             case .success(let token):
                                 print(token)
+                                UserDefaults.standard.set(token, forKey: "token")
                                 redirectToLogin.toggle()
                             case .failure(let error):
                                 redirectToLogin.toggle()
@@ -333,7 +333,7 @@ struct FifthView: View {
                         .background(Color.blue)
                         .cornerRadius(10)
                 }
-                .background(NavigationLink("", destination: SignupLoginView(), isActive: $redirectToLogin))
+                .background(NavigationLink("", destination: homeView(), isActive: $redirectToLogin))
                 .alert(isPresented: $showAlert) {
                             Alert(
                                 title: Text("Signup Failed!"),
@@ -346,8 +346,6 @@ struct FifthView: View {
                 
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-        }
-        .navigationBarBackButtonHidden(true)
         
     }
 }

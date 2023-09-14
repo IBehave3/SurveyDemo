@@ -12,11 +12,9 @@ struct homeView: View {
     let tokenKey = "token"
     
     @State private var logout: Bool = false
-    @State private var backgroundTaskID: UIBackgroundTaskIdentifier = .invalid
     @ObservedObject var locationManager = LocationManager()
 
     var body: some View {
-        NavigationView {
             List {
                 NavigationLink(destination: secondView()) {
                     MenuItemView(title: "Daily Survey", imageName: "sun.max.fill")
@@ -26,6 +24,7 @@ struct homeView: View {
                 }
             }
             .navigationBarTitle("Menu")
+            .navigationBarBackButtonHidden(true)
             .toolbar {
                             ToolbarItem(placement: .navigationBarTrailing) {
                                 Button(action: {
@@ -37,46 +36,30 @@ struct homeView: View {
                                 .background(NavigationLink("", destination: SignupLoginView(), isActive: $logout))
                             }
                         }
-        }
-        .navigationBarBackButtonHidden(true)
         .onAppear {
-            registerBackgroundTask()
-                
             startPeriodicBackgroundTask()
         }
     }
-    
-    private func registerBackgroundTask() {
-        backgroundTaskID = UIApplication.shared.beginBackgroundTask()
-        print("Background task registered successfully: \(backgroundTaskID)")
-
-    }
-
-    private func endBackgroundTask() {
-        UIApplication.shared.endBackgroundTask(backgroundTaskID)
-        backgroundTaskID = .invalid
-    }
 
     private func performBackgroundTask() {
-        let timer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { _ in
+        let timer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { timer in
                    
             if let location = locationManager.location {
                 print("Latitude: \(location.coordinate.latitude)")
                 print("Longitude: \(location.coordinate.longitude)")
                 
+                let token = UserDefaults.standard.string(forKey: "token")
+                                
                 //Call api to post location data
                 //Depending on api response, generate hourly notification
                 //If api returns unauthorized, logout and end background task, the user has to login again
+                let errorOccurred = false
+                if errorOccurred {
+                    timer.invalidate()
+                }
             }
-                   
-//            let errorOccurred = false
-//            if errorOccurred {
-//                self.endBackgroundTask()
-//            }
         }
                
-        // Ensure the timer is properly invalidated when the task is done
-        RunLoop.current.add(timer, forMode: .default)
         RunLoop.current.run()
     }
     

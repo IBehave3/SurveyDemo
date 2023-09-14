@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct GeneralStress: View {
-    
-    @AppStorage("welcomeScreenShown") var welcomeScreenShown: Bool = false
-    
+        
     @EnvironmentObject var globalVariable : globalVariables
     
     @Environment(\.rootPresentation) var isActive: Binding<Bool>
@@ -51,7 +49,6 @@ struct GeneralStress: View {
     let VERY_OFTEN = "Very Often"
     
     var body: some View {
-        NavigationView() {
             VStack {
                 
                 Text("1. How often have you felt that you were unable to control the important things in your life?")
@@ -425,8 +422,6 @@ struct GeneralStress: View {
                 .padding(.top, 10)
                 .padding(.bottom, 10)
             }
-        }
-        .navigationBarBackButtonHidden(false)
 
     }
         

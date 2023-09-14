@@ -23,6 +23,7 @@ struct SurveyDemoApp: App {
                 .environmentObject(globalVariable)
                 .environmentObject(locationManager)
                 .environmentObject(signupVariable)
+                .navigationViewStyle(.stack)
         }
     }
 }
