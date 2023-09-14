@@ -10,9 +10,10 @@ import SwiftUI
 struct demographicQuestions: View {
     
     @AppStorage("welcomeScreenShown") var welcomeScreenShown: Bool = false
-    @EnvironmentObject var globalVariable : globalVariables
     
-    @State var demographicData : [String:Any] = [:]
+    @EnvironmentObject var signupVariables : SignupVariables
+    
+    @State var demographic : [String:Any] = [:]
     
     @State var age : String = ""
     @State var otherGender : String = ""
@@ -40,6 +41,8 @@ struct demographicQuestions: View {
     
     @State var submit : Bool = false
     
+    @State var race = [String]()
+    
     var body: some View {
         VStack {
             NavigationView {
@@ -64,7 +67,7 @@ struct demographicQuestions: View {
                                     if buttonA1{
                                         buttonA2 = false
                                     }
-                                    demographicData["Gender"] = "1"
+                                    demographic["gender"] = "male"
                                 }
                             selectButton2(isSelected2: $buttonA2, color2: .blue, text2: "Female")
                                 .onTapGesture {
@@ -72,7 +75,7 @@ struct demographicQuestions: View {
                                     if buttonA2{
                                         buttonA1 = false
                                     }
-                                    demographicData["Gender"] = "2"
+                                    demographic["gender"] = "female"
                                 }
                             TextField("Gender", text: $otherGender , prompt: Text("Other: please specify"))
                                 .textFieldStyle(.roundedBorder)
@@ -83,94 +86,80 @@ struct demographicQuestions: View {
                                 .font(.title2)
                             selectButton2(isSelected2: $buttonB1, color2: .blue, text2: "White")
                                 .onTapGesture {
-                                    buttonB1.toggle()
-                                    if buttonB1 {
-                                        buttonB2 = false
-                                        buttonB3 = false
-                                        buttonB4 = false
-                                        buttonB5 = false
-                                        buttonB7 = false
-                                        buttonB8 = false
+                                    if (buttonB1) {
+                                        if let indexToRemove = race.firstIndex(of: "white") {
+                                            race.remove(at: indexToRemove)
+                                        }
+                                    } else {
+                                        self.race.append("white")
                                     }
-                                    demographicData["Race/Ethnicity"] = "1"
+                                    buttonB1.toggle()
                                 }
                             selectButton2(isSelected2: $buttonB8, color2: .blue, text2: "African American")
                                 .onTapGesture {
-                                    buttonB8.toggle()
-                                    if buttonB8 {
-                                        buttonB1 = false
-                                        buttonB3 = false
-                                        buttonB4 = false
-                                        buttonB5 = false
-                                        buttonB2 = false
-                                        buttonB7 = false
+                                    if (buttonB8) {
+                                        if let indexToRemove = race.firstIndex(of: "african american") {
+                                            race.remove(at: indexToRemove)
+                                        }
+                                    } else {
+                                        self.race.append("african american")
                                     }
-                                    demographicData["Race/Ethnicity"] = "3"
+                                    buttonB8.toggle()
                                 }
                             selectButton2(isSelected2: $buttonB2, color2: .blue, text2: "Hispanic or Latino")
                                 .onTapGesture {
-                                    buttonB2.toggle()
-                                    if buttonB2 {
-                                        buttonB1 = false
-                                        buttonB3 = false
-                                        buttonB4 = false
-                                        buttonB5 = false
-                                        buttonB7 = false
-                                        buttonB8 = false
+                                    if (buttonB2) {
+                                        if let indexToRemove = race.firstIndex(of: "hispanic or latino") {
+                                            race.remove(at: indexToRemove)
+                                        }
+                                    } else {
+                                        self.race.append("hispanic or latino")
                                     }
-                                    demographicData["Race/Ethnicity"] = "2"
+                                    buttonB2.toggle()
                                 }
                             selectButton2(isSelected2: $buttonB3, color2: .blue, text2: "American Indian or Alaska Native")
                                 .onTapGesture {
-                                    buttonB3.toggle()
-                                    if buttonB3 {
-                                        buttonB1 = false
-                                        buttonB2 = false
-                                        buttonB4 = false
-                                        buttonB5 = false
-                                        buttonB7 = false
-                                        buttonB8 = false
+                                    if (buttonB3) {
+                                        if let indexToRemove = race.firstIndex(of: "american indian or alaska native") {
+                                            race.remove(at: indexToRemove)
+                                        }
+                                    } else {
+                                        self.race.append("american indian or alaska native")
                                     }
-                                    demographicData["Race/Ethnicity"] = "5"
+                                    buttonB3.toggle()
                                 }
                             selectButton2(isSelected2: $buttonB4, color2: .blue, text2: "Asian")
                                 .onTapGesture {
-                                    buttonB4.toggle()
-                                    if buttonB4 {
-                                        buttonB1 = false
-                                        buttonB3 = false
-                                        buttonB2 = false
-                                        buttonB5 = false
-                                        buttonB7 = false
-                                        buttonB8 = false
+                                    if (buttonB4) {
+                                        if let indexToRemove = race.firstIndex(of: "asian") {
+                                            race.remove(at: indexToRemove)
+                                        }
+                                    } else {
+                                        self.race.append("asian")
                                     }
-                                    demographicData["Race/Ethnicity"] = "4"
+                                    buttonB4.toggle()
                                 }
                             selectButton2(isSelected2: $buttonB5, color2: .blue, text2: "Native Hawaiian or Pacific Islander")
                                 .onTapGesture {
-                                    buttonB5.toggle()
-                                    if buttonB5 {
-                                        buttonB1 = false
-                                        buttonB3 = false
-                                        buttonB4 = false
-                                        buttonB2 = false
-                                        buttonB7 = false
-                                        buttonB8 = false
+                                    if (buttonB5) {
+                                        if let indexToRemove = race.firstIndex(of: "native hawaiian or pacific islander") {
+                                            race.remove(at: indexToRemove)
+                                        }
+                                    } else {
+                                        self.race.append("native hawaiian or pacific islander")
                                     }
-                                    demographicData["Race/Ethnicity"] = "7"
+                                    buttonB5.toggle()
                                 }
                             selectButton2(isSelected2: $buttonB7, color2: .blue, text2: "Middle Eastern or North African")
                                 .onTapGesture {
-                                    buttonB7.toggle()
-                                    if buttonB7 {
-                                        buttonB1 = false
-                                        buttonB3 = false
-                                        buttonB4 = false
-                                        buttonB5 = false
-                                        buttonB2 = false
-                                        buttonB8 = false
+                                    if (buttonB7) {
+                                        if let indexToRemove = race.firstIndex(of: "middle easter or north african") {
+                                            race.remove(at: indexToRemove)
+                                        }
+                                    } else {
+                                        self.race.append("middle easter or north african")
                                     }
-                                    demographicData["Race/Ethnicity"] = "6"
+                                    buttonB7.toggle()
                                 }
                             TextField("Race/Ethinicity", text: $otherRace , prompt: Text("Other: please specify"))
                                 .textFieldStyle(.roundedBorder)
@@ -188,7 +177,7 @@ struct demographicQuestions: View {
                                         buttonC4 = false
                                         buttonC8 = false
                                     }
-                                    demographicData["Level of Education"] = "1"
+                                    demographic["levelOfEducation"] = "1"
                                 }
                             selectButton2(isSelected2: $buttonC2, color2: .blue, text2: "Highschool diploma or equivalent")
                                 .onTapGesture {
@@ -199,7 +188,7 @@ struct demographicQuestions: View {
                                         buttonC4 = false
                                         buttonC8 = false
                                     }
-                                    demographicData["Level of Education"] = "2"
+                                    demographic["levelOfEducation"] = "2"
                                 }
                             selectButton2(isSelected2: $buttonC3, color2: .blue, text2: "College/technical school, no degree")
                                 .onTapGesture {
@@ -210,7 +199,7 @@ struct demographicQuestions: View {
                                         buttonC4 = false
                                         buttonC8 = false
                                     }
-                                    demographicData["Level of Education"] = "3"
+                                    demographic["levelOfEducation"] = "3"
                                 }
                             selectButton2(isSelected2: $buttonC4, color2: .blue, text2: "College/technical school, with degree")
                                 .onTapGesture {
@@ -221,7 +210,7 @@ struct demographicQuestions: View {
                                         buttonC1 = false
                                         buttonC8 = false
                                     }
-                                    demographicData["Level of Education"] = "4"
+                                    demographic["levelOfEducation"] = "4"
                                 }
 
                             selectButton2(isSelected2: $buttonC8, color2: .blue, text2: "Graduate study in progress/completed")
@@ -233,7 +222,7 @@ struct demographicQuestions: View {
                                         buttonC4 = false
                                         buttonC1 = false
                                     }
-                                    demographicData["Level of Education"] = "5"
+                                    demographic["levelOfEducation"] = "5"
                                     
                                 }
                         }
@@ -246,7 +235,7 @@ struct demographicQuestions: View {
                                     if buttonD1 {
                                         buttonD2 = false
                                     }
-                                    demographicData["Employment status"] = "0"
+                                    demographic["employed"] = "false"
                                 }
                             selectButton2(isSelected2: $buttonD2, color2: .blue, text2: "Yes")
                                 .onTapGesture {
@@ -254,7 +243,7 @@ struct demographicQuestions: View {
                                     if buttonD2 {
                                         buttonD1 = false
                                     }
-                                    demographicData["Employment status"] = "1"
+                                    demographic["employed"] = "true"
                                 }
                         }
                         
@@ -262,16 +251,17 @@ struct demographicQuestions: View {
                     
                     HStack {
                         Button("Next", action: {
-                            demographicData["Age"] = age
+                            demographic["age"] = age
+                            demographic["race"] = self.race
                             if (otherRace != "") {
-                                demographicData["Race/Ethnicity"] = otherRace
+                                demographic["otherRace"] = otherRace
                             }
                             if (otherGender != "") {
-                                demographicData["Gender"] = otherGender
+                                demographic["otherGender"] = otherGender
                             }
-                            var _ = print(demographicData)
+                            var _ = print(demographic)
                             
-                            globalVariable.demographicData = demographicData
+                            signupVariables.demographic = demographic
                             submit = true
                         })
                         Image(systemName:"arrow.right.circle.fill")
@@ -288,6 +278,6 @@ struct demographicQuestions: View {
 
 struct demographicQuestions_Previews: PreviewProvider {
     static var previews: some View {
-        demographicQuestions().environmentObject(globalVariables())
+        demographicQuestions().environmentObject(SignupVariables())
     }
 }

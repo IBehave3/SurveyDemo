@@ -20,6 +20,8 @@ struct SignupLoginView: View {
     @State private var checkingLogin = false
     
     @AppStorage("token") var token: String = ""
+    
+    @EnvironmentObject var signupVariables : SignupVariables
 
     var body: some View {
         NavigationView {
@@ -49,15 +51,9 @@ struct SignupLoginView: View {
                                 "password": password
                             ]
                             
-                            signupUser(data: credentials) {
-                                result in switch result {
-                                    case .success(let token):
-                                        redirectToViewA.toggle()
-                                    case .failure(let error):
-                                        errMsg = error.localizedDescription
-                                        showAlert.toggle()
-                                    }
-                            }
+                            redirectToViewA.toggle()
+
+                            signupVariables.credentials = credentials
                         }) {
                             Text("Sign Up")
                                 .foregroundColor(.white)
@@ -157,5 +153,6 @@ struct SignupLoginView: View {
 struct SignupLoginView_Previews: PreviewProvider {
     static var previews: some View {
         SignupLoginView()
+            .environmentObject(SignupVariables())
     }
 }

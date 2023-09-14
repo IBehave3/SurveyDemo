@@ -13,6 +13,7 @@ struct SurveyDemoApp: App {
     
     @StateObject var globalVariable = globalVariables()
     @StateObject var locationManager = LocationManager()
+    @StateObject var signupVariable = SignupVariables()
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
@@ -21,6 +22,7 @@ struct SurveyDemoApp: App {
             ContentView()
                 .environmentObject(globalVariable)
                 .environmentObject(locationManager)
+                .environmentObject(signupVariable)
         }
     }
 }

@@ -8,10 +8,10 @@
 import Foundation
 
 
-func signupUser(data: Any, completionHandler: @escaping (Result<Data, Error>) -> Void) {
+func signupUser(data: SignupVariables, completionHandler: @escaping (Result<Data, Error>) -> Void) {
     do {
         // Convert the dictionary to JSON data
-        let jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
+        let jsonData = try JSONSerialization.data(withJSONObject: data.toDictionary(), options: .prettyPrinted)
         
         // Convert the JSON data to a string
         if let jsonString = String(data: jsonData, encoding: .utf8) {
