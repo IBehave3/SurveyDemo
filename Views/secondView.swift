@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct secondView: View {
-    
-    @EnvironmentObject var globalVariable : globalVariables
+        
+    @EnvironmentObject var dailySurveyAnswers : DailySurveyAnswers
     
     @Environment(\.rootPresentation) var isActive: Binding<Bool>
         
@@ -43,7 +43,7 @@ struct secondView: View {
         ScrollView {
             VStack {
                 
-                Text("1. Currently, I am unable to control the important things in my life")
+                Text("1. Currently, I feel unable to control the important things in my life.")
                     .font(.system(size:20))
                     .padding(.leading, 5)
 
@@ -58,8 +58,8 @@ struct secondView: View {
                                     buttonPushed3 = false
                                     buttonPushed4 = false
                                     buttonPushed5 = false
-                                    answer1 = "Strongly Disagree"
-                                    globalVariable.dataCollected["Page 1 answer1"] = answer1
+                                    answer1 = "1"
+                                    dailySurveyAnswers.unableToControlImportantThings = answer1
                                 }
                                 
                             }
@@ -76,8 +76,8 @@ struct secondView: View {
                                     buttonPushed3 = false
                                     buttonPushed4 = false
                                     buttonPushed5 = false
-                                    answer1 = "Disagree"
-                                    globalVariable.dataCollected["Page 1 answer1"] = answer1
+                                    answer1 = "2"
+                                    dailySurveyAnswers.unableToControlImportantThings = answer1
                                 }
                             }
                         Text("Disagree")
@@ -92,8 +92,8 @@ struct secondView: View {
                                     buttonPushed2 = false
                                     buttonPushed4 = false
                                     buttonPushed5 = false
-                                    answer1 = "Neutral"
-                                    globalVariable.dataCollected["Page 1 answer1"] = answer1
+                                    answer1 = "3"
+                                    dailySurveyAnswers.unableToControlImportantThings = answer1
                                 }
                             }
                         Text("Neutral")
@@ -108,8 +108,8 @@ struct secondView: View {
                                     buttonPushed2 = false
                                     buttonPushed3 = false
                                     buttonPushed5 = false
-                                    answer1 = "Agree"
-                                    globalVariable.dataCollected["Page 1 answer1"] = answer1
+                                    answer1 = "4"
+                                    dailySurveyAnswers.unableToControlImportantThings = answer1
                                 }
                             }
                         Text("Agree")
@@ -124,8 +124,8 @@ struct secondView: View {
                                     buttonPushed2 = false
                                     buttonPushed3 = false
                                     buttonPushed4 = false
-                                    answer1 = "Strongly Agree"
-                                    globalVariable.dataCollected["Page 1 answer1"] = answer1
+                                    answer1 = "5"
+                                    dailySurveyAnswers.unableToControlImportantThings = answer1
                                 }
                             }
                         Text("Strongly Agree")
@@ -136,7 +136,7 @@ struct secondView: View {
                 .padding(.bottom, 10)
                 .controlSize(.mini)
                 
-                Text("2. Currently, I feel confident about my ability to handle my personal problems")
+                Text("2. Currently, I feel confident about my ability to handle my personal problems.")
                     .font(.system(size: 20))
                     .padding(.leading, 5)
 
@@ -151,8 +151,8 @@ struct secondView: View {
                                     buttonPushedB3 = false
                                     buttonPushedB4 = false
                                     buttonPushedB5 = false
-                                    answer2 = "Strongly Disagree"
-                                    globalVariable.dataCollected["Page 1 answer2"] = answer2
+                                    answer2 = "1"
+                                    dailySurveyAnswers.oftenFeltConfidentHandlePersonalProblems = answer2
                                 }
                             }
                         Text("Strongly Disagree")
@@ -167,8 +167,8 @@ struct secondView: View {
                                     buttonPushedB3 = false
                                     buttonPushedB4 = false
                                     buttonPushedB5 = false
-                                    answer2 = "Disagree"
-                                    globalVariable.dataCollected["Page 1 answer2"] = answer2
+                                    answer2 = "2"
+                                    dailySurveyAnswers.oftenFeltConfidentHandlePersonalProblems = answer2
                                 }
                             }
                         Text("Disagree")
@@ -183,8 +183,8 @@ struct secondView: View {
                                     buttonPushedB2 = false
                                     buttonPushedB4 = false
                                     buttonPushedB5 = false
-                                    answer2 = "Neutral"
-                                    globalVariable.dataCollected["Page 1 answer2"] = answer2
+                                    answer2 = "3"
+                                    dailySurveyAnswers.oftenFeltConfidentHandlePersonalProblems = answer2
                                 }
                             }
                         Text("Neutral")
@@ -199,8 +199,8 @@ struct secondView: View {
                                     buttonPushedB2 = false
                                     buttonPushedB3 = false
                                     buttonPushedB5 = false
-                                    answer2 = "Agree"
-                                    globalVariable.dataCollected["Page 1 answer2"] = answer2
+                                    answer2 = "4"
+                                    dailySurveyAnswers.oftenFeltConfidentHandlePersonalProblems = answer2
                                 }
                             }
                         Text("Agree")
@@ -215,8 +215,8 @@ struct secondView: View {
                                     buttonPushedB2 = false
                                     buttonPushedB3 = false
                                     buttonPushedB4 = false
-                                    answer2 = "Strongly Agree"
-                                    globalVariable.dataCollected["Page 1 answer2"] = answer2
+                                    answer2 = "5"
+                                    dailySurveyAnswers.oftenFeltConfidentHandlePersonalProblems = answer2
                                 }
                             }
                         Text("Strongly Agree")
@@ -227,7 +227,7 @@ struct secondView: View {
                 .controlSize(.mini)
                 .padding(.bottom, 10)
                 
-                Text("3. Currently, I feel things are going my way")
+                Text("3. Currently, I feel things are going my way.")
                     .font(.system(size: 20))
                     .padding(.leading, 5)
 
@@ -242,8 +242,8 @@ struct secondView: View {
                                     buttonPushedC3 = false
                                     buttonPushedC4 = false
                                     buttonPushedC5 = false
-                                    answer3 = "Strongly Disagree"
-                                    globalVariable.dataCollected["Page 1 answer3"] = answer3
+                                    answer3 = "1"
+                                    dailySurveyAnswers.feelThingsAreGoingMyWay = answer3
                                 }
                             }
                         Text("Strongly Disagree")
@@ -258,8 +258,8 @@ struct secondView: View {
                                     buttonPushedC3 = false
                                     buttonPushedC4 = false
                                     buttonPushedC5 = false
-                                    answer3 = "Disagree"
-                                    globalVariable.dataCollected["Page 1 answer3"] = answer3
+                                    answer3 = "2"
+                                    dailySurveyAnswers.feelThingsAreGoingMyWay = answer3
                                 }
                             }
                         Text("Disagree")
@@ -274,8 +274,8 @@ struct secondView: View {
                                     buttonPushedC2 = false
                                     buttonPushedC4 = false
                                     buttonPushedC5 = false
-                                    answer3 = "Neutral"
-                                    globalVariable.dataCollected["Page 1 answer3"] = answer3
+                                    answer3 = "3"
+                                    dailySurveyAnswers.feelThingsAreGoingMyWay = answer3
                                 }
                             }
                         Text("Neutral")
@@ -290,8 +290,8 @@ struct secondView: View {
                                     buttonPushedC2 = false
                                     buttonPushedC3 = false
                                     buttonPushedC5 = false
-                                    answer3 = "Agree"
-                                    globalVariable.dataCollected["Page 1 answer3"] = answer3
+                                    answer3 = "4"
+                                    dailySurveyAnswers.feelThingsAreGoingMyWay = answer3
                                 }
                             }
                         Text("Agree")
@@ -306,8 +306,8 @@ struct secondView: View {
                                     buttonPushedC2 = false
                                     buttonPushedC3 = false
                                     buttonPushedC4 = false
-                                    answer3 = "Strongly Agree"
-                                    globalVariable.dataCollected["Page 1 answer3"] = answer3
+                                    answer3 = "5"
+                                    dailySurveyAnswers.feelThingsAreGoingMyWay = answer3
                                 }
                             }
                         Text("Strongly Agree")
@@ -318,7 +318,7 @@ struct secondView: View {
                 .controlSize(.mini)
                 .padding(.bottom, 10)
                 
-                Text("4. Currently, I feel difficulties are piling up so high that I could not overcome them")
+                Text("4. Currently, I feel difficulties are piling up so high that I could not overcome them. ")
                     .font(.system(size: 20))
                     .padding(.leading, 5)
 
@@ -333,8 +333,8 @@ struct secondView: View {
                                     buttonPushedD3 = false
                                     buttonPushedD4 = false
                                     buttonPushedD5 = false
-                                    answer4 = "Strongly Disagree"
-                                    globalVariable.dataCollected["Page 1 answer4"] = answer4
+                                    answer4 = "1"
+                                    dailySurveyAnswers.feelDifficultiesPilingCannotOvercome = answer4
                                 }
                             }
                         Text("Strongly Disagree")
@@ -349,8 +349,8 @@ struct secondView: View {
                                     buttonPushedD3 = false
                                     buttonPushedD4 = false
                                     buttonPushedD5 = false
-                                    answer4 = "Disagree"
-                                    globalVariable.dataCollected["Page 1 answer4"] = answer4
+                                    answer4 = "2"
+                                    dailySurveyAnswers.feelDifficultiesPilingCannotOvercome = answer4
                                 }
                             }
                         Text("Disagree")
@@ -365,8 +365,8 @@ struct secondView: View {
                                     buttonPushedD2 = false
                                     buttonPushedD4 = false
                                     buttonPushedD5 = false
-                                    answer4 = "Neutral"
-                                    globalVariable.dataCollected["Page 1 answer4"] = answer4
+                                    answer4 = "3"
+                                    dailySurveyAnswers.feelDifficultiesPilingCannotOvercome = answer4
                                 }
                             }
                         Text("Neutral")
@@ -381,8 +381,8 @@ struct secondView: View {
                                     buttonPushedD2 = false
                                     buttonPushedD3 = false
                                     buttonPushedD5 = false
-                                    answer4 = "Agree"
-                                    globalVariable.dataCollected["Page 1 answer4"] = answer4
+                                    answer4 = "4"
+                                    dailySurveyAnswers.feelDifficultiesPilingCannotOvercome = answer4
                                 }
                             }
                         Text("Agree")
@@ -397,8 +397,8 @@ struct secondView: View {
                                     buttonPushedD2 = false
                                     buttonPushedD3 = false
                                     buttonPushedD4 = false
-                                    answer4 = "Strongly Agree"
-                                    globalVariable.dataCollected["Page 1 answer4"] = answer4
+                                    answer4 = "5"
+                                    dailySurveyAnswers.feelDifficultiesPilingCannotOvercome = answer4
                                 }
                             }
                         Text("Strongly Agree")
@@ -414,13 +414,6 @@ struct secondView: View {
         
        
         HStack {
-            let _ = print("answer 1: \(answer1)")
-            let _ = print("answer 2: \(answer2)")
-            let _ = print("answer 3: \(answer3)")
-            let _ = print("answer 4: \(answer4)")
-            let _ = print("Global Variable: \(globalVariable.userNameId)")
-            let _ = print(globalVariable.dataCollected)
-
             NavigationLink(destination: ThirdView()){
                 Text("Next Question")
             }
@@ -439,6 +432,6 @@ struct secondView_Previews: PreviewProvider {
     @Binding var isActive: Bool
     static var previews: some View {
         secondView()
-            .environmentObject(globalVariables())
+            .environmentObject(DailySurveyAnswers())
     }
 }

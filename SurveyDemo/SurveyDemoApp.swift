@@ -14,6 +14,7 @@ struct SurveyDemoApp: App {
     @StateObject var globalVariable = globalVariables()
     @StateObject var locationManager = LocationManager()
     @StateObject var signupVariable = SignupVariables()
+    @StateObject var dailyAnswers = DailySurveyAnswers()
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
@@ -23,6 +24,7 @@ struct SurveyDemoApp: App {
                 .environmentObject(globalVariable)
                 .environmentObject(locationManager)
                 .environmentObject(signupVariable)
+                .environmentObject(dailyAnswers)
                 .navigationViewStyle(.stack)
         }
     }

@@ -56,7 +56,7 @@ struct GeneralStress: View {
 
                 HStack {
                     VStack{
-                        selectButton(isSelected: $buttonPushed1, color: .blue, text: "1")
+                        selectButton(isSelected: $buttonPushed1, color: .blue, text: "0")
                             .buttonStyle(.borderedProminent)
                             .onTapGesture {
                                 buttonPushed1.toggle()
@@ -66,7 +66,7 @@ struct GeneralStress: View {
                                     buttonPushed4 = false
                                     buttonPushed5 = false
                                     isAnswer1Selected.toggle()
-                                    globalVariable.generalStress["unableToControlImportanThings"] = "1"
+                                    globalVariable.generalStress["unableToControlImportanThings"] = "0"
                                 }
                                 
                             }
@@ -75,7 +75,7 @@ struct GeneralStress: View {
                         
                     }
                     VStack{
-                        selectButton(isSelected: $buttonPushed2, color: .blue, text: "2")
+                        selectButton(isSelected: $buttonPushed2, color: .blue, text: "1")
                             .onTapGesture {
                                 buttonPushed2.toggle()
                                 if buttonPushed2 {
@@ -84,14 +84,14 @@ struct GeneralStress: View {
                                     buttonPushed4 = false
                                     buttonPushed5 = false
                                     isAnswer1Selected.toggle()
-                                    globalVariable.generalStress["unableToControlImportanThings"] = "2"
+                                    globalVariable.generalStress["unableToControlImportanThings"] = "1"
                                 }
                             }
                         Text(ALMOST_NEVER)
                             .font(.system(size: 13))
                     }
                     VStack{
-                        selectButton(isSelected: $buttonPushed3, color: .blue, text: "3")
+                        selectButton(isSelected: $buttonPushed3, color: .blue, text: "2")
                             .onTapGesture {
                                 buttonPushed3.toggle()
                                 if buttonPushed3 {
@@ -100,14 +100,14 @@ struct GeneralStress: View {
                                     buttonPushed4 = false
                                     buttonPushed5 = false
                                     isAnswer1Selected.toggle()
-                                    globalVariable.generalStress["unableToControlImportanThings"] = "3"
+                                    globalVariable.generalStress["unableToControlImportanThings"] = "2"
                                 }
                             }
                         Text(SOMETIMES)
                             .font(.system(size: 13))
                     }
                     VStack{
-                        selectButton(isSelected: $buttonPushed4, color: .blue, text: "4")
+                        selectButton(isSelected: $buttonPushed4, color: .blue, text: "3")
                             .onTapGesture {
                                 buttonPushed4.toggle()
                                 if buttonPushed4 {
@@ -116,14 +116,14 @@ struct GeneralStress: View {
                                     buttonPushed3 = false
                                     buttonPushed5 = false
                                     isAnswer1Selected.toggle()
-                                    globalVariable.generalStress["unableToControlImportanThings"] = "4"
+                                    globalVariable.generalStress["unableToControlImportanThings"] = "3"
                                 }
                             }
                         Text(OFTEN)
                             .font(.system(size: 13))
                     }
                     VStack{
-                        selectButton(isSelected: $buttonPushed5, color: .blue, text: "5")
+                        selectButton(isSelected: $buttonPushed5, color: .blue, text: "4")
                             .onTapGesture {
                                 buttonPushed5.toggle()
                                 if buttonPushed5 {
@@ -132,7 +132,7 @@ struct GeneralStress: View {
                                     buttonPushed3 = false
                                     buttonPushed4 = false
                                     isAnswer1Selected.toggle()
-                                    globalVariable.generalStress["unableToControlImportanThings"] = "5"
+                                    globalVariable.generalStress["unableToControlImportanThings"] = "4"
                                 }
                             }
                         Text(VERY_OFTEN)
@@ -148,7 +148,7 @@ struct GeneralStress: View {
 
                 HStack {
                     VStack{
-                        selectButton(isSelected: $buttonPushedB1, color: .blue, text: "1")
+                        selectButton(isSelected: $buttonPushedB1, color: .blue, text: "0")
                             .buttonStyle(.borderedProminent)
                             .onTapGesture {
                                 buttonPushedB1.toggle()
@@ -158,14 +158,14 @@ struct GeneralStress: View {
                                     buttonPushedB4 = false
                                     buttonPushedB5 = false
                                     isAnswer2Selected.toggle()
-                                    globalVariable.generalStress["oftenFeltConfidentHandlePersonalProblems"] = "1"
+                                    globalVariable.generalStress["oftenFeltConfidentHandlePersonalProblems"] = "0"
                                 }
                             }
                         Text(NEVER)
                             .font(.system(size: 13))
                     }
                     VStack{
-                        selectButton(isSelected: $buttonPushedB2, color: .blue, text: "2")
+                        selectButton(isSelected: $buttonPushedB2, color: .blue, text: "1")
                             .onTapGesture {
                                 buttonPushedB2.toggle()
                                 if buttonPushedB2 {
@@ -174,14 +174,14 @@ struct GeneralStress: View {
                                     buttonPushedB4 = false
                                     buttonPushedB5 = false
                                     isAnswer2Selected.toggle()
-                                    globalVariable.generalStress["oftenFeltConfidentHandlePersonalProblems"] = "2"
+                                    globalVariable.generalStress["oftenFeltConfidentHandlePersonalProblems"] = "1"
                                 }
                             }
                         Text(ALMOST_NEVER)
                             .font(.system(size: 13))
                     }
                     VStack{
-                        selectButton(isSelected: $buttonPushedB3, color: .blue, text: "3")
+                        selectButton(isSelected: $buttonPushedB3, color: .blue, text: "2")
                             .onTapGesture {
                                 buttonPushedB3.toggle()
                                 if buttonPushedB3 {
@@ -190,14 +190,14 @@ struct GeneralStress: View {
                                     buttonPushedB4 = false
                                     buttonPushedB5 = false
                                     isAnswer2Selected.toggle()
-                                    globalVariable.generalStress["oftenFeltConfidentHandlePersonalProblems"] = "3"
+                                    globalVariable.generalStress["oftenFeltConfidentHandlePersonalProblems"] = "2"
                                 }
                             }
                         Text(SOMETIMES)
                             .font(.system(size: 13))
                     }
                     VStack{
-                        selectButton(isSelected: $buttonPushedB4, color: .blue, text: "4")
+                        selectButton(isSelected: $buttonPushedB4, color: .blue, text: "3")
                             .onTapGesture {
                                 buttonPushedB4.toggle()
                                 if buttonPushedB4 {
@@ -206,14 +206,14 @@ struct GeneralStress: View {
                                     buttonPushedB3 = false
                                     buttonPushedB5 = false
                                     isAnswer2Selected.toggle()
-                                    globalVariable.generalStress["oftenFeltConfidentHandlePersonalProblems"] = "4"
+                                    globalVariable.generalStress["oftenFeltConfidentHandlePersonalProblems"] = "3"
                                 }
                             }
                         Text(OFTEN)
                             .font(.system(size: 13))
                     }
                     VStack{
-                        selectButton(isSelected: $buttonPushedB5, color: .blue, text: "5")
+                        selectButton(isSelected: $buttonPushedB5, color: .blue, text: "4")
                             .onTapGesture {
                                 buttonPushedB5.toggle()
                                 if buttonPushedB4 {
@@ -222,7 +222,7 @@ struct GeneralStress: View {
                                     buttonPushedB3 = false
                                     buttonPushedB4 = false
                                     isAnswer2Selected.toggle()
-                                    globalVariable.generalStress["oftenFeltConfidentHandlePersonalProblems"] = "5"
+                                    globalVariable.generalStress["oftenFeltConfidentHandlePersonalProblems"] = "4"
                                 }
                             }
                         Text(VERY_OFTEN)
@@ -238,7 +238,7 @@ struct GeneralStress: View {
 
                 HStack {
                     VStack{
-                        selectButton(isSelected: $buttonPushedC1, color: .blue, text: "1")
+                        selectButton(isSelected: $buttonPushedC1, color: .blue, text: "0")
                             .buttonStyle(.borderedProminent)
                             .onTapGesture {
                                 buttonPushedC1.toggle()
@@ -248,14 +248,14 @@ struct GeneralStress: View {
                                     buttonPushedC4 = false
                                     buttonPushedC5 = false
                                     isAnswer3Selected.toggle()
-                                    globalVariable.generalStress["feltThingsGoYourWay"] = "1"
+                                    globalVariable.generalStress["feltThingsGoYourWay"] = "0"
                                 }
                             }
                         Text(NEVER)
                             .font(.system(size: 13))
                     }
                     VStack{
-                        selectButton(isSelected: $buttonPushedC2, color: .blue, text: "2")
+                        selectButton(isSelected: $buttonPushedC2, color: .blue, text: "1")
                             .onTapGesture {
                                 buttonPushedC2.toggle()
                                 if buttonPushedC2 {
@@ -264,14 +264,14 @@ struct GeneralStress: View {
                                     buttonPushedC4 = false
                                     buttonPushedC5 = false
                                     isAnswer3Selected.toggle()
-                                    globalVariable.generalStress["feltThingsGoYourWay"] = "2"
+                                    globalVariable.generalStress["feltThingsGoYourWay"] = "1"
                                 }
                             }
                         Text(ALMOST_NEVER)
                             .font(.system(size: 13))
                     }
                     VStack{
-                        selectButton(isSelected: $buttonPushedC3, color: .blue, text: "3")
+                        selectButton(isSelected: $buttonPushedC3, color: .blue, text: "2")
                             .onTapGesture {
                                 buttonPushedC3.toggle()
                                 if buttonPushedC3 {
@@ -280,14 +280,14 @@ struct GeneralStress: View {
                                     buttonPushedC4 = false
                                     buttonPushedC5 = false
                                     isAnswer3Selected.toggle()
-                                    globalVariable.generalStress["feltThingsGoYourWay"] = "3"
+                                    globalVariable.generalStress["feltThingsGoYourWay"] = "2"
                                 }
                             }
                         Text(SOMETIMES)
                             .font(.system(size: 13))
                     }
                     VStack{
-                        selectButton(isSelected: $buttonPushedC4, color: .blue, text: "4")
+                        selectButton(isSelected: $buttonPushedC4, color: .blue, text: "3")
                             .onTapGesture {
                                 buttonPushedC4.toggle()
                                 if buttonPushedC4 {
@@ -296,14 +296,14 @@ struct GeneralStress: View {
                                     buttonPushedC3 = false
                                     buttonPushedC5 = false
                                     isAnswer3Selected.toggle()
-                                    globalVariable.generalStress["feltThingsGoYourWay"] = "4"
+                                    globalVariable.generalStress["feltThingsGoYourWay"] = "3"
                                 }
                             }
                         Text(OFTEN)
                             .font(.system(size: 13))
                     }
                     VStack{
-                        selectButton(isSelected: $buttonPushedC5, color: .blue, text: "5")
+                        selectButton(isSelected: $buttonPushedC5, color: .blue, text: "4")
                             .onTapGesture {
                                 buttonPushedC5.toggle()
                                 if buttonPushedC5 {
@@ -312,7 +312,7 @@ struct GeneralStress: View {
                                     buttonPushedC3 = false
                                     buttonPushedC4 = false
                                     isAnswer3Selected.toggle()
-                                    globalVariable.generalStress["feltThingsGoYourWay"] = "5"
+                                    globalVariable.generalStress["feltThingsGoYourWay"] = "4"
                                 }
                             }
                         Text(VERY_OFTEN)
@@ -328,7 +328,7 @@ struct GeneralStress: View {
                 
                 HStack {
                     VStack{
-                        selectButton(isSelected: $buttonPushedD1, color: .blue, text: "1")
+                        selectButton(isSelected: $buttonPushedD1, color: .blue, text: "0")
                             .buttonStyle(.borderedProminent)
                             .onTapGesture {
                                 buttonPushedD1.toggle()
@@ -338,14 +338,14 @@ struct GeneralStress: View {
                                     buttonPushedD4 = false
                                     buttonPushedD5 = false
                                     isAnswer4Selected.toggle()
-                                    globalVariable.generalStress["feltDifficultiesPilingUp"] = "1"
+                                    globalVariable.generalStress["feltDifficultiesPilingUp"] = "0"
                                 }
                             }
                         Text(NEVER)
                             .font(.system(size: 13))
                     }
                     VStack{
-                        selectButton(isSelected: $buttonPushedD2, color: .blue, text: "2")
+                        selectButton(isSelected: $buttonPushedD2, color: .blue, text: "1")
                             .onTapGesture {
                                 buttonPushedD2.toggle()
                                 if buttonPushedD2 {
@@ -354,14 +354,14 @@ struct GeneralStress: View {
                                     buttonPushedD4 = false
                                     buttonPushedD5 = false
                                     isAnswer4Selected.toggle()
-                                    globalVariable.generalStress["feltDifficultiesPilingUp"] = "2"
+                                    globalVariable.generalStress["feltDifficultiesPilingUp"] = "1"
                                 }
                             }
                         Text(ALMOST_NEVER)
                             .font(.system(size: 13))
                     }
                     VStack{
-                        selectButton(isSelected: $buttonPushedD3, color: .blue, text: "3")
+                        selectButton(isSelected: $buttonPushedD3, color: .blue, text: "2")
                             .onTapGesture {
                                 buttonPushedD3.toggle()
                                 if buttonPushedD3 {
@@ -370,14 +370,14 @@ struct GeneralStress: View {
                                     buttonPushedD4 = false
                                     buttonPushedD5 = false
                                     isAnswer4Selected.toggle()
-                                    globalVariable.generalStress["feltDifficultiesPilingUp"] = "3"
+                                    globalVariable.generalStress["feltDifficultiesPilingUp"] = "2"
                                 }
                             }
                         Text(SOMETIMES)
                             .font(.system(size: 13))
                     }
                     VStack{
-                        selectButton(isSelected: $buttonPushedD4, color: .blue, text: "4")
+                        selectButton(isSelected: $buttonPushedD4, color: .blue, text: "3")
                             .onTapGesture {
                                 buttonPushedD4.toggle()
                                 if buttonPushedD4 {
@@ -386,14 +386,14 @@ struct GeneralStress: View {
                                     buttonPushedD3 = false
                                     buttonPushedD5 = false
                                     isAnswer4Selected.toggle()
-                                    globalVariable.generalStress["feltDifficultiesPilingUp"] = "4"
+                                    globalVariable.generalStress["feltDifficultiesPilingUp"] = "3"
                                 }
                             }
                         Text(OFTEN)
                             .font(.system(size: 13))
                     }
                     VStack{
-                        selectButton(isSelected: $buttonPushedD5, color: .blue, text: "5")
+                        selectButton(isSelected: $buttonPushedD5, color: .blue, text: "4")
                             .onTapGesture {
                                 buttonPushedD5.toggle()
                                 if buttonPushedD5 {
@@ -402,7 +402,7 @@ struct GeneralStress: View {
                                     buttonPushedD3 = false
                                     buttonPushedD4 = false
                                     isAnswer4Selected.toggle()
-                                    globalVariable.generalStress["feltDifficultiesPilingUp"] = "5"
+                                    globalVariable.generalStress["feltDifficultiesPilingUp"] = "4"
                                 }
                             }
                         Text(VERY_OFTEN)
