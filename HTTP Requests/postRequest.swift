@@ -22,6 +22,14 @@ func sendPostRequestWithJSON(jsonString: String, urlString: String, completionHa
     request.httpBody = jsonString.data(using: .utf8)
     request.setValue("application/json", forHTTPHeaderField: "Content-Type")
     
+    if let token = UserDefaults.standard.string(forKey: "token") {
+        let tokenWithBearer = "Bearer " + token
+        request.setValue(tokenWithBearer, forHTTPHeaderField: "Authorization")
+    } else {
+        // Handle the case where the token is nil
+        print("Token is nil")
+    }
+    
     let session = URLSession.shared
     
     let task = session.dataTask(with: request) { (data, response, error) in
@@ -35,13 +43,17 @@ func sendPostRequestWithJSON(jsonString: String, urlString: String, completionHa
             return
         }
         
-        if httpResponse.statusCode == 200 {
+        if httpResponse.statusCode == 201 || httpResponse.statusCode == 200 {
             if let data = data {
                 completionHandler(.success(data))
             } else {
                 completionHandler(.failure(NSError(domain: "No Data Received", code: 0, userInfo: nil)))
             }
-        } else {
+        } else if httpResponse.statusCode == 401 {
+            UserDefaults.standard.removeObject(forKey: "token")
+            completionHandler(.failure(NSError(domain: "Unauthorized error.", code: httpResponse.statusCode, userInfo: nil)))
+        }
+        else {
             completionHandler(.failure(NSError(domain: "Server Error", code: httpResponse.statusCode, userInfo: nil)))
         }
     }

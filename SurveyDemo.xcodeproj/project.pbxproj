@@ -10,6 +10,7 @@
 		8449C2CF2AAE973D00953B8C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449C2CE2AAE973D00953B8C /* HomeView.swift */; };
 		8449C2D12AB3A07D00953B8C /* SignupVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449C2D02AB3A07D00953B8C /* SignupVariables.swift */; };
 		8449C2D32AB4D7EB00953B8C /* DailySurveyAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449C2D22AB4D7EB00953B8C /* DailySurveyAnswers.swift */; };
+		8449C2D52AB7435F00953B8C /* SurveyRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449C2D42AB7435E00953B8C /* SurveyRequests.swift */; };
 		8454799A2AA14D5B0092FF35 /* GeneralStress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845479992AA14D5B0092FF35 /* GeneralStress.swift */; };
 		84B49E402AABA4F300A7C64E /* LoginSignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B49E3F2AABA4F300A7C64E /* LoginSignupView.swift */; };
 		84B49E422AABACD400A7C64E /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B49E412AABACD400A7C64E /* AuthRequest.swift */; };
@@ -65,6 +66,7 @@
 		8449C2CE2AAE973D00953B8C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8449C2D02AB3A07D00953B8C /* SignupVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVariables.swift; sourceTree = "<group>"; };
 		8449C2D22AB4D7EB00953B8C /* DailySurveyAnswers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySurveyAnswers.swift; sourceTree = "<group>"; };
+		8449C2D42AB7435E00953B8C /* SurveyRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyRequests.swift; sourceTree = "<group>"; };
 		845479992AA14D5B0092FF35 /* GeneralStress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralStress.swift; sourceTree = "<group>"; };
 		84B49E3F2AABA4F300A7C64E /* LoginSignupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginSignupView.swift; path = Views/LoginSignupView.swift; sourceTree = SOURCE_ROOT; };
 		84B49E412AABACD400A7C64E /* AuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				BA1525602A5F43C900E525B2 /* createUserRequest.swift */,
 				BA6C58802A5F8B2000AD2F3E /* getLoginUserRequest.swift */,
 				84B49E412AABACD400A7C64E /* AuthRequest.swift */,
+				8449C2D42AB7435E00953B8C /* SurveyRequests.swift */,
 			);
 			path = "HTTP Requests";
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				BAB9428F2A0D63F000C837D4 /* ContentView.swift in Sources */,
 				BA66EE452A4CC9150040326C /* getRequest.swift in Sources */,
 				8449C2D12AB3A07D00953B8C /* SignupVariables.swift in Sources */,
+				8449C2D52AB7435F00953B8C /* SurveyRequests.swift in Sources */,
 				BA3889972A4620BB000870E8 /* secondView.swift in Sources */,
 				BAB496B52A85F9E4006A5DFC /* savedLocationsView.swift in Sources */,
 				BAB9428D2A0D63F000C837D4 /* SurveyDemoApp.swift in Sources */,

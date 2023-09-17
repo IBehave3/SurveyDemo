@@ -9,9 +9,7 @@ import SwiftUI
 
 struct GeneralStress: View {
         
-    @EnvironmentObject var globalVariable : globalVariables
-    
-    @Environment(\.rootPresentation) var isActive: Binding<Bool>
+    @EnvironmentObject var signupVariables : SignupVariables
     
     @State private var buttonPushed1 = false
     @State private var buttonPushed2 = false
@@ -66,7 +64,7 @@ struct GeneralStress: View {
                                     buttonPushed4 = false
                                     buttonPushed5 = false
                                     isAnswer1Selected.toggle()
-                                    globalVariable.generalStress["unableToControlImportanThings"] = "0"
+                                    signupVariables.generalStress["unableToControlImportanThings"] = 0
                                 }
                                 
                             }
@@ -84,7 +82,7 @@ struct GeneralStress: View {
                                     buttonPushed4 = false
                                     buttonPushed5 = false
                                     isAnswer1Selected.toggle()
-                                    globalVariable.generalStress["unableToControlImportanThings"] = "1"
+                                    signupVariables.generalStress["unableToControlImportanThings"] = 1
                                 }
                             }
                         Text(ALMOST_NEVER)
@@ -100,7 +98,7 @@ struct GeneralStress: View {
                                     buttonPushed4 = false
                                     buttonPushed5 = false
                                     isAnswer1Selected.toggle()
-                                    globalVariable.generalStress["unableToControlImportanThings"] = "2"
+                                    signupVariables.generalStress["unableToControlImportanThings"] = 2
                                 }
                             }
                         Text(SOMETIMES)
@@ -116,7 +114,7 @@ struct GeneralStress: View {
                                     buttonPushed3 = false
                                     buttonPushed5 = false
                                     isAnswer1Selected.toggle()
-                                    globalVariable.generalStress["unableToControlImportanThings"] = "3"
+                                    signupVariables.generalStress["unableToControlImportanThings"] = 3
                                 }
                             }
                         Text(OFTEN)
@@ -132,7 +130,7 @@ struct GeneralStress: View {
                                     buttonPushed3 = false
                                     buttonPushed4 = false
                                     isAnswer1Selected.toggle()
-                                    globalVariable.generalStress["unableToControlImportanThings"] = "4"
+                                    signupVariables.generalStress["unableToControlImportanThings"] = 4
                                 }
                             }
                         Text(VERY_OFTEN)
@@ -158,7 +156,7 @@ struct GeneralStress: View {
                                     buttonPushedB4 = false
                                     buttonPushedB5 = false
                                     isAnswer2Selected.toggle()
-                                    globalVariable.generalStress["oftenFeltConfidentHandlePersonalProblems"] = "0"
+                                    signupVariables.generalStress["oftenFeltConfidentHandlePersonalProblems"] = 0
                                 }
                             }
                         Text(NEVER)
@@ -174,7 +172,7 @@ struct GeneralStress: View {
                                     buttonPushedB4 = false
                                     buttonPushedB5 = false
                                     isAnswer2Selected.toggle()
-                                    globalVariable.generalStress["oftenFeltConfidentHandlePersonalProblems"] = "1"
+                                    signupVariables.generalStress["oftenFeltConfidentHandlePersonalProblems"] = 1
                                 }
                             }
                         Text(ALMOST_NEVER)
@@ -190,7 +188,7 @@ struct GeneralStress: View {
                                     buttonPushedB4 = false
                                     buttonPushedB5 = false
                                     isAnswer2Selected.toggle()
-                                    globalVariable.generalStress["oftenFeltConfidentHandlePersonalProblems"] = "2"
+                                    signupVariables.generalStress["oftenFeltConfidentHandlePersonalProblems"] = 2
                                 }
                             }
                         Text(SOMETIMES)
@@ -206,7 +204,7 @@ struct GeneralStress: View {
                                     buttonPushedB3 = false
                                     buttonPushedB5 = false
                                     isAnswer2Selected.toggle()
-                                    globalVariable.generalStress["oftenFeltConfidentHandlePersonalProblems"] = "3"
+                                    signupVariables.generalStress["oftenFeltConfidentHandlePersonalProblems"] = 3
                                 }
                             }
                         Text(OFTEN)
@@ -222,7 +220,7 @@ struct GeneralStress: View {
                                     buttonPushedB3 = false
                                     buttonPushedB4 = false
                                     isAnswer2Selected.toggle()
-                                    globalVariable.generalStress["oftenFeltConfidentHandlePersonalProblems"] = "4"
+                                    signupVariables.generalStress["oftenFeltConfidentHandlePersonalProblems"] = 4
                                 }
                             }
                         Text(VERY_OFTEN)
@@ -248,7 +246,7 @@ struct GeneralStress: View {
                                     buttonPushedC4 = false
                                     buttonPushedC5 = false
                                     isAnswer3Selected.toggle()
-                                    globalVariable.generalStress["feltThingsGoYourWay"] = "0"
+                                    signupVariables.generalStress["feltThingsGoYourWay"] = 0
                                 }
                             }
                         Text(NEVER)
@@ -264,7 +262,7 @@ struct GeneralStress: View {
                                     buttonPushedC4 = false
                                     buttonPushedC5 = false
                                     isAnswer3Selected.toggle()
-                                    globalVariable.generalStress["feltThingsGoYourWay"] = "1"
+                                    signupVariables.generalStress["feltThingsGoYourWay"] = 1
                                 }
                             }
                         Text(ALMOST_NEVER)
@@ -280,7 +278,7 @@ struct GeneralStress: View {
                                     buttonPushedC4 = false
                                     buttonPushedC5 = false
                                     isAnswer3Selected.toggle()
-                                    globalVariable.generalStress["feltThingsGoYourWay"] = "2"
+                                    signupVariables.generalStress["feltThingsGoYourWay"] = 2
                                 }
                             }
                         Text(SOMETIMES)
@@ -296,7 +294,7 @@ struct GeneralStress: View {
                                     buttonPushedC3 = false
                                     buttonPushedC5 = false
                                     isAnswer3Selected.toggle()
-                                    globalVariable.generalStress["feltThingsGoYourWay"] = "3"
+                                    signupVariables.generalStress["feltThingsGoYourWay"] = 3
                                 }
                             }
                         Text(OFTEN)
@@ -312,7 +310,7 @@ struct GeneralStress: View {
                                     buttonPushedC3 = false
                                     buttonPushedC4 = false
                                     isAnswer3Selected.toggle()
-                                    globalVariable.generalStress["feltThingsGoYourWay"] = "4"
+                                    signupVariables.generalStress["feltThingsGoYourWay"] = 4
                                 }
                             }
                         Text(VERY_OFTEN)
@@ -338,7 +336,7 @@ struct GeneralStress: View {
                                     buttonPushedD4 = false
                                     buttonPushedD5 = false
                                     isAnswer4Selected.toggle()
-                                    globalVariable.generalStress["feltDifficultiesPilingUp"] = "0"
+                                    signupVariables.generalStress["feltDifficultiesPilingUp"] = 0
                                 }
                             }
                         Text(NEVER)
@@ -354,7 +352,7 @@ struct GeneralStress: View {
                                     buttonPushedD4 = false
                                     buttonPushedD5 = false
                                     isAnswer4Selected.toggle()
-                                    globalVariable.generalStress["feltDifficultiesPilingUp"] = "1"
+                                    signupVariables.generalStress["feltDifficultiesPilingUp"] = 1
                                 }
                             }
                         Text(ALMOST_NEVER)
@@ -370,7 +368,7 @@ struct GeneralStress: View {
                                     buttonPushedD4 = false
                                     buttonPushedD5 = false
                                     isAnswer4Selected.toggle()
-                                    globalVariable.generalStress["feltDifficultiesPilingUp"] = "2"
+                                    signupVariables.generalStress["feltDifficultiesPilingUp"] = 2
                                 }
                             }
                         Text(SOMETIMES)
@@ -386,7 +384,7 @@ struct GeneralStress: View {
                                     buttonPushedD3 = false
                                     buttonPushedD5 = false
                                     isAnswer4Selected.toggle()
-                                    globalVariable.generalStress["feltDifficultiesPilingUp"] = "3"
+                                    signupVariables.generalStress["feltDifficultiesPilingUp"] = 3
                                 }
                             }
                         Text(OFTEN)
@@ -402,7 +400,7 @@ struct GeneralStress: View {
                                     buttonPushedD3 = false
                                     buttonPushedD4 = false
                                     isAnswer4Selected.toggle()
-                                    globalVariable.generalStress["feltDifficultiesPilingUp"] = "4"
+                                    signupVariables.generalStress["feltDifficultiesPilingUp"] = 4
                                 }
                             }
                         Text(VERY_OFTEN)
@@ -430,9 +428,8 @@ struct GeneralStress: View {
     
 
 struct GeneralStress_Previews: PreviewProvider {
-    @Binding var isActive: Bool
     static var previews: some View {
         secondView()
-            .environmentObject(globalVariables())
+            .environmentObject(SignupVariables())
     }
 }

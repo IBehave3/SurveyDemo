@@ -46,14 +46,10 @@ struct SignupLoginView: View {
 
                     if isSignUp {
                         Button(action: {
-                            let credentials: [String: Any] = [
-                                "username": username,
-                                "password": password
-                            ]
+                            signupVariables.username = username
+                            signupVariables.password = password
                             
                             redirectToViewA.toggle()
-
-                            signupVariables.credentials = credentials
                         }) {
                             Text("Sign Up")
                                 .foregroundColor(.white)
@@ -85,6 +81,7 @@ struct SignupLoginView: View {
                                             
                                             if let token = jsonObject["token"] as? String {
                                                 self.token = token
+                                                redirectToViewB.toggle()
                                             }
                                         } else {
                                             print("Failed to convert Data to JSON dictionary")
@@ -93,7 +90,6 @@ struct SignupLoginView: View {
                                         print("Error: \(error)")
                                     }
                                     
-                                    redirectToViewB.toggle()
                                 case .failure(let error):
                                     errMsg = error.localizedDescription
                                     showAlert.toggle()
@@ -106,7 +102,7 @@ struct SignupLoginView: View {
                                 .background(Color.blue)
                                 .cornerRadius(10)
                         }
-                        .background(NavigationLink("", destination: homeView(), isActive: $redirectToViewB))
+                        NavigationLink("", destination: homeView(), isActive: $redirectToViewB)
                         .alert(isPresented: $showAlert) {
                                     Alert(
                                         title: Text("Login Failed!"),

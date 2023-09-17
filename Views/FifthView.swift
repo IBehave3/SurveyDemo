@@ -19,9 +19,7 @@ struct FifthView: View {
     @State var choice4 = ""
     @State var choice5 = ""
     @State var choice6 = ""
-    @State var choice7 = ""
-    @State var choice8 = ""
-    @State var choice9 = ""
+
     
     @State var redirectToLogin = false
     @State var showAlert = false
@@ -39,31 +37,31 @@ struct FifthView: View {
                         Menu{
                             Button(action:{
                                 choice1 = "1"
-                                signupVariables.resilience["bounceBackQuickly"] = choice1
+                                signupVariables.resilience["bounceBackQuickly"] = 1
                             }, label: {
                                 Text("1: Strongly Agree")
                             })
                             Button(action:{
                                 choice1 = "2"
-                                signupVariables.resilience["bounceBackQuickly"] = choice1
+                                signupVariables.resilience["bounceBackQuickly"] = 2
                             }, label: {
                                 Text("2: Agree")
                             })
                             Button(action:{
                                 choice1 = "3"
-                                signupVariables.resilience["bounceBackQuickly"] = choice1
+                                signupVariables.resilience["bounceBackQuickly"] = 3
                             }, label: {
                                 Text("3: Neutral")
                             })
                             Button(action:{
                                 choice1 = "4"
-                                signupVariables.resilience["bounceBackQuickly"] = choice1
+                                signupVariables.resilience["bounceBackQuickly"] = 4
                             }, label: {
                                 Text("4: Disagree")
                             })
                             Button(action:{
                                 choice1 = "5"
-                                signupVariables.resilience["bounceBackQuickly"] = choice1
+                                signupVariables.resilience["bounceBackQuickly"] = 5
                             }, label: {
                                 Text("5: Strongly Disagree")
                             })
@@ -86,31 +84,31 @@ struct FifthView: View {
                         Menu{
                             Button(action:{
                                 choice2 = "1"
-                                signupVariables.resilience["hardTimeStressfullEvents"] = choice2
+                                signupVariables.resilience["hardTimeStressfullEvents"] = 1
                             }, label: {
                                 Text("1: Strongly Agree")
                             })
                             Button(action:{
                                 choice2 = "2"
-                                signupVariables.resilience["hardTimeStressfullEvents"] = choice2
+                                signupVariables.resilience["hardTimeStressfullEvents"] = 2
                             }, label: {
                                 Text("2: Agree")
                             })
                             Button(action:{
                                 choice2 = "3"
-                                signupVariables.resilience["hardTimeStressfullEvents"] = choice2
+                                signupVariables.resilience["hardTimeStressfullEvents"] = 3
                             }, label: {
                                 Text("3: Neutral")
                             })
                             Button(action:{
                                 choice2 = "4"
-                                signupVariables.resilience["hardTimeStressfullEvents"] = choice2
+                                signupVariables.resilience["hardTimeStressfullEvents"] = 4
                             }, label: {
                                 Text("4: Disagree")
                             })
                             Button(action:{
                                 choice2 = "5"
-                                signupVariables.resilience["hardTimeStressfullEvents"] = choice2
+                                signupVariables.resilience["hardTimeStressfullEvents"] = 5
                             }, label: {
                                 Text("5: Strongly Disagree")
                             })
@@ -133,31 +131,31 @@ struct FifthView: View {
                         Menu{
                             Button(action:{
                                 choice3 = "1"
-                                signupVariables.resilience["longRecoveryTime"] = choice3
+                                signupVariables.resilience["longRecoveryTime"] = 1
                             }, label: {
                                 Text("1: Strongly Agree")
                             })
                             Button(action:{
                                 choice3 = "2"
-                                signupVariables.resilience["longRecoveryTime"] = choice3
+                                signupVariables.resilience["longRecoveryTime"] = 2
                             }, label: {
                                 Text("2: Agree")
                             })
                             Button(action:{
                                 choice3 = "3"
-                                signupVariables.resilience["longRecoveryTime"] = choice3
+                                signupVariables.resilience["longRecoveryTime"] = 3
                             }, label: {
                                 Text("3: Neutral")
                             })
                             Button(action:{
                                 choice3 = "4"
-                                signupVariables.resilience["longRecoveryTime"] = choice3
+                                signupVariables.resilience["longRecoveryTime"] = 4
                             }, label: {
                                 Text("4: Disagree")
                             })
                             Button(action:{
                                 choice3 = "5"
-                                signupVariables.resilience["longRecoveryTime"] = choice3
+                                signupVariables.resilience["longRecoveryTime"] = 5
                             }, label: {
                                 Text("5: Strongly Disagree")
                             })
@@ -181,31 +179,31 @@ struct FifthView: View {
                         Menu{
                             Button(action:{
                                 choice4 = "1"
-                                signupVariables.resilience["hardToSnapBack"] = choice4
+                                signupVariables.resilience["hardToSnapBack"] = 1
                             }, label: {
                                 Text("1: Strongly Agree")
                             })
                             Button(action:{
                                 choice4 = "2"
-                                signupVariables.resilience["hardToSnapBack"] = choice4
+                                signupVariables.resilience["hardToSnapBack"] = 2
                             }, label: {
                                 Text("2: Agree")
                             })
                             Button(action:{
                                 choice4 = "3"
-                                signupVariables.resilience["hardToSnapBack"] = choice4
+                                signupVariables.resilience["hardToSnapBack"] = 3
                             }, label: {
                                 Text("3: Neutral")
                             })
                             Button(action:{
                                 choice4 = "4"
-                                signupVariables.resilience["hardToSnapBack"] = choice4
+                                signupVariables.resilience["hardToSnapBack"] = 4
                             }, label: {
                                 Text("4: Disagree")
                             })
                             Button(action:{
                                 choice4 = "5"
-                                signupVariables.resilience["hardToSnapBack"] = choice4
+                                signupVariables.resilience["hardToSnapBack"] = 5
                             }, label: {
                                 Text("5: Strongly Disagree")
                             })
@@ -227,31 +225,31 @@ struct FifthView: View {
                         Menu{
                             Button(action:{
                                 choice5 = "1"
-                                signupVariables.resilience["comeThroughDifficulTimes"] = choice5
+                                signupVariables.resilience["comeThroughDifficulTimes"] = 1
                             }, label: {
                                 Text("1: Strongly Agree")
                             })
                             Button(action:{
                                 choice5 = "2"
-                                signupVariables.resilience["comeThroughDifficulTimes"] = choice5
+                                signupVariables.resilience["comeThroughDifficulTimes"] = 2
                             }, label: {
                                 Text("2: Agree")
                             })
                             Button(action:{
                                 choice5 = "3"
-                                signupVariables.resilience["comeThroughDifficulTimes"] = choice5
+                                signupVariables.resilience["comeThroughDifficulTimes"] = 3
                             }, label: {
                                 Text("3: Neutral")
                             })
                             Button(action:{
                                 choice5 = "4"
-                                signupVariables.resilience["comeThroughDifficulTimes"] = choice5
+                                signupVariables.resilience["comeThroughDifficulTimes"] = 4
                             }, label: {
                                 Text("4: Disagree")
                             })
                             Button(action:{
                                 choice5 = "5"
-                                signupVariables.resilience["comeThroughDifficulTimes"] = choice5
+                                signupVariables.resilience["comeThroughDifficulTimes"] = 5
                             }, label: {
                                 Text("5: Strongly Disagree")
                             })
@@ -273,31 +271,31 @@ struct FifthView: View {
                         Menu{
                             Button(action:{
                                 choice6 = "1"
-                                signupVariables.resilience["longTimeGetOverSetBacks"] = choice6
+                                signupVariables.resilience["longTimeGetOverSetBacks"] = 1
                             }, label: {
                                 Text("1: Strongly Agree")
                             })
                             Button(action:{
                                 choice6 = "2"
-                                signupVariables.resilience["longTimeGetOverSetBacks"] = choice6
+                                signupVariables.resilience["longTimeGetOverSetBacks"] = 2
                             }, label: {
                                 Text("2: Agree")
                             })
                             Button(action:{
                                 choice6 = "3"
-                                signupVariables.resilience["longTimeGetOverSetBacks"] = choice6
+                                signupVariables.resilience["longTimeGetOverSetBacks"] = 3
                             }, label: {
                                 Text("3: Neutral")
                             })
                             Button(action:{
                                 choice6 = "4"
-                                signupVariables.resilience["longTimeGetOverSetBacks"] = choice6
+                                signupVariables.resilience["longTimeGetOverSetBacks"] = 4
                             }, label: {
                                 Text("4: Disagree")
                             })
                             Button(action:{
                                 choice6 = "5"
-                                signupVariables.resilience["longTimeGetOverSetBacks"] = choice6
+                                signupVariables.resilience["longTimeGetOverSetBacks"] = 5
                             }, label: {
                                 Text("5: Strongly Disagree")
                             })
@@ -315,12 +313,20 @@ struct FifthView: View {
                 Button(action: {
                     signupUser(data: signupVariables) {
                         result in switch result {
-                            case .success(let token):
-                                print(token)
-                                UserDefaults.standard.set(token, forKey: "token")
-                                redirectToLogin.toggle()
+                            case .success(let data):
+                            do {
+                                if let jsonObject = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                                    if let token = jsonObject["token"] as? String {
+                                        UserDefaults.standard.set(token, forKey: "token")
+                                        redirectToLogin.toggle()
+                                    }
+                                } else {
+                                    print("Failed to convert Data to JSON dictionary")
+                                }
+                            } catch {
+                                print("Error: \(error)")
+                            }
                             case .failure(let error):
-                                redirectToLogin.toggle()
                                 errMsg = error.localizedDescription
                                 showAlert.toggle()
                             }
@@ -341,9 +347,11 @@ struct FifthView: View {
                                 dismissButton: .default(Text("OK"))
                             )
                 }
-                .disabled(choice1.isEmpty || choice2.isEmpty || choice3.isEmpty || choice4.isEmpty || choice5.isEmpty || choice6.isEmpty)
                 .padding()
                 
+            }
+            .onAppear {
+                self.showAlert = false
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         

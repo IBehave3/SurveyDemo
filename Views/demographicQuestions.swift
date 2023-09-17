@@ -232,7 +232,7 @@ struct demographicQuestions: View {
                                     if buttonD1 {
                                         buttonD2 = false
                                     }
-                                    demographic["employed"] = "false"
+                                    demographic["employed"] = false
                                 }
                             selectButton2(isSelected2: $buttonD2, color2: .blue, text2: "Yes")
                                 .onTapGesture {
@@ -240,7 +240,7 @@ struct demographicQuestions: View {
                                     if buttonD2 {
                                         buttonD1 = false
                                     }
-                                    demographic["employed"] = "true"
+                                    demographic["employed"] = true
                                 }
                         }
                         
@@ -248,8 +248,8 @@ struct demographicQuestions: View {
                     
                     HStack {
                         Button("Next", action: {
-                            demographic["age"] = age
-                            demographic["race"] = self.race
+                            demographic["age"] = Int(age)
+                            demographic["race"] = race
                             if (otherRace != "") {
                                 demographic["otherRace"] = otherRace
                             }

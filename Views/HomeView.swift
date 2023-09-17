@@ -12,8 +12,11 @@ struct homeView: View {
     let tokenKey = "token"
     
     @State private var logout: Bool = false
-    @ObservedObject var locationManager = LocationManager()
-
+//    @ObservedObject var locationManager = LocationManager()
+    
+    @State private var timer: Timer?
+    @State private var isBackgroundTaskRunning: Bool = false
+    
     var body: some View {
             List {
                 NavigationLink(destination: secondView()) {
@@ -28,6 +31,8 @@ struct homeView: View {
             .toolbar {
                             ToolbarItem(placement: .navigationBarTrailing) {
                                 Button(action: {
+//                                    self.timer?.invalidate()
+//                                    UserDefaults.standard.set(false, forKey: "taskStatus")
                                     UserDefaults.standard.removeObject(forKey: tokenKey)
                                     logout.toggle()
                                 }) {
@@ -37,37 +42,46 @@ struct homeView: View {
                             }
                         }
         .onAppear {
-            startPeriodicBackgroundTask()
+//            startPeriodicBackgroundTask()
         }
     }
 
-    private func performBackgroundTask() {
-        let timer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { timer in
-                   
-            if let location = locationManager.location {
-                print("Latitude: \(location.coordinate.latitude)")
-                print("Longitude: \(location.coordinate.longitude)")
-                
-                let token = UserDefaults.standard.string(forKey: "token")
-                                
-                //Call api to post location data
-                //Depending on api response, generate hourly notification
-                //If api returns unauthorized, logout and end background task, the user has to login again
-                let errorOccurred = false
-                if errorOccurred {
-                    timer.invalidate()
-                }
-            }
-        }
-               
-        RunLoop.current.run()
-    }
+//    private func performBackgroundTask() {
+//
+//             timer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { timer in
+                       
+//                if let location = locationManager.location {
+//                    print("Latitude: \(location.coordinate.latitude)")
+//                    print("Longitude: \(location.coordinate.longitude)")
+//
+//                    let token = UserDefaults.standard.string(forKey: "token")
+//
+//                    //Call api to post location data
+//                    //Depending on api response, generate hourly notification
+//                    //If api returns unauthorized, logout and end background task, the user has to login again
+//                    let errorOccurred = false
+//                    if errorOccurred {
+//                        timer.invalidate()
+//                    }
+//                }
+//        }
+//
+//        RunLoop.current.run()
+//    }
     
-    private func startPeriodicBackgroundTask() {
-        DispatchQueue.global().async {
-            self.performBackgroundTask()
-        }
-    }
+//    private func startPeriodicBackgroundTask() {
+//        let isRunning = UserDefaults.standard.bool(forKey: "taskStatus")
+//
+//        DispatchQueue.global().async {
+//            if isRunning {
+//                 return
+//             }
+//
+//            UserDefaults.standard.set(true, forKey: "taskStatus")
+//
+//            self.performBackgroundTask()
+//        }
+//    }
 }
 
 struct MenuItemView: View {

@@ -59,7 +59,7 @@ struct secondView: View {
                                     buttonPushed4 = false
                                     buttonPushed5 = false
                                     answer1 = "1"
-                                    dailySurveyAnswers.unableToControlImportantThings = answer1
+                                    dailySurveyAnswers.unableToControlImportantThings = 1
                                 }
                                 
                             }
@@ -77,7 +77,7 @@ struct secondView: View {
                                     buttonPushed4 = false
                                     buttonPushed5 = false
                                     answer1 = "2"
-                                    dailySurveyAnswers.unableToControlImportantThings = answer1
+                                    dailySurveyAnswers.unableToControlImportantThings = 2
                                 }
                             }
                         Text("Disagree")
@@ -93,7 +93,7 @@ struct secondView: View {
                                     buttonPushed4 = false
                                     buttonPushed5 = false
                                     answer1 = "3"
-                                    dailySurveyAnswers.unableToControlImportantThings = answer1
+                                    dailySurveyAnswers.unableToControlImportantThings = 3
                                 }
                             }
                         Text("Neutral")
@@ -109,7 +109,7 @@ struct secondView: View {
                                     buttonPushed3 = false
                                     buttonPushed5 = false
                                     answer1 = "4"
-                                    dailySurveyAnswers.unableToControlImportantThings = answer1
+                                    dailySurveyAnswers.unableToControlImportantThings = 4
                                 }
                             }
                         Text("Agree")
@@ -125,7 +125,7 @@ struct secondView: View {
                                     buttonPushed3 = false
                                     buttonPushed4 = false
                                     answer1 = "5"
-                                    dailySurveyAnswers.unableToControlImportantThings = answer1
+                                    dailySurveyAnswers.unableToControlImportantThings = 5
                                 }
                             }
                         Text("Strongly Agree")
@@ -152,7 +152,7 @@ struct secondView: View {
                                     buttonPushedB4 = false
                                     buttonPushedB5 = false
                                     answer2 = "1"
-                                    dailySurveyAnswers.oftenFeltConfidentHandlePersonalProblems = answer2
+                                    dailySurveyAnswers.oftenFeltConfidentHandlePersonalProblems = 1
                                 }
                             }
                         Text("Strongly Disagree")
@@ -168,7 +168,7 @@ struct secondView: View {
                                     buttonPushedB4 = false
                                     buttonPushedB5 = false
                                     answer2 = "2"
-                                    dailySurveyAnswers.oftenFeltConfidentHandlePersonalProblems = answer2
+                                    dailySurveyAnswers.oftenFeltConfidentHandlePersonalProblems = 2
                                 }
                             }
                         Text("Disagree")
@@ -184,7 +184,7 @@ struct secondView: View {
                                     buttonPushedB4 = false
                                     buttonPushedB5 = false
                                     answer2 = "3"
-                                    dailySurveyAnswers.oftenFeltConfidentHandlePersonalProblems = answer2
+                                    dailySurveyAnswers.oftenFeltConfidentHandlePersonalProblems = 3
                                 }
                             }
                         Text("Neutral")
@@ -200,7 +200,7 @@ struct secondView: View {
                                     buttonPushedB3 = false
                                     buttonPushedB5 = false
                                     answer2 = "4"
-                                    dailySurveyAnswers.oftenFeltConfidentHandlePersonalProblems = answer2
+                                    dailySurveyAnswers.oftenFeltConfidentHandlePersonalProblems = 4
                                 }
                             }
                         Text("Agree")
@@ -216,7 +216,7 @@ struct secondView: View {
                                     buttonPushedB3 = false
                                     buttonPushedB4 = false
                                     answer2 = "5"
-                                    dailySurveyAnswers.oftenFeltConfidentHandlePersonalProblems = answer2
+                                    dailySurveyAnswers.oftenFeltConfidentHandlePersonalProblems = 5
                                 }
                             }
                         Text("Strongly Agree")
@@ -243,7 +243,7 @@ struct secondView: View {
                                     buttonPushedC4 = false
                                     buttonPushedC5 = false
                                     answer3 = "1"
-                                    dailySurveyAnswers.feelThingsAreGoingMyWay = answer3
+                                    dailySurveyAnswers.feelThingsAreGoingMyWay = 1
                                 }
                             }
                         Text("Strongly Disagree")
@@ -259,7 +259,7 @@ struct secondView: View {
                                     buttonPushedC4 = false
                                     buttonPushedC5 = false
                                     answer3 = "2"
-                                    dailySurveyAnswers.feelThingsAreGoingMyWay = answer3
+                                    dailySurveyAnswers.feelThingsAreGoingMyWay = 2
                                 }
                             }
                         Text("Disagree")
@@ -275,7 +275,7 @@ struct secondView: View {
                                     buttonPushedC4 = false
                                     buttonPushedC5 = false
                                     answer3 = "3"
-                                    dailySurveyAnswers.feelThingsAreGoingMyWay = answer3
+                                    dailySurveyAnswers.feelThingsAreGoingMyWay = 3
                                 }
                             }
                         Text("Neutral")
@@ -291,7 +291,7 @@ struct secondView: View {
                                     buttonPushedC3 = false
                                     buttonPushedC5 = false
                                     answer3 = "4"
-                                    dailySurveyAnswers.feelThingsAreGoingMyWay = answer3
+                                    dailySurveyAnswers.feelThingsAreGoingMyWay = 4
                                 }
                             }
                         Text("Agree")
@@ -307,7 +307,7 @@ struct secondView: View {
                                     buttonPushedC3 = false
                                     buttonPushedC4 = false
                                     answer3 = "5"
-                                    dailySurveyAnswers.feelThingsAreGoingMyWay = answer3
+                                    dailySurveyAnswers.feelThingsAreGoingMyWay = 5
                                 }
                             }
                         Text("Strongly Agree")
@@ -334,7 +334,7 @@ struct secondView: View {
                                     buttonPushedD4 = false
                                     buttonPushedD5 = false
                                     answer4 = "1"
-                                    dailySurveyAnswers.feelDifficultiesPilingCannotOvercome = answer4
+                                    dailySurveyAnswers.feelDifficultiesPilingCannotOvercome = 1
                                 }
                             }
                         Text("Strongly Disagree")
@@ -350,7 +350,7 @@ struct secondView: View {
                                     buttonPushedD4 = false
                                     buttonPushedD5 = false
                                     answer4 = "2"
-                                    dailySurveyAnswers.feelDifficultiesPilingCannotOvercome = answer4
+                                    dailySurveyAnswers.feelDifficultiesPilingCannotOvercome = 2
                                 }
                             }
                         Text("Disagree")
@@ -366,7 +366,7 @@ struct secondView: View {
                                     buttonPushedD4 = false
                                     buttonPushedD5 = false
                                     answer4 = "3"
-                                    dailySurveyAnswers.feelDifficultiesPilingCannotOvercome = answer4
+                                    dailySurveyAnswers.feelDifficultiesPilingCannotOvercome = 3
                                 }
                             }
                         Text("Neutral")
@@ -382,7 +382,7 @@ struct secondView: View {
                                     buttonPushedD3 = false
                                     buttonPushedD5 = false
                                     answer4 = "4"
-                                    dailySurveyAnswers.feelDifficultiesPilingCannotOvercome = answer4
+                                    dailySurveyAnswers.feelDifficultiesPilingCannotOvercome = 4
                                 }
                             }
                         Text("Agree")
@@ -398,7 +398,7 @@ struct secondView: View {
                                     buttonPushedD3 = false
                                     buttonPushedD4 = false
                                     answer4 = "5"
-                                    dailySurveyAnswers.feelDifficultiesPilingCannotOvercome = answer4
+                                    dailySurveyAnswers.feelDifficultiesPilingCannotOvercome = 5
                                 }
                             }
                         Text("Strongly Agree")
@@ -420,7 +420,6 @@ struct secondView: View {
             Image(systemName:"arrow.right.circle.fill")
             
         }
-        .disabled(answer1.isEmpty || answer2.isEmpty || answer3.isEmpty || answer4.isEmpty)
         .padding(.bottom, 20.0)
     }
         

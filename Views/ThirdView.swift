@@ -39,6 +39,10 @@ struct ThirdView: View {
     @State private var answer3 = ""
     @State private var answer4 = ""
 
+    @State private var showAlert = false
+    @State private var errMsg = ""
+    
+    @State private var unauthorized = false
     
     var body: some View{
         
@@ -67,7 +71,7 @@ struct ThirdView: View {
                                         buttonPushed4 = false
                                         buttonPushed5 = false
                                         answer1 = "0"
-                                        dailySurveyAnswers.stressYourHealth = answer1
+                                        dailySurveyAnswers.stressYourHealth = 0
                                     }
                                     
                                 }
@@ -85,7 +89,7 @@ struct ThirdView: View {
                                         buttonPushed4 = false
                                         buttonPushed5 = false
                                         answer1 = "1"
-                                        dailySurveyAnswers.stressYourHealth = answer1
+                                        dailySurveyAnswers.stressYourHealth = 1
                                     }
                                 }
                             Text("A little")
@@ -101,7 +105,7 @@ struct ThirdView: View {
                                         buttonPushed4 = false
                                         buttonPushed5 = false
                                         answer1 = "2"
-                                        dailySurveyAnswers.stressYourHealth = answer1
+                                        dailySurveyAnswers.stressYourHealth = 2
                                     }
                                 }
                             Text("Moderately")
@@ -117,7 +121,7 @@ struct ThirdView: View {
                                         buttonPushed3 = false
                                         buttonPushed5 = false
                                         answer1 = "3"
-                                        dailySurveyAnswers.stressYourHealth = answer1
+                                        dailySurveyAnswers.stressYourHealth = 3
                                     }
                                 }
                             Text("Quite a Bit")
@@ -133,7 +137,7 @@ struct ThirdView: View {
                                         buttonPushed3 = false
                                         buttonPushed4 = false
                                         answer1 = "4"
-                                        dailySurveyAnswers.stressYourHealth = answer1
+                                        dailySurveyAnswers.stressYourHealth = 4
                                     }
                                 }
                             Text("Extremely")
@@ -161,7 +165,7 @@ struct ThirdView: View {
                                         buttonPushedB4 = false
                                         buttonPushedB5 = false
                                         answer2 = "0"
-                                        dailySurveyAnswers.stressYourFinances = answer2
+                                        dailySurveyAnswers.stressYourFinances = 0
                                     }
                                 }
                             Text("Not at All")
@@ -177,7 +181,7 @@ struct ThirdView: View {
                                         buttonPushedB4 = false
                                         buttonPushedB5 = false
                                         answer2 = "1"
-                                        dailySurveyAnswers.stressYourFinances = answer2
+                                        dailySurveyAnswers.stressYourFinances = 1
                                     }
                                 }
                             Text("A little")
@@ -193,7 +197,7 @@ struct ThirdView: View {
                                         buttonPushedB4 = false
                                         buttonPushedB5 = false
                                         answer2 = "2"
-                                        dailySurveyAnswers.stressYourFinances = answer2
+                                        dailySurveyAnswers.stressYourFinances = 2
                                     }
                                 }
                             Text("Moderately")
@@ -209,7 +213,7 @@ struct ThirdView: View {
                                         buttonPushedB3 = false
                                         buttonPushedB5 = false
                                         answer2 = "3"
-                                        dailySurveyAnswers.stressYourFinances = answer2
+                                        dailySurveyAnswers.stressYourFinances = 3
                                     }
                                 }
                             Text("Quite a Bit")
@@ -225,7 +229,7 @@ struct ThirdView: View {
                                         buttonPushedB3 = false
                                         buttonPushedB4 = false
                                         answer2 = "4"
-                                        dailySurveyAnswers.stressYourFinances = answer2
+                                        dailySurveyAnswers.stressYourFinances = 4
                                     }
                                 }
                             Text("Extremely")
@@ -252,7 +256,7 @@ struct ThirdView: View {
                                         buttonPushedC3 = false
                                         buttonPushedC4 = false
                                         answer3 = "0"
-                                        dailySurveyAnswers.stressFamilySocialRelationships = answer3
+                                        dailySurveyAnswers.stressFamilySocialRelationships = 0
                                     }
                                 }
                             Text("Not at All")
@@ -268,7 +272,7 @@ struct ThirdView: View {
                                         buttonPushedC4 = false
                                         buttonPushedC5 = false
                                         answer3 = "1"
-                                        dailySurveyAnswers.stressFamilySocialRelationships = answer3
+                                        dailySurveyAnswers.stressFamilySocialRelationships = 1
                                     }
                                 }
                             Text("A little")
@@ -284,7 +288,7 @@ struct ThirdView: View {
                                         buttonPushedC4 = false
                                         buttonPushedC5 = false
                                         answer3 = "2"
-                                        dailySurveyAnswers.stressFamilySocialRelationships = answer3
+                                        dailySurveyAnswers.stressFamilySocialRelationships = 2
                                     }
                                 }
                             Text("Moderately")
@@ -300,7 +304,7 @@ struct ThirdView: View {
                                         buttonPushedC3 = false
                                         buttonPushedC5 = false
                                         answer3 = "3"
-                                        dailySurveyAnswers.stressFamilySocialRelationships = answer3
+                                        dailySurveyAnswers.stressFamilySocialRelationships = 3
                                     }
                                 }
                             Text("Quite a Bit")
@@ -316,7 +320,7 @@ struct ThirdView: View {
                                         buttonPushedC3 = false
                                         buttonPushedC4 = false
                                         answer3 = "4"
-                                        dailySurveyAnswers.stressFamilySocialRelationships = answer3
+                                        dailySurveyAnswers.stressFamilySocialRelationships = 4
                                     }
                                 }
                             Text("Extremely")
@@ -344,7 +348,7 @@ struct ThirdView: View {
                                         buttonPushedD4 = false
                                         buttonPushedD5 = false
                                         answer4 = "0"
-                                        dailySurveyAnswers.stressYourWord = answer4
+                                        dailySurveyAnswers.stressYourWord = 0
                                     }
                                 }
                             Text("Not at All")
@@ -360,7 +364,7 @@ struct ThirdView: View {
                                         buttonPushedD4 = false
                                         buttonPushedD5 = false
                                         answer4 = "1"
-                                        dailySurveyAnswers.stressYourWord = answer4
+                                        dailySurveyAnswers.stressYourWord = 1
                                     }
                                 }
                             Text("A little")
@@ -376,7 +380,7 @@ struct ThirdView: View {
                                         buttonPushedD4 = false
                                         buttonPushedD5 = false
                                         answer4 = "2"
-                                        dailySurveyAnswers.stressYourWord = answer4
+                                        dailySurveyAnswers.stressYourWord = 2
                                     }
                                 }
                             Text("Moderately")
@@ -392,7 +396,7 @@ struct ThirdView: View {
                                         buttonPushedD3 = false
                                         buttonPushedD5 = false
                                         answer4 = "3"
-                                        dailySurveyAnswers.stressYourWord = answer4
+                                        dailySurveyAnswers.stressYourWord = 3
                                     }
                                 }
                             Text("Quite a Bit")
@@ -408,7 +412,7 @@ struct ThirdView: View {
                                         buttonPushedD3 = false
                                         buttonPushedD4 = false
                                         answer4 = "4"
-                                        dailySurveyAnswers.stressYourWord = answer4
+                                        dailySurveyAnswers.stressYourWord = 4
                                     }
                                 }
                             Text("Extremely")
@@ -421,14 +425,35 @@ struct ThirdView: View {
                 }
                 
                 Button("Finish Survey"){
-                    navigateToHome.toggle()
+                    
+                    submitDailySurvey(data: dailySurveyAnswers) {
+                        result in switch result {
+                            case .success(let token):
+                                print(token)
+                                navigateToHome.toggle()
+                        case .failure(let error as NSError):
+                                if (error.code == 401) {
+                                    unauthorized = true
+                                } else {
+                                    errMsg = error.domain
+                                    showAlert = true
+                                }
+                            }
+                    }
                     
                 }
+                .alert(isPresented: $showAlert) {
+                            Alert(
+                                title: Text("Error submitting daily survey."),
+                                message: Text(errMsg),
+                                dismissButton: .default(Text("OK"))
+                            )
+                        }
                 .buttonStyle(.borderedProminent)
-                .disabled(answer1.isEmpty || answer2.isEmpty || answer3.isEmpty || answer4.isEmpty)
                 .padding()
                 NavigationLink("", destination: homeView(), isActive: $navigateToHome)
-                
+                NavigationLink("", destination: SignupLoginView(), isActive: $unauthorized)
+
             }
             .frame(maxWidth: .infinity)
             
