@@ -26,7 +26,6 @@ func sendPostRequestWithJSON(jsonString: String, urlString: String, completionHa
         let tokenWithBearer = "Bearer " + token
         request.setValue(tokenWithBearer, forHTTPHeaderField: "Authorization")
     } else {
-        // Handle the case where the token is nil
         print("Token is nil")
     }
     
