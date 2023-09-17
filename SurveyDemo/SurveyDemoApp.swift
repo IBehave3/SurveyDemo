@@ -15,9 +15,10 @@ struct SurveyDemoApp: App {
     @StateObject var locationManager = LocationManager()
     @StateObject var signupVariable = SignupVariables()
     @StateObject var dailyAnswers = DailySurveyAnswers()
+    @StateObject var locationStatus = LocationStatus()
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    
+        
     @State private var timer: Timer?
 
     var body: some Scene {
@@ -27,6 +28,7 @@ struct SurveyDemoApp: App {
                 .environmentObject(locationManager)
                 .environmentObject(signupVariable)
                 .environmentObject(dailyAnswers)
+                .environmentObject(locationStatus)
                 .navigationViewStyle(.stack)
                 .onAppear {
                     startPeriodicBackgroundTask()
@@ -59,14 +61,27 @@ struct SurveyDemoApp: App {
                                  result in switch result {
                                     case .success(let data):
                                         print("Location sent successfully.")
+                                     
+                                        DispatchQueue.main.async {
+                                                 locationStatus.isLocationLive = true
+                                        }
                                     case .failure(let error as NSError):
+                                     DispatchQueue.main.async {
+                                                 locationStatus.isLocationLive = false
+                                             }
                                         print("Location sent unsuccessful.")
                                  }
                              }
+                         } else {
+                             DispatchQueue.main.async {
+                                         locationStatus.isLocationLive = false
+                                     }
                          }
                          
                      } else {
-                         
+                         DispatchQueue.main.async {
+                                     locationStatus.isLocationLive = false
+                                 }
                          print("Token is nil or empty")
                      }
             }

@@ -11,6 +11,7 @@
 		8449C2D12AB3A07D00953B8C /* SignupVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449C2D02AB3A07D00953B8C /* SignupVariables.swift */; };
 		8449C2D32AB4D7EB00953B8C /* DailySurveyAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449C2D22AB4D7EB00953B8C /* DailySurveyAnswers.swift */; };
 		8449C2D52AB7435F00953B8C /* SurveyRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449C2D42AB7435E00953B8C /* SurveyRequests.swift */; };
+		8449C2D92AB7B8BA00953B8C /* LocationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449C2D82AB7B8BA00953B8C /* LocationStatus.swift */; };
 		8454799A2AA14D5B0092FF35 /* GeneralStress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845479992AA14D5B0092FF35 /* GeneralStress.swift */; };
 		84B49E402AABA4F300A7C64E /* LoginSignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B49E3F2AABA4F300A7C64E /* LoginSignupView.swift */; };
 		84B49E422AABACD400A7C64E /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B49E412AABACD400A7C64E /* AuthRequest.swift */; };
@@ -67,6 +68,7 @@
 		8449C2D02AB3A07D00953B8C /* SignupVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVariables.swift; sourceTree = "<group>"; };
 		8449C2D22AB4D7EB00953B8C /* DailySurveyAnswers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySurveyAnswers.swift; sourceTree = "<group>"; };
 		8449C2D42AB7435E00953B8C /* SurveyRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyRequests.swift; sourceTree = "<group>"; };
+		8449C2D82AB7B8BA00953B8C /* LocationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStatus.swift; sourceTree = "<group>"; };
 		845479992AA14D5B0092FF35 /* GeneralStress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralStress.swift; sourceTree = "<group>"; };
 		84B49E3F2AABA4F300A7C64E /* LoginSignupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginSignupView.swift; path = Views/LoginSignupView.swift; sourceTree = SOURCE_ROOT; };
 		84B49E412AABACD400A7C64E /* AuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				BA4B67582A6105CD00D8216A /* globalVariables.swift */,
 				8449C2D02AB3A07D00953B8C /* SignupVariables.swift */,
 				8449C2D22AB4D7EB00953B8C /* DailySurveyAnswers.swift */,
+				8449C2D82AB7B8BA00953B8C /* LocationStatus.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				8449C2D52AB7435F00953B8C /* SurveyRequests.swift in Sources */,
 				BA3889972A4620BB000870E8 /* secondView.swift in Sources */,
 				BAB496B52A85F9E4006A5DFC /* savedLocationsView.swift in Sources */,
+				8449C2D92AB7B8BA00953B8C /* LocationStatus.swift in Sources */,
 				BAB9428D2A0D63F000C837D4 /* SurveyDemoApp.swift in Sources */,
 				BA2371D92A73132800250EE8 /* demographicQuestions.swift in Sources */,
 				BA94015B2A462877000E3F9E /* SixthView.swift in Sources */,
