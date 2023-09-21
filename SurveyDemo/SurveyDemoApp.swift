@@ -31,6 +31,8 @@ struct SurveyDemoApp: App {
                 .environmentObject(locationStatus)
                 .navigationViewStyle(.stack)
                 .onAppear {
+                    UIApplication.shared.isIdleTimerDisabled = true
+
                     startPeriodicBackgroundTask()
                 }
         }
@@ -100,7 +102,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         NotificationManager().requestAuthorization()
         NotificationManager().schedulesTimedNotification()
-        
+                
         return true
     }
 }

@@ -21,6 +21,9 @@ struct FourthView: View {
     @State private var oneTimeAnswers = [String:String]()
     @State private var navigateToHome: Bool = false
     
+    @State var showAlert = false
+    @State var errMsg = ""
+    
     var body: some View{
         ScrollView {
             VStack{
@@ -131,8 +134,28 @@ struct FourthView: View {
                 }
                 
                 Button("Finish Survey"){
-                    oneTimeAnswers["location"] = dropdownOptions[selectedOptionIndex]
-                    navigateToHome.toggle()
+                    let hourlySurveyAnswers = HourlySurveyAnswers()
+                    hourlySurveyAnswers.location = dropdownOptions[selectedOptionIndex]
+                    hourlySurveyAnswers.currentStress = Int(oneTimeAnswers["currentStress"] ?? "")
+                    
+                    submitHourlySurvey(data: hourlySurveyAnswers) {
+                        result in switch result {
+                           case .success(let data):
+                               navigateToHome.toggle()
+                               print("Hourly survey submitted successfully.")
+                           case .failure(let error as NSError):
+                               showAlert.toggle()
+                               errMsg = error.description
+                               print("Hourly survey couldn't be submitted.")
+                        }
+                    }
+                }
+                .alert(isPresented: $showAlert) {
+                            Alert(
+                                title: Text("Hourly survey couldn't be submitted at this time."),
+                                message: Text(errMsg),
+                                dismissButton: .default(Text("OK"))
+                            )
                 }
                 .buttonStyle(.borderedProminent)
                 .disabled(answer.isEmpty)
