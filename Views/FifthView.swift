@@ -314,17 +314,34 @@ struct FifthView: View {
                     signupUser(data: signupVariables) {
                         result in switch result {
                             case .success(let data):
-                            do {
-                                if let jsonObject = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                                    if let token = jsonObject["token"] as? String {
-                                        UserDefaults.standard.set(token, forKey: "token")
-                                        redirectToLogin.toggle()
+                            
+                            let credentials: [String: Any] = [
+                                "username": signupVariables.username,
+                                "password": signupVariables.password
+                            ]
+                            
+                            loginUser(data: credentials) {
+                                result in switch result {
+                                case .success(let data):
+                                    
+                                    do {
+                                        if let jsonObject = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                                            
+                                            if let token = jsonObject["token"] as? String {
+                                                UserDefaults.standard.set(token, forKey: "token")
+                                                redirectToLogin.toggle()
+                                            }
+                                        } else {
+                                            print("Failed to convert Data to JSON dictionary")
+                                        }
+                                    } catch {
+                                        print("Error: \(error)")
                                     }
-                                } else {
-                                    print("Failed to convert Data to JSON dictionary")
+                                    
+                                case .failure(let error):
+                                    errMsg = error.localizedDescription
+                                    showAlert.toggle()
                                 }
-                            } catch {
-                                print("Error: \(error)")
                             }
                             case .failure(let error):
                                 errMsg = error.localizedDescription

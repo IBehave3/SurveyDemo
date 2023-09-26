@@ -34,7 +34,7 @@ class NotificationManager {
         let content = UNMutableNotificationContent()
         
         content.title = "Daily Survey"
-        content.body = "You have a survey waiting for you."
+        content.body = "You have a daily survey waiting for you."
         content.sound = .default
         content.badge = 1
         
@@ -45,7 +45,7 @@ class NotificationManager {
 
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
 
-        let request = UNNotificationRequest(identifier: "notificationIdentifier", content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
 
         UNUserNotificationCenter.current().add(request) { (error) in
             if let error = error {
@@ -55,6 +55,25 @@ class NotificationManager {
                 }
             }
         
+    }
+    
+    func generateHourlyNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "Hourly Survey"
+        content.body = "You have an hourly survey waiting for you."
+        content.sound = .default
+                
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+                
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                
+        UNUserNotificationCenter.current().add(request) { (error) in
+            if let error = error {
+                print("Error scheduling notification: \(error.localizedDescription)")
+            } else {
+                print("Hourly notification shown.")
+            }
+        }
     }
     
     func cancelNotification() {

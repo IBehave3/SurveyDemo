@@ -47,16 +47,11 @@ struct SurveyDemoApp: App {
                              
                              print("Latitude: \(location.coordinate.latitude)")
                              print("Longitude: \(location.coordinate.longitude)")
-                             
-                             let dateFormatter = DateFormatter()
-                             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssXXX"
-
-                             let timestampString = dateFormatter.string(from: Date())
          
                              let data: [String: Any] = [
                                  "latitude": location.coordinate.latitude,
                                  "longitude": location.coordinate.longitude,
-                                 "timestamp": timestampString
+                                 "timestamp": Int(NSDate().timeIntervalSince1970)
                              ]
                              
                              submitLocationData(data: data) {
@@ -64,6 +59,11 @@ struct SurveyDemoApp: App {
                                     case .success(let data):
                                         print("Location sent successfully.")
                                      
+                                         if let responseString = String(data: data, encoding: .utf8) {
+                                             if (responseString == "yes") {
+                                                 NotificationManager().generateHourlyNotification()
+                                             }
+                                         }
                                         DispatchQueue.main.async {
                                                  locationStatus.isLocationLive = true
                                         }
@@ -98,11 +98,23 @@ struct SurveyDemoApp: App {
         }
 }
 
-class AppDelegate: NSObject, UIApplicationDelegate {
+class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         NotificationManager().requestAuthorization()
         NotificationManager().schedulesTimedNotification()
+        UNUserNotificationCenter.current().delegate = self
                 
         return true
     }
+    
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        willPresent notification: UNNotification,
+        withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void)
+    {        
+        // Show a banner
+        completionHandler([.alert,.sound])
+
+    }
+    
 }
