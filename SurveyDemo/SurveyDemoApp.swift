@@ -58,12 +58,21 @@ struct SurveyDemoApp: App {
                                  result in switch result {
                                     case .success(let data):
                                         print("Location sent successfully.")
-                                     
-                                         if let responseString = String(data: data, encoding: .utf8) {
-                                             if (responseString == "yes") {
-                                                 NotificationManager().generateHourlyNotification()
+                                         do {
+                                             if let jsonObject = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                                                 
+                                                 if let startHourlySurvey = jsonObject["initHourlySurvey"] as? Bool {
+                                                     if (startHourlySurvey) {
+                                                         NotificationManager().generateHourlyNotification()
+                                                     }
+                                                 }
+                                             } else {
+                                                 print("Failed to convert Data to JSON dictionary")
                                              }
+                                         } catch {
+                                             print("Error: \(error)")
                                          }
+                                     
                                         DispatchQueue.main.async {
                                                  locationStatus.isLocationLive = true
                                         }

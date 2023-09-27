@@ -137,6 +137,7 @@ struct FourthView: View {
                     let hourlySurveyAnswers = HourlySurveyAnswers()
                     hourlySurveyAnswers.location = dropdownOptions[selectedOptionIndex]
                     hourlySurveyAnswers.currentStress = Int(oneTimeAnswers["currentStress"] ?? "")
+                    hourlySurveyAnswers.timestamp = Int(NSDate().timeIntervalSince1970)
                     
                     submitHourlySurvey(data: hourlySurveyAnswers) {
                         result in switch result {

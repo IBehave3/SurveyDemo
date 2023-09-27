@@ -13,11 +13,14 @@ class HourlySurveyAnswers {
     
      var currentStress : Int?
     
+     var timestamp: Int?
+    
     func toDictionary() -> [String: Any] {
             var dictionary: [String: Any] = [:]
             
             dictionary["location"] = location
             dictionary["currentStress"] = currentStress
+            dictionary["timestamp"] = timestamp
         
             return dictionary
         }
