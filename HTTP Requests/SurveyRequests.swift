@@ -93,3 +93,27 @@ func submitLocationData(data: [String: Any], completionHandler: @escaping (Resul
     }
     
 }
+
+func updateLocation(data: [String: Any], completionHandler: @escaping (Result<Data, Error>) -> Void) {
+    do {
+        // Convert the dictionary to JSON data
+        let jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
+        
+        // Convert the JSON data to a string
+        if let jsonString = String(data: jsonData, encoding: .utf8) {
+            sendPostRequestWithJSON(jsonString: jsonString, urlString: "/api/location/custom") {
+                result in switch result {
+                    case .success(let data):
+                        completionHandler(.success(data))
+                    case .failure(let error):
+                        completionHandler(.failure(error))
+                    }
+            }
+        } else {
+            print("Unable to convert JSON data to string.")
+        }
+    } catch {
+        print("Error encoding credentials to JSON: \(error)")
+    }
+    
+}

@@ -19,7 +19,14 @@ struct homeView: View {
     
     @EnvironmentObject var locationStatus : LocationStatus
     
+    @State private var location: String = ""
+    
+    @State var isSuccess = false
+    @State var isError = false
+    @State var errMsg = ""
+    
     var body: some View {
+        VStack {
             List {
                 NavigationLink(destination: secondView()) {
                     MenuItemView(title: "Daily Survey", imageName: "sun.max.fill")
@@ -41,6 +48,47 @@ struct homeView: View {
                                 .background(NavigationLink("", destination: SignupLoginView(), isActive: $logout))
                             }
                         }
+            HStack {
+                TextField("Location", text: $location)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                
+                Button("Submit") {
+                    let data: [String: Any] = [
+                        "location": location,
+                        "timestamp": Int(NSDate().timeIntervalSince1970)
+                    ]
+                    updateLocation(data: data) {
+                        result in switch result {
+                            
+                           case .success(let data):
+                                isSuccess = true
+                                location = ""
+                               print("Location updated successfully.")
+                           case .failure(let error as NSError):
+                                isError.toggle()
+                                print("Location sent unsuccessful.")
+                        }
+                    }
+                }
+                .disabled(location.isEmpty)
+
+                    .alert(isPresented: $isSuccess) {
+                                Alert(
+                                    title: Text("Success."),
+                                    message: Text("Location updated successfully."),
+                                    dismissButton: .default(Text("OK"))
+                                )
+                    }
+                    .alert(isPresented: $isError) {
+                                Alert(
+                                    title: Text("Location couldn't be updated."),
+                                    message: Text(errMsg),
+                                    dismissButton: .default(Text("OK"))
+                                )
+                    }
+            }
+        }
         
             if let locationLive = locationStatus.isLocationLive {
                 
