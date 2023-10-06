@@ -21,9 +21,8 @@ struct homeView: View {
     
     @State private var location: String = ""
     
-    @State var isSuccess = false
-    @State var isError = false
-    @State var errMsg = ""
+    @State var showAlert = false
+    @State var msg = ""
     
     var body: some View {
         VStack {
@@ -62,28 +61,23 @@ struct homeView: View {
                         result in switch result {
                             
                            case .success(let data):
-                                isSuccess = true
+                                showAlert = true
                                 location = ""
+                                msg = "Location updated successfully."
                                print("Location updated successfully.")
                            case .failure(let error as NSError):
-                                isError.toggle()
+                                showAlert = true
+                                msg = "Location couldn't be updated."
                                 print("Location sent unsuccessful.")
                         }
                     }
                 }
                 .disabled(location.isEmpty)
 
-                    .alert(isPresented: $isSuccess) {
+                    .alert(isPresented: $showAlert) {
                                 Alert(
-                                    title: Text("Success."),
-                                    message: Text("Location updated successfully."),
-                                    dismissButton: .default(Text("OK"))
-                                )
-                    }
-                    .alert(isPresented: $isError) {
-                                Alert(
-                                    title: Text("Location couldn't be updated."),
-                                    message: Text(errMsg),
+                                    title: Text("Location Update"),
+                                    message: Text(msg),
                                     dismissButton: .default(Text("OK"))
                                 )
                     }
