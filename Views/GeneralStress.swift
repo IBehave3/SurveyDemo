@@ -51,6 +51,8 @@ struct GeneralStress: View {
                 
                 Text("1. How often have you felt that you were unable to control the important things in your life?")
                     .font(.system(size:20))
+                    .padding(.top, 10)
+                    .fixedSize(horizontal: false, vertical: true)
 
                 HStack {
                     VStack{
@@ -143,6 +145,7 @@ struct GeneralStress: View {
                 Text("2. How often have you felt confident about your ability to handle your personal problems?")
                     .font(.system(size: 20))
                     .padding(.top, 10)
+                    .fixedSize(horizontal: false, vertical: true)
 
                 HStack {
                     VStack{
@@ -233,6 +236,7 @@ struct GeneralStress: View {
                 Text("3. How often have you felt that things were going your way?")
                     .font(.system(size: 20))
                     .padding(.top, 10)
+                    .fixedSize(horizontal: false, vertical: true)
 
                 HStack {
                     VStack{
@@ -323,6 +327,7 @@ struct GeneralStress: View {
                 Text("4. How often have you felt difficulties were piling up so high that you could not overcome them?")
                     .font(.system(size: 20))
                     .padding(.top, 10)
+                    .fixedSize(horizontal: false, vertical: true)
                 
                 HStack {
                     VStack{
